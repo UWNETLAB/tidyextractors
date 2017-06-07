@@ -1,1 +1,1 @@
-from tidyextractors.base import *
+from tidyextractors.base_extractor import *
