@@ -7,6 +7,12 @@ class BaseExtractor(object):
 
     # TODO: Add doc strings
 
+    # __data__ stores the main collection of extracted data
+    __data__ = None
+
+    # A lookup of 'format':<generating function> pairs used by get_tidy
+    __lookup__ = {}
+
     def __init__(self, source, *args, auto_extract=True, progress_bar=True, **kwargs):
 
         # Extract data unless otherwise specified
@@ -28,11 +34,14 @@ class BaseExtractor(object):
     def __extract__(self, source, *args, **kwargs):
         self.__data__ = pd.DataFrame()
 
-    def get_tidy(self, output, *args, **kwargs):
+    def get_tidy(self, output, drop_compound = True, *args, **kwargs):
 
         # If the output is in __lookup__ call appropriate method.
         if output in self.__lookup__:
-            return self.__lookup__[output](*args, **kwargs)
+            if drop_compound:
+                return self.__drop_compound__(self.__lookup__[output](*args, **kwargs))
+            else:
+                return self.__lookup__[output](*args, **kwargs)
 
         # Otherwise, warn the user and print appropriate options.
         else:
@@ -41,12 +50,6 @@ class BaseExtractor(object):
                           str(self.__lookup__.keys()))
             return None
 
-    # __data__ stores the main collection of extracted data
-    __data__ = None
-
-    # A lookup of 'format':<generating function> pairs used by get_tidy
-    __lookup__ = {}
-
     def raw(self):
         return self.__data__
 
@@ -54,8 +57,10 @@ class BaseExtractor(object):
         all_cols = df.columns
         keep_cols = []
         for c in all_cols:
-            if not hasattr(df[c].dtype, '__iter__'):
-                keep_cols.extend(c)
+
+            # TODO: dtype inadequate for this applications
+            if df[c].dtype not in [dict, list, set]:
+                keep_cols.append(c)
         return df[keep_cols]
 
     def expand_on(self, col1, col2, rename1 = None, rename2 = None, drop = [], drop_compound = False):
