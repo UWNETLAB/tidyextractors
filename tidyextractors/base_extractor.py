@@ -180,4 +180,4 @@ class BaseExtractor(object):
         # The final expanded data set
         df_out = pd.concat([df_1, df_2], axis=1)
 
-        return df_1, df_2, df_out
+        return df_out
