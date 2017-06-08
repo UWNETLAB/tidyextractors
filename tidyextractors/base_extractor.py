@@ -90,12 +90,14 @@ class BaseExtractor(object):
         second_index = max(col1_index, col2_index)
         first_name = column_list[first_index]
         second_name = column_list[second_index]
+        first_rename = rename1 if first_index == col1_index else rename2
+        second_rename = rename2 if first_index == col1_index else rename1
 
         # New column names:
         new_column_list = column_list[:first_index] + \
-                          [first_name+'_extended'] + \
+                          [first_name+'_extended' if first_rename is None else first_rename] + \
                           column_list[first_index+1:second_index] + \
-                          [second_name+'_extended'] + \
+                          [second_name+'_extended' if second_rename is None else second_rename] + \
                           column_list[second_index+1:]
 
         # List of tuples. Rows in new data frame.
@@ -157,10 +159,10 @@ class BaseExtractor(object):
                     # Get nested data for this index.
                     if type(temp_first) == dict:
                         for k in temp_first:
-                            temp_attrs[k + '_' + first_name] = temp_first[k]
+                            temp_attrs[first_name + '/' + k] = temp_first[k]
                     if type(temp_second) == dict:
                         for k in temp_second:
-                            temp_attrs[k + '_' + second_name] = temp_second[k]
+                            temp_attrs[second_name + '/' + k] = temp_second[k]
 
                     # Add to the "new data" records.
                     new_attr_df_dicts.append(temp_attrs)

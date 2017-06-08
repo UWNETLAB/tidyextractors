@@ -32,4 +32,4 @@ class GitExtractor(BaseExtractor):
 
     def changes(self):
 
-      return self.expand_on('hexsha','changes',rename1='hash',rename2='files')
+      return self.expand_on('hexsha','changes',rename1='hash',rename2='file')
