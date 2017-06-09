@@ -40,5 +40,4 @@ class MboxExtractor(BaseExtractor):
         # Combine dataframes
         output_df = pd.concat([on_to_df,on_cc_df])
 
-        return output_df
-        #return self._drop_collections(output_df)
+        return self._drop_collections(output_df)
