@@ -21,11 +21,11 @@ Installing
 -----------------
 In the near future, `tidyextractors` will be distributed on PyPI and accessible via `pip`. For now, install as follows:
 
-```
+::
 cd /dir/of/your/choice/
 git clone https://github.com/networks-lab/tidyextractors.git
 pip install -e ./tidyextractors
-```
+
 
 Contributing
 -----------------
