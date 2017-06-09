@@ -1,1 +1,1 @@
-from tidyextractors.tidygit.git_extractor import *
+from tidyextractors.tidygit.git_extractor import GitExtractor
