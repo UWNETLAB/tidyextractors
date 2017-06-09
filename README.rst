@@ -4,7 +4,7 @@ tidyextractors
 Overview
 -----------------
 
-`tidyextractors` makes extracting data from supported sources as painless as possible, delivering you a populated Pandas DataFrame in three lines of code. `tidyextractors` was inspired by `Hadley Whickham's (2014) paper <http://vita.had.co.nz/papers/tidy-data.html>`_  which introduces "tidy data" as a conceptual framework for data preparation.
+``tidyextractors`` makes extracting data from supported sources as painless as possible, delivering you a populated Pandas DataFrame in three lines of code. ``tidyextractors`` was inspired by `Hadley Whickham's (2014) paper <http://vita.had.co.nz/papers/tidy-data.html>`_  which introduces "tidy data" as a conceptual framework for data preparation.
 
 Features
 -----------------
@@ -20,7 +20,7 @@ In the near future, ``tidyextractors`` will be distributed on PyPI and accessibl
 A Quick Example
 -----------------
 
-You can use the ``GitExtractor`` to quickly extract a record of commits or changes from a local Git repository. For example, this is what happens when you run the following code within the `tidyextractors` repository:
+You can use the ``GitExtractor`` to quickly extract a record of commits or changes from a local Git repository. For example, this is what happens when you run the following code within the ``tidyextractors`` repository:
 
 .. code::python
   import tidyextractors.tidygit as tg
@@ -52,9 +52,9 @@ Near Future Data Sources
 -----------------
 
 * Twitter User Data (including Tweets) using the Twitter API
-* Emails stored in the `mbox` file format.
+* Emails stored in the ``mbox`` file format.
 
 Contributing
 -----------------
 
-`tidyextractors` is a very new project, but it will grow quickly in the coming month. If there is a particular kind of data you are interested in extracting, or which to contribute to the package, please contact Joel Becker (`mail@joelbecker.ca <mailto:%22Joel%20Becker%22%3cmail@joelbecker.ca%3e>`_) or Jillian Anderson (jillianderson8@gmail.com) and we will respond ASAP.
+``tidyextractors`` is a very new project, but it will grow quickly in the coming month. If there is a particular kind of data you are interested in extracting, or which to contribute to the package, please contact Joel Becker (`mail@joelbecker.ca <mailto:%22Joel%20Becker%22%3cmail@joelbecker.ca%3e>`_) or Jillian Anderson (jillianderson8@gmail.com) and we will respond ASAP.
