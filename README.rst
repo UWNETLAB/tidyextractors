@@ -4,7 +4,44 @@ tidyextractors
 Overview
 -----------------
 
-`tidyextractors` makes extracting data from supported sources as painless as possible. In no more than 
+`tidyextractors` makes extracting data from supported sources as painless as possible, delivering you a populated Pandas DataFrame in three lines of code. `tidyextractors` was inspired by `Hadley Whickham's (2014) paper <http://vita.had.co.nz/papers/tidy-data.html>`_  which introduces "tidy data" as a conceptual framework for data preparation.
+
+Features
+-----------------
+
+* Extract data with minimal effort.
+* Readable code that requires minimal documentation to understand.
+* Exports Pandas Dataframes to maximize compatibility with the Python data science ecosystem.
+
+Installing
+-----------------
+In the near future, ``tidyextractors`` will be distributed on PyPI and accessible via ``pip``. For now, clone the repository and run ``pip install -e .`` in the cloned directory.
+
+A Quick Example
+-----------------
+
+You can use the ``GitExtractor`` to quickly extract a record of commits or changes from a local Git repository. For example, this is what happens when you run the following code within the `tidyextractors` repository:
+
+.. code::python
+  import tidyextractors.tidygit as tg
+  gx = tg.GitExtractor('')
+  pandas_data = gx.get_tidy('changes')
+
+The result is a Pandas DataFrame where each row is a committed change to a specific file. To fit this page, we'll just look at a few columns using ``pandas_data[['hash','file','author_email','summary','changes/insertions']]``:
+
++-----------+-------------------------------------------+----------------------+-----------------+--------------------+
+| hash      | file                                      | author_email         | summary         | changes/insertions |
++===========+===========================================+======================+=================+====================+
+| 'd85fab4' | 'tidyextractors/tidygit/__init__.py'      | 'mail@joelbecker.ca' | 'Removed im...' |                  1 |
++-----------+-------------------------------------------+----------------------+-----------------+--------------------+
+| '743a777' | 'tidyextractors/base_extractor.py'        | 'mail@joelbecker.ca' | 'Fixed _dro...' |                 69 |
++-----------+-------------------------------------------+----------------------+-----------------+--------------------+
+| '743a777' | 'tidyextractors/tidygit/git_extractor.py' | 'mail@joelbecker.ca' | 'Fixed _dro...' |                  9 |
++-----------+-------------------------------------------+----------------------+-----------------+--------------------+
+| 'add9794' | 'tidyextractors/base_extractor.py'        | 'mail@joelbecker.ca' | 'Fixed one ...' |                 15 |
++-----------+-------------------------------------------+----------------------+-----------------+--------------------+
+| '44ec7f6' | 'tidyextractors/base_extractor.py'        | 'mail@joelbecker.ca' | 'Added rena...' |                  6 |
++-----------+-------------------------------------------+----------------------+-----------------+--------------------+
 
 Currently Implemented Data Sources
 -----------------
@@ -16,11 +53,6 @@ Near Future Data Sources
 
 * Twitter User Data (including Tweets) using the Twitter API
 * Emails stored in the `mbox` file format.
-
-Installing
------------------
-In the near future, ``tidyextractors`` will be distributed on PyPI and accessible via ``pip``. For now, clone the repository and run ``pip install -e .`` inside it.
-
 
 Contributing
 -----------------
