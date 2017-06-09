@@ -29,4 +29,4 @@ class GitExtractor(BaseExtractor):
         return self._data.set_index('hexsha')
 
     def changes(self):
-        return self.expand_on('hexsha', 'changes', rename1='hash', rename2='file')
+        return self.expand_on('hexsha', 'changes', index_cols=['hash','file'], rename1='hash', rename2='file')

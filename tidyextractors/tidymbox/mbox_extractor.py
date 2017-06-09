@@ -30,14 +30,15 @@ class MboxExtractor(BaseExtractor):
     def sends(self):
 
         # Expand on each "to" field
-        on_to_df = self.expand_on('From','To',rename2='To')
-        on_cc_df = self.expand_on('From','Cc',rename2='To')
+        on_to_df = self.expand_on('From', 'To', ['MessageID', 'Recipient'], rename1='From', rename2='Recipient')
+        on_cc_df = self.expand_on('From', 'Cc', ['MessageID', 'Recipient'], rename1='From', rename2='Recipient')
 
         # Specify how it was sent
         on_to_df['SendType'] = 'To'
         on_cc_df['SendType'] = 'Cc'
 
         # Combine dataframes
-        # output_df = pd.concat([on_to_df,on_cc_df]).set_index(['MessageID','To'])
+        output_df = pd.concat([on_to_df,on_cc_df])
 
-        return on_to_df, on_cc_df
+        return output_df
+        #return self._drop_collections(output_df)

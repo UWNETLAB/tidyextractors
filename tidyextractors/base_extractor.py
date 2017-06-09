@@ -25,9 +25,6 @@ class BaseExtractor(object):
         # Do subclass initialization
         self.__sub_init__(source, *args, **kwargs)
 
-        # Check invariants
-        self._check_invariants()
-
     def __sub_init__(self, source, *args, **kwargs):
         pass
 
@@ -37,34 +34,21 @@ class BaseExtractor(object):
     def _extract(self, source, *args, **kwargs):
         self._data = pd.DataFrame()
 
-    def _check_invariants(self):
-        # Invariant 1: Columns contain only one type
-        for c in self._data.columns:
-            if self._col_type(c) == type(None):
-                type_set = self._col_type_set(c)
-                raise TypeError('Column {} contains more than one type. '
-                                'Types present are {}'.format(c,type_set))
-
-
     def _add_lookup(self, key, fn):
         self._lookup[key] = fn
 
-    def _col_type(self, col):
-        type_set = self._col_type_set(col)
-        assert(len(type_set) == 1)
-        return type_set.pop()
-
-    def _col_type_set(self, col):
+    def _col_type_set(self, col, df):
         type_set = set()
-        if self._data[col].dtype == np.dtype(object):
-            for i in range(1, len(self._data[col])):
-                if self._data[col][i] == np.nan:
+        if df[col].dtype == np.dtype(object):
+            unindexed_col = list(df[col])
+            for i in range(0, len(df[col])):
+                if unindexed_col[i] == np.nan:
                     continue
                 else:
-                    type_set.add(type(self._data[col][i]))
+                    type_set.add(type(unindexed_col[i]))
             return type_set
         else:
-            type_set.add(self._data[col].dtype)
+            type_set.add(df[col].dtype)
             return type_set
 
     def _drop_collections(self, df):
@@ -73,7 +57,7 @@ class BaseExtractor(object):
 
         # Check whether each column contains collections.
         for c in all_cols:
-            if self._col_type(c) not in [dict, list, set]:
+            if len(self._col_type_set(c, df).intersection([set, dict, list])) == 0:
                 keep_cols.append(c)
         return df[keep_cols]
 
@@ -96,7 +80,7 @@ class BaseExtractor(object):
     def raw(self):
         return self._data
 
-    def expand_on(self, col1, col2, rename1 = None, rename2 = None, drop = [], drop_compound = False):
+    def expand_on(self, col1, col2, index_cols, rename1 = None, rename2 = None, drop = [], drop_compound = False):
 
         # Assumption 1: Expanded columns are either atomic are built in collections
         # Assumption 2: New test_data columns added to rows from dicts in columns of collections.
@@ -136,6 +120,11 @@ class BaseExtractor(object):
                           column_list[first_index+1:second_index] + \
                           [second_name+'_extended' if second_rename is None else second_rename] + \
                           column_list[second_index+1:]
+
+        # Assert that there are no duplicates!
+        if len(set(new_column_list)) != len(new_column_list):
+            raise Exception('Duplicate columns names found. Note that you cannot rename a column with a name '
+                            'that is already taken by another column.')
 
         # List of tuples. Rows in new test_data frame.
         old_attr_df_tuples = []
@@ -208,14 +197,14 @@ class BaseExtractor(object):
 
         # An expanded test_data frame with only the columns of the original test_data frame
         df_1 = pd.DataFrame.from_records(old_attr_df_tuples,
-                                        index=index_tuples,
                                         columns=new_column_list)
 
         # An expanded test_data frame containing any test_data held in value:key collections in the expanded cols
-        df_2 = pd.DataFrame.from_records(new_attr_df_dicts,
-                                        index=index_tuples)
+        df_2 = pd.DataFrame.from_records(new_attr_df_dicts)
 
         # The final expanded test_data set
         df_out = pd.concat([df_1, df_2], axis=1)
+
+        df_out = df_out.set_index(index_cols)
 
         return df_out
