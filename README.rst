@@ -9,8 +9,8 @@ Overview
 Features
 -----------------
 
-* Extract data with minimal effort.
-* Readable code that requires minimal documentation to understand.
+* Extracts data with minimal effort.
+* Creates readable code that requires minimal explanation.
 * Exports Pandas Dataframes to maximize compatibility with the Python data science ecosystem.
 
 A Quick Example
