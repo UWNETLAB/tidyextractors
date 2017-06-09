@@ -1,82 +1,114 @@
 import tqdm
 import warnings
+import numpy as np
 import pandas as pd
 import itertools as it
 
+
 class BaseExtractor(object):
 
-    # TODO: Add doc strings
-
-    # __data__ stores the main collection of extracted data
-    __data__ = None
+    # _data stores the main collection of extracted data
+    _data = None
 
     # A lookup of 'format':<generating function> pairs used by get_tidy
-    __lookup__ = {}
+    _lookup = {}
 
     def __init__(self, source, *args, auto_extract=True, progress_bar=True, **kwargs):
 
         # Extract data unless otherwise specified
         if auto_extract:
-            self.__extract__(source, *args, **kwargs)
+            self._extract(source, *args, **kwargs)
 
         # Store progress bar preference
-        self.__progress_bool__ = progress_bar
+        self._progress_bool = progress_bar
 
         # Do subclass initialization
         self.__sub_init__(source, *args, **kwargs)
 
+        # Check invariants
+        self._check_invariants()
+
     def __sub_init__(self, source, *args, **kwargs):
         pass
 
-    def __add_lookup__(self, key, fn):
-        self.__lookup__[key] = fn
+    def __len__(self):
+        return len(self._data)
 
-    def __extract__(self, source, *args, **kwargs):
-        self.__data__ = pd.DataFrame()
+    def _extract(self, source, *args, **kwargs):
+        self._data = pd.DataFrame()
 
-    def get_tidy(self, output, drop_compound = True, *args, **kwargs):
+    def _check_invariants(self):
+        # Invariant 1: Columns contain only one type
+        for c in self._data.columns:
+            if self._col_type(c) == type(None):
+                type_set = self._col_type_set(c)
+                raise TypeError('Column {} contains more than one type. '
+                                'Types present are {}'.format(c,type_set))
 
-        # If the output is in __lookup__ call appropriate method.
-        if output in self.__lookup__:
-            if drop_compound:
-                return self.__drop_compound__(self.__lookup__[output](*args, **kwargs))
+
+    def _add_lookup(self, key, fn):
+        self._lookup[key] = fn
+
+    def _col_type(self, col):
+        type_set = self._col_type_set(col)
+        assert(len(type_set) == 1)
+        return type_set.pop()
+
+    def _col_type_set(self, col):
+        type_set = set()
+        if self._data[col].dtype == np.dtype(object):
+            for i in range(1, len(self._data[col])):
+                if self._data[col][i] == np.nan:
+                    continue
+                else:
+                    type_set.add(type(self._data[col][i]))
+            return type_set
+        else:
+            type_set.add(self._data[col].dtype)
+            return type_set
+
+    def _drop_collections(self, df):
+        all_cols = df.columns
+        keep_cols = []
+
+        # Check whether each column contains collections.
+        for c in all_cols:
+            if self._col_type(c) not in [dict, list, set]:
+                keep_cols.append(c)
+        return df[keep_cols]
+
+    def get_tidy(self, output, drop_collections = True, *args, **kwargs):
+
+        # If the output is in _lookup call appropriate method.
+        if output in self._lookup:
+            if drop_collections:
+                return self._drop_collections(self._lookup[output](*args, **kwargs))
             else:
-                return self.__lookup__[output](*args, **kwargs)
+                return self._lookup[output](*args, **kwargs)
 
         # Otherwise, warn the user and print appropriate options.
         else:
             warnings.warn('An invalid output format was entered.' +
                           ' Valid formats are: ' +
-                          str(self.__lookup__.keys()))
+                          str(self._lookup.keys()))
             return None
 
     def raw(self):
-        return self.__data__
-
-    def __drop_compound__(self, df):
-        all_cols = df.columns
-        keep_cols = []
-        for c in all_cols:
-
-            # TODO: dtype inadequate for this applications
-            if df[c].dtype not in [dict, list, set]:
-                keep_cols.append(c)
-        return df[keep_cols]
+        return self._data
 
     def expand_on(self, col1, col2, rename1 = None, rename2 = None, drop = [], drop_compound = False):
 
-        # Assumption 1: Expanded columns are either atomic or have __iter__
-        # Assumption 2: New data columns added to rows from dicts in __iter__-able columns.
+        # Assumption 1: Expanded columns are either atomic are built in collections
+        # Assumption 2: New data columns added to rows from dicts in columns of collections.
 
         # How many rows expected in the output?
-        count = len(self.__data__)
+        count = len(self._data)
 
         # How often should the progress bar be updated?
-        # update_interval = max(min(count//100, 100), 5)
-        update_interval = 1
+        update_interval = max(min(count//100, 100), 5)
 
         # What are the column names?
-        column_list = list(self.__data__.columns)
+        column_list = list(self._data.columns)
 
         # Determine column index (for itertuples)
         try:
@@ -131,7 +163,7 @@ class BaseExtractor(object):
 
         # Create data for output.
         with tqdm.tqdm(total=count) as pbar:
-            for row in self.__data__.itertuples(index=False):
+            for row in self._data.itertuples(index=False):
                 # Enumerate commit/file pairs
                 for index in iter_product(row[first_index],row[second_index]):
 
@@ -147,8 +179,7 @@ class BaseExtractor(object):
                     # Add key tuple to list of indices
                     index_tuples.append((index[0],index[1]))
 
-                    # If there's data in either of the columns (i.e. it's a dict-like object
-                    #  with a __getitem__ method) add the data to the new attr data frame.
+                    # If there's data in either of the columns add the data to the new attr data frame.
                     temp_attrs = {}
 
                     # Get a copy of the first cell value for this index.
