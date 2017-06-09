@@ -30,7 +30,7 @@ You can use the ``GitExtractor`` to quickly extract a record of commits or chang
 The result is a Pandas DataFrame where each row is a committed change to a specific file. To fit this page, we'll just look at a few columns using ``pandas_data[['hash','file','author_email','summary','changes/insertions']]``:
 
 +-----------+-------------------------------------------+----------------------+-----------------+--------------------+
-| hash      | file                                      | author_email         | summary         | changes/insertions |
+| hash      | file                                      | author_email         | summary         | insertions         |
 +===========+===========================================+======================+=================+====================+
 | 'd85fab4' | 'tidyextractors/tidygit/__init__.py'      | 'mail@joelbecker.ca' | 'Removed im...' |                  1 |
 +-----------+-------------------------------------------+----------------------+-----------------+--------------------+
