@@ -7,7 +7,7 @@ import itertools as it
 
 class BaseExtractor(object):
 
-    # _data stores the main collection of extracted data
+    # _data stores the main collection of extracted test_data
     _data = None
 
     # A lookup of 'format':<generating function> pairs used by get_tidy
@@ -15,7 +15,7 @@ class BaseExtractor(object):
 
     def __init__(self, source, *args, auto_extract=True, progress_bar=True, **kwargs):
 
-        # Extract data unless otherwise specified
+        # Extract test_data unless otherwise specified
         if auto_extract:
             self._extract(source, *args, **kwargs)
 
@@ -99,7 +99,7 @@ class BaseExtractor(object):
     def expand_on(self, col1, col2, rename1 = None, rename2 = None, drop = [], drop_compound = False):
 
         # Assumption 1: Expanded columns are either atomic are built in collections
-        # Assumption 2: New data columns added to rows from dicts in columns of collections.
+        # Assumption 2: New test_data columns added to rows from dicts in columns of collections.
 
         # How many rows expected in the output?
         count = len(self._data)
@@ -137,7 +137,7 @@ class BaseExtractor(object):
                           [second_name+'_extended' if second_rename is None else second_rename] + \
                           column_list[second_index+1:]
 
-        # List of tuples. Rows in new data frame.
+        # List of tuples. Rows in new test_data frame.
         old_attr_df_tuples = []
         new_attr_df_dicts = []
 
@@ -161,7 +161,7 @@ class BaseExtractor(object):
                 iter2 = [item2]
             return it.product(iter1,iter2)
 
-        # Create data for output.
+        # Create test_data for output.
         with tqdm.tqdm(total=count) as pbar:
             for row in self._data.itertuples(index=False):
                 # Enumerate commit/file pairs
@@ -179,7 +179,7 @@ class BaseExtractor(object):
                     # Add key tuple to list of indices
                     index_tuples.append((index[0],index[1]))
 
-                    # If there's data in either of the columns add the data to the new attr data frame.
+                    # If there's test_data in either of the columns add the test_data to the new attr test_data frame.
                     temp_attrs = {}
 
                     # Get a copy of the first cell value for this index.
@@ -192,7 +192,7 @@ class BaseExtractor(object):
                     if type(temp_second) == dict:
                         temp_second = temp_second[index[1]]
 
-                    # Get nested data for this index.
+                    # Get nested test_data for this index.
                     if type(temp_first) == dict:
                         for k in temp_first:
                             temp_attrs[first_name + '/' + k] = temp_first[k]
@@ -200,22 +200,22 @@ class BaseExtractor(object):
                         for k in temp_second:
                             temp_attrs[second_name + '/' + k] = temp_second[k]
 
-                    # Add to the "new data" records.
+                    # Add to the "new test_data" records.
                     new_attr_df_dicts.append(temp_attrs)
 
                     # Update progress bar
                     pbar.update(update_interval)
 
-        # An expanded data frame with only the columns of the original data frame
+        # An expanded test_data frame with only the columns of the original test_data frame
         df_1 = pd.DataFrame.from_records(old_attr_df_tuples,
                                         index=index_tuples,
                                         columns=new_column_list)
 
-        # An expanded data frame containing any data held in value:key collections in the expanded cols
+        # An expanded test_data frame containing any test_data held in value:key collections in the expanded cols
         df_2 = pd.DataFrame.from_records(new_attr_df_dicts,
                                         index=index_tuples)
 
-        # The final expanded data set
+        # The final expanded test_data set
         df_out = pd.concat([df_1, df_2], axis=1)
 
         return df_out

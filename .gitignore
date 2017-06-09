@@ -11,6 +11,9 @@ __pycache__/
 # PyCharm
 .idea/
 
+# Project Files
+tidyextractors/test_data/
+
 # Distribution / packaging
 .Python
 env/

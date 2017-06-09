@@ -1,1 +1,1 @@
-from tidyextractors.tidymbox.mbox_extract import *
+from tidyextractors.tidymbox.mbox_extract import MboxExtractor

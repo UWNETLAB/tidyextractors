@@ -19,7 +19,7 @@ class GitExtractor(BaseExtractor):
         self._add_lookup('ch', self.changes)
 
     def _extract(self, source, *args, **kwargs):
-        # Extract git data
+        # Extract git test_data
         self._data = extract_log(source)
 
         # Shorten hashes

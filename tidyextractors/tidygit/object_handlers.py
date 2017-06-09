@@ -26,5 +26,3 @@ def handle_actor(name, obj):
 
 object_handlers_lookup = {git.Stats: handle_stats,
                           git.Actor: handle_actor}
-
-# TODO: Let the user meddle with the handlers if they want to.

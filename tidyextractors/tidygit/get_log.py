@@ -3,6 +3,8 @@ import tqdm
 import pandas as pd
 from tidyextractors.tidygit.object_handlers import object_handlers_lookup
 
+# TODO: Increase get_log efficiency i.e. using gitnet implementation
+
 # A default list of attributes to be extracted.
 simple_attributes = ['author',
                      'author_tz_offset',
@@ -17,7 +19,7 @@ simple_attributes = ['author',
 
 def handle_object(name,object):
     '''
-    This helper function handles incoming data for make_object_dict.
+    This helper function handles incoming test_data for make_object_dict.
     If thereis a special handler in object_handlers_lookup, this
     is used. Otherwise, the given name:object pair is returned
     as-is.
@@ -36,7 +38,7 @@ def handle_object(name,object):
 
 def make_object_dict(obj,keep=[]):
     '''
-    Processes an object, exporting its data as a nested dictionary.
+    Processes an object, exporting its test_data as a nested dictionary.
     Individual objects are handled using handle_object.
     Args:
         obj: 
@@ -60,13 +62,13 @@ def make_object_dict(obj,keep=[]):
 
 def extract_log(rpath,extract=simple_attributes):
     '''
-    Extracts Git commit data from a local repository.
+    Extracts Git commit test_data from a local repository.
     
     Args:
         rpath: The path to a local Git repo.
 
     Returns:
-        A Pandas dataframe containing Git commit data.
+        A Pandas dataframe containing Git commit test_data.
     '''
 
     # Get repo
@@ -85,12 +87,12 @@ def extract_log(rpath,extract=simple_attributes):
         # Get commits again
         m_commits = m_repo.iter_commits()
 
-        # Setup data extraction
+        # Setup test_data extraction
         update_interval = max(min(count//100,100),5)
         index = 0
         buffer = []
 
-        # Extract commit data
+        # Extract commit test_data
         while True:
 
             # Add the next commit to the buffer
