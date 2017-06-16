@@ -1,7 +1,7 @@
 import git
 import tqdm
 import pandas as pd
-from tidyextractors.tidygit.object_handlers import object_handlers_lookup
+from tidyextractors.tidygit.git_object_handlers import git_object_handlers_lookup
 
 # TODO: Increase get_log efficiency i.e. using gitnet implementation
 
@@ -17,32 +17,32 @@ simple_attributes = ['author',
                      'type'
                      ]
 
-def handle_object(name,object):
+def handle_object(name, obj):
     '''
     This helper function handles incoming test_data for make_object_dict.
-    If thereis a special handler in object_handlers_lookup, this
-    is used. Otherwise, the given name:object pair is returned
+    If thereis a special handler in git_object_handlers_lookup, this
+    is used. Otherwise, the given name:obj pair is returned
     as-is.
     Args:
         name: 
-        object: 
+        obj:
 
     Returns:
         A dict of attributes.
     '''
-    if type(object) in object_handlers_lookup:
-        return object_handlers_lookup[type(object)](name,object)
+    if type(obj) in git_object_handlers_lookup:
+        return git_object_handlers_lookup[type(obj)](name, obj)
     else:
-        return {name:object}
+        return {name:obj}
 
 
-def make_object_dict(obj,keep=[]):
+def make_object_dict(obj, keep=[]):
     '''
     Processes an object, exporting its test_data as a nested dictionary.
     Individual objects are handled using handle_object.
     Args:
-        obj: 
-        keep: 
+        obj:
+        keep:
 
     Returns:
 
@@ -57,7 +57,6 @@ def make_object_dict(obj,keep=[]):
         datum = getattr(obj,attr)
         data.update(handle_object(attr,datum))
     return data
-
 
 
 def extract_log(rpath,extract=simple_attributes):
@@ -109,3 +108,4 @@ def extract_log(rpath,extract=simple_attributes):
 
     # final_df = pd.concat(sub_df_list)
     return pd.DataFrame(buffer)
+

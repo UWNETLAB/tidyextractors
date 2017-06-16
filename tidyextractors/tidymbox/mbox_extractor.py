@@ -38,6 +38,6 @@ class MboxExtractor(BaseExtractor):
         on_cc_df['SendType'] = 'Cc'
 
         # Combine dataframes
-        output_df = pd.concat([on_to_df,on_cc_df])
+        output_df = pd.concat([on_to_df, on_cc_df])
 
         return self._drop_collections(output_df)

@@ -24,5 +24,5 @@ def handle_actor(name, obj):
 #   Functions return a dictionary of attributes, which
 #   will appear in a row of the pandas dataframe.
 
-object_handlers_lookup = {git.Stats: handle_stats,
-                          git.Actor: handle_actor}
+git_object_handlers_lookup = {git.Stats: handle_stats,
+                              git.Actor: handle_actor}

@@ -1,1 +1,1 @@
-from tidyextractors.tidytwitter.twitter_extract import *
+from tidyextractors.tidytwitter.twitter_extractor import TwitterExtractor

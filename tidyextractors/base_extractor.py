@@ -205,6 +205,11 @@ class BaseExtractor(object):
         # The final expanded test_data set
         df_out = pd.concat([df_1, df_2], axis=1)
 
+        # Set new index
         df_out = df_out.set_index(index_cols)
+
+        # Drop unwanted columns
+        for col in drop:
+            df_out = df_out.drop(col,1)
 
         return df_out
