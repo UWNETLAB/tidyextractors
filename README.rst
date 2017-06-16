@@ -48,12 +48,13 @@ Currently Implemented Data Sources
 -----------------
 
 * Local Git Repositories
-
-Near Future Data Sources
------------------
-
 * Twitter User Data (including Tweets) using the Twitter API
 * Emails stored in the ``mbox`` file format.
+
+Future Data Sources
+-----------------
+
+To be determined. If you have ideas, or would like to contribute an extractor, get in touch!
 
 Contributing
 -----------------
