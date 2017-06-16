@@ -8,6 +8,12 @@ import git
 
 
 def handle_stats(name, obj):
+    """
+    Stats object handler.
+    :param name: Unused String
+    :param obj: GitPython Stats
+    :return: Dictionary of attributes.
+    """
     return {'total_deletions': obj.total['deletions'],
             'total_insertions': obj.total['insertions'],
             'total_lines': obj.total['lines'],
@@ -16,6 +22,12 @@ def handle_stats(name, obj):
 
 
 def handle_actor(name, obj):
+    """
+    Actor object handler.
+    :param name: Unused String
+    :param obj: GitPython Actor
+    :return: Dictionary of attributes.
+    """
     return {'author_name': obj.name,
             'author_email': obj.email}
 

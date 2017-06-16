@@ -18,18 +18,15 @@ simple_attributes = ['author',
                      ]
 
 def handle_object(name, obj):
-    '''
+    """
     This helper function handles incoming test_data for make_object_dict.
     If thereis a special handler in git_object_handlers_lookup, this
     is used. Otherwise, the given name:obj pair is returned
     as-is.
-    Args:
-        name: 
-        obj:
-
-    Returns:
-        A dict of attributes.
-    '''
+    :param name: String
+    :param obj: The object to be processed.
+    :return: A dictionary of attributes.
+    """
     if type(obj) in git_object_handlers_lookup:
         return git_object_handlers_lookup[type(obj)](name, obj)
     else:
@@ -37,16 +34,13 @@ def handle_object(name, obj):
 
 
 def make_object_dict(obj, keep=[]):
-    '''
-    Processes an object, exporting its test_data as a nested dictionary.
+    """
+    Processes an object, exporting its data as a nested dictionary.
     Individual objects are handled using handle_object.
-    Args:
-        obj:
-        keep:
-
-    Returns:
-
-    '''
+    :param obj: The object to be processed.
+    :param keep: Object attributes to be kept. Defaults to all attributes.
+    :return: A dictionary of attributes.
+    """
     data = {}
     if keep == []:
         get_attrs = dir(obj)
@@ -60,16 +54,12 @@ def make_object_dict(obj, keep=[]):
 
 
 def extract_log(rpath,extract=simple_attributes):
-    '''
+    """
     Extracts Git commit test_data from a local repository.
-    
-    Args:
-        rpath: The path to a local Git repo.
-
-    Returns:
-        A Pandas dataframe containing Git commit test_data.
-    '''
-
+    :param rpath: The path to a local Git repo.
+    :param extract: A list of attribute name strings.
+    :return: A Pandas dataframe containing Git commit test_data.
+    """
     # Get repo
     m_repo = git.Repo(rpath)
 

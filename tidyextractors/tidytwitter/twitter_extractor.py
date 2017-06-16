@@ -12,13 +12,34 @@ from tidyextractors.tidytwitter.twitter_object_handlers import twitter_object_ha
 class TwitterExtractor(BaseExtractor):
 
     def __sub_init__(self, source, *args, **kwargs):
-
+        """
+        Subclass initialization routine which runs after BaseExtractor initialization.
+        Mutates get_tidy lookup table.
+        NOTE: TwitterExtractor requires a complete set of Twitter API credentials
+        to initialize: 'access_token', 'access_secret', 'consumer_key', and 'consumer_secret'.
+        :param source: A list of user screen names.
+        :param args: Arbitrary arguments for extensibility.
+        :param kwargs: Arbitrary keyword arguments for extensibility.
+        :return: None
+        """
         # Populate lookup table:
+        self._add_lookup('users', self.users)
+        self._add_lookup('tweets', self.tweets)
+
         # Add lazy short form lookup table:
-        pass
+        self._add_lookup('u', self.users)
+        self._add_lookup('t', self.tweets)
 
     def _extract(self, source, extract_tweets=True, *args, **kwargs):
-
+        """
+        Extracts user data Using the twitter API. Mutates _data.
+        NOTE: TwitterExtractor requires a complete set of Twitter API credentials
+        to initialize: 'access_token', 'access_secret', 'consumer_key', and 'consumer_secret'.
+        :param source: A list of user screen names.
+        :param args: Arbitrary arguments for extensibility.
+        :param kwargs: Arbitrary keyword arguments for extensibility.
+        :return: None
+        """
         # Check that the proper API keywords were provided.
         for cred in ['access_token', 'access_secret', 'consumer_key', 'consumer_secret']:
             if cred not in kwargs:
@@ -54,10 +75,20 @@ class TwitterExtractor(BaseExtractor):
         self._data = pd.DataFrame.from_records(rows)
 
     def users(self):
+        """
+        Returns a table of Twitter user data, with "users" as rows/observations.
+        :return: A Pandas DataFrame
+        """
         return self._data
 
     def tweets(self):
+        """
+        Returns a table of Twitter user data, with "tweets" as rows/observations.
+        :return: A Pandas DataFrame
+        """
 
+        # I've hard coded these. Seemed like a good idea at the time...
+        # TODO: Fix this.
         all_columns = ['contributors_enabled', 'created_at', 'default_profile',
                        'default_profile_image', 'description', 'entities', 'favourites_count',
                        'follow_request_sent', 'followers_count', 'following', 'friends_count',
@@ -84,6 +115,13 @@ class TwitterExtractor(BaseExtractor):
         return self.expand_on('id', 'tweets', ['id','tweet_id'], rename1='id', rename2='tweet_id', drop=drop_columns)
 
     def _handle_object(self, name, obj):
+        """
+        Process an object using twitter_object_handlers_lookup.
+        Doesn't currently do anything (as of 2017-06-16).
+        :param name: String
+        :param obj: An object to be processed
+        :return: A dictionary of attributes
+        """
         if type(obj) in twitter_object_handlers_lookup:
             return twitter_object_handlers_lookup[type(obj)](name, obj)
         else:
@@ -92,11 +130,8 @@ class TwitterExtractor(BaseExtractor):
     def _make_object_dict(self, obj):
         """
         Processes an object, exporting its data as a nested dictionary.
-        Complex values (i.e. objects that aren't int, bool, float, str, or
-        a collection of such) are converted to strings (i.e. using __str__
-        or __repr__). To access user data only, use make_user_dict(username)['_json'].
-        :param username: A Twitter username string.
-        :return: A nested dicitonary of user data.
+        :param obj: An object
+        :return: A nested dictionary of object data
         """
         data = {}
         for attr in dir(obj):
