@@ -1,11 +1,17 @@
 import tqdm
+import re
 import warnings
+import petl as etl
 import numpy as np
 import pandas as pd
 import itertools as it
 
 
 class BaseExtractor(object):
+    """
+    BaseExtractor defines a basic interface, initialization routine, and data
+    manipulation tools for extractor subclasses.
+    """
 
     # _data stores the main collection of extracted test_data
     _data = None
@@ -14,6 +20,15 @@ class BaseExtractor(object):
     _lookup = {}
 
     def __init__(self, source, *args, auto_extract=True, progress_bar=True, **kwargs):
+        """
+        Extractor initialization. Should not be overridden by extractor subclasses.
+
+        :param source: Specifies data source. Differs by subclass.
+        :param args: Arbitrary arguments permitted for extensibility.
+        :param bool auto_extract: Extract data from source upon initialization?
+        :param bool progress_bar: Show progress bar?
+        :param kwargs: Arbitrary keyword arguments permitted for extensibility.
+        """
 
         # Extract test_data unless otherwise specified
         if auto_extract:
@@ -26,18 +41,82 @@ class BaseExtractor(object):
         self.__sub_init__(source, *args, **kwargs)
 
     def __sub_init__(self, source, *args, **kwargs):
+        """
+        Subclass initialization routine. Used so that subclasses do not need to override ``BaseExtractor.__init__``.
+
+        :param source: Specifies data source. Differs by subclass.
+        :param args: Arbitrary arguments permitted for extensibility.
+        :param kwargs: Arbitrary keyword arguments permitted for extensibility.
+        :return: None
+        """
         pass
 
     def __len__(self):
+        """
+        Length of self._data.
+
+        :return: Integer
+        """
         return len(self._data)
 
     def _extract(self, source, *args, **kwargs):
+        """
+        This method handles data extraction, and should be overridden by extractor subclasses.
+         Default behaviour initializes an empty ``pandas.DataFrame``.
+
+        :param source: Specifies data source. Differs by subclass.
+        :param args: Arbitrary arguments permitted for extensibility.
+        :param kwargs: Arbitrary keyword arguments permitted for extensibility.
+        :return: None
+        """
         self._data = pd.DataFrame()
 
     def _add_lookup(self, key, fn):
+        """
+        Adds an entry to the ``get_tidy`` lookup table.
+
+        :param string key: The lookup code e.g. "commits" or "c".
+        :param function fn: A function/method callable without parameters.
+        :return: None
+        """
         self._lookup[key] = fn
 
+    def _print_lookup(self):
+        """
+        Prints the get_tidy lookup table in RST.
+
+        :return: String
+        """
+
+        # The name of the subclass
+        class_stem = re.sub(r'\W+', '', str(self.__class__).split('.')[-1])
+
+        # A list of entires
+        table = []
+
+        # Make a row tuple per entry, using value-method name.
+        for k in self._lookup:
+            table.append((k,self._lookup[k].__name__, class_stem+'.get_tidy(\''+k+'\')'))
+
+        # Make pandas dataframe
+        df1 = pd.DataFrame.from_records(table,columns=['Lookup', 'Method Used', 'Example Usage'])
+
+        # Make petl dataframe
+        df2 = etl.fromdataframe(df1)
+
+        # Make a pritable string in rst (default __str__ in etl dataframe)
+        printable = str(df2)
+
+        return printable
+
     def _col_type_set(self, col, df):
+        """
+        Determines the set of types present in a DataFrame column.
+
+        :param string col: A column name.
+        :param pandas.DataFrame df: The dataset. Usually ``self._data``.
+        :return: A set of Types.
+        """
         type_set = set()
         if df[col].dtype == np.dtype(object):
             unindexed_col = list(df[col])
@@ -52,6 +131,12 @@ class BaseExtractor(object):
             return type_set
 
     def _drop_collections(self, df):
+        """
+        Drops columns containing collections (i.e. sets, dicts, lists) from a DataFrame.
+
+        :param pandas.DataFrame df: Usually self._data.
+        :return: pandas.DataFrame
+        """
         all_cols = df.columns
         keep_cols = []
 
@@ -62,6 +147,22 @@ class BaseExtractor(object):
         return df[keep_cols]
 
     def get_tidy(self, output, drop_collections = True, *args, **kwargs):
+        """
+        A basic interface for getting data. "Output" is a string specifying
+        a type of data. Output types are subclass-specific.
+
+        Example:
+
+        .. code-block:: python
+
+            >>> my_extractor.get_tidy('raw')
+
+        :param string output: Specifies the type of data to produce.
+        :param bool drop_collections: Specifies whether columns containing collections are kept.
+        :param args: Arbitrary arguments permitted for extensibility.
+        :param kwargs: Arbitrary keyword arguments permitted for extensibility.
+        :return: pandas.DataFrame
+        """
 
         # If the output is in _lookup call appropriate method.
         if output in self._lookup:
@@ -78,9 +179,59 @@ class BaseExtractor(object):
             return None
 
     def raw(self):
+        """
+        Produces the extractor object's data as it is stored internally.
+
+        :return: pandas.DataFrame
+        """
         return self._data
 
-    def expand_on(self, col1, col2, index_cols, rename1 = None, rename2 = None, drop = [], drop_compound = False):
+    def expand_on(self, col1, col2, index_cols, rename1 = None, rename2 = None, drop = [], drop_collections = False):
+        """
+        Returns a reshaped version of extractor's data, where unique combinations of values from col1 and col2
+        are given individual rows.
+
+        Example function call from ``tidymbox``:
+
+        .. code-block:: python
+
+            self.expand_on('From', 'To', ['MessageID', 'Recipient'], rename1='From', rename2='Recipient')
+
+        Columns to be expanded upon should be either atomic values or dictionaries of dictionaries. For example:
+
+        Input Data:
+
+        +-----------------+-------------------------------------------------------------------+
+        | col1 (Atomic)   | col2 (Dict of Dict)                                               |
+        +=================+===================================================================+
+        | value1          | {valueA : {attr1: X1, attr2: Y1}, valueB: {attr1: X2, attr2: Y2}  |
+        +-----------------+-------------------------------------------------------------------+
+        | value2          | {valueC : {attr1: X3, attr2: Y3},  valueD: {attr1: X4, attr2: Y4} |
+        +-----------------+-------------------------------------------------------------------+
+
+        Output Data:
+
+        +---------------+---------------+-------+-------+
+        | col1_extended | col2_extended | attr1 | attr2 |
+        +===============+===============+=======+=======+
+        | value1        | valueA        | X1    | Y1    |
+        +---------------+---------------+-------+-------+
+        | value1        | valueB        | X2    | Y2    |
+        +---------------+---------------+-------+-------+
+        | value2        | valueA        | X3    | Y3    |
+        +---------------+---------------+-------+-------+
+        | value2        | valueB        | X4    | Y4    |
+        +---------------+---------------+-------+-------+
+
+        :param string col1: The first column to expand on. May be an atomic value, or a dict of dict.
+        :param string col2: The second column to expand on. May be an atomic value, or a dict of dict.
+        :param list index_cols: The names of columns to be used to create a MultiIndex for output data.
+        :param string rename1: The name for col1 after expansion. Defaults to col1_extended.
+        :param string rename2: The name for col2 after expansion. Defaults to col2_extended.
+        :param list drop: Column names to be dropped from output.
+        :param bool drop_collections: Should columns with compound values be dropped?
+        :return: pandas.DataFrame
+        """
 
         # Assumption 1: Expanded columns are either atomic are built in collections
         # Assumption 2: New test_data columns added to rows from dicts in columns of collections.
@@ -211,5 +362,8 @@ class BaseExtractor(object):
         # Drop unwanted columns
         for col in drop:
             df_out = df_out.drop(col,1)
+
+        if drop_collections is True:
+            df_out = self._drop_collections(df_out)
 
         return df_out

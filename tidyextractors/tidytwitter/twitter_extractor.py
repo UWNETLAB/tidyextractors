@@ -17,6 +17,7 @@ class TwitterExtractor(BaseExtractor):
         Mutates get_tidy lookup table.
         NOTE: TwitterExtractor requires a complete set of Twitter API credentials
         to initialize: 'access_token', 'access_secret', 'consumer_key', and 'consumer_secret'.
+
         :param source: A list of user screen names.
         :param args: Arbitrary arguments for extensibility.
         :param kwargs: Arbitrary keyword arguments for extensibility.
@@ -35,6 +36,7 @@ class TwitterExtractor(BaseExtractor):
         Extracts user data Using the twitter API. Mutates _data.
         NOTE: TwitterExtractor requires a complete set of Twitter API credentials
         to initialize: 'access_token', 'access_secret', 'consumer_key', and 'consumer_secret'.
+
         :param source: A list of user screen names.
         :param args: Arbitrary arguments for extensibility.
         :param kwargs: Arbitrary keyword arguments for extensibility.
@@ -77,14 +79,16 @@ class TwitterExtractor(BaseExtractor):
     def users(self):
         """
         Returns a table of Twitter user data, with "users" as rows/observations.
-        :return: A Pandas DataFrame
+
+        :return: pandas.DataFrame
         """
         return self._data
 
     def tweets(self):
         """
         Returns a table of Twitter user data, with "tweets" as rows/observations.
-        :return: A Pandas DataFrame
+
+        :return: pandas.DataFrame
         """
 
         # I've hard coded these. Seemed like a good idea at the time...
@@ -118,6 +122,7 @@ class TwitterExtractor(BaseExtractor):
         """
         Process an object using twitter_object_handlers_lookup.
         Doesn't currently do anything (as of 2017-06-16).
+
         :param name: String
         :param obj: An object to be processed
         :return: A dictionary of attributes
@@ -130,6 +135,7 @@ class TwitterExtractor(BaseExtractor):
     def _make_object_dict(self, obj):
         """
         Processes an object, exporting its data as a nested dictionary.
+
         :param obj: An object
         :return: A nested dictionary of object data
         """
@@ -147,6 +153,7 @@ class TwitterExtractor(BaseExtractor):
         Complex values (i.e. objects that aren't int, bool, float, str, or
         a collection of such) are converted to strings (i.e. using __str__
         or __repr__). To access user data only, use make_user_dict(username)['_json'].
+
         :param username: A Twitter username string.
         :return: A nested dictionary of user data.
         """

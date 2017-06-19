@@ -1,9 +1,5 @@
-import tqdm
-import warnings
-import pandas as pd
-import itertools as it
-from tidyextractors.tidygit.get_log import extract_log
 from tidyextractors import BaseExtractor
+from tidyextractors.tidygit.get_log import extract_log
 
 
 class GitExtractor(BaseExtractor):
@@ -42,13 +38,15 @@ class GitExtractor(BaseExtractor):
     def commits(self):
         """
         Returns a table of git log data, with "commits" as rows/observations.
-        :return: Pandas DataFrame
+
+        :return: pandas.DataFrame
         """
         return self._data.set_index('hexsha')
 
     def changes(self):
         """
         Returns a table of git log data, with "changes" as rows/observations.
-        :return: Pandas DataFrame
+
+        :return: pandas.DataFrame
         """
         return self.expand_on('hexsha', 'changes', index_cols=['hash','file'], rename1='hash', rename2='file')

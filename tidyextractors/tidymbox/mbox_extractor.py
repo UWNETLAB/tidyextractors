@@ -9,6 +9,7 @@ class MboxExtractor(BaseExtractor):
         """
         Subclass initialization routine which runs after BaseExtractor initialization.
         Mutates get_tidy lookup table.
+
         :param source: A string specifying a path to one or more mbox files.
         :param args: Arbitrary arguments for extensibility.
         :param kwargs: Arbitrary keyword arguments for extensibility.
@@ -25,6 +26,7 @@ class MboxExtractor(BaseExtractor):
     def _extract(self, source, *args, **kwargs):
         """
         Extracts data from mbox files. Mutates _data.
+
         :param source: A string specifying a path to one or more mbox files.
         :param args: Arbitrary arguments for extensibility.
         :param kwargs: Arbitrary keyword arguments for extensibility.
@@ -37,7 +39,8 @@ class MboxExtractor(BaseExtractor):
     def emails(self):
         """
         Returns a table of mbox message data, with "messages" as rows/observations.
-        :return: Pandas DataFrame
+
+        :return: pandas.DataFrame
         """
         return self._data.set_index(['MessageID'])
 
@@ -45,7 +48,8 @@ class MboxExtractor(BaseExtractor):
         """
         Returns a table of mbox message data, with "sender/recipient" pairs as rows/observations.
         NOTE: Rows may have a recipient from either "TO" or "CC". SendType column specifies this for each row.
-        :return: A Pandas DataFrame
+
+        :return: pandas.DataFrame
         """
         # Expand on each "to" field
         on_to_df = self.expand_on('From', 'To', ['MessageID', 'Recipient'], rename1='From', rename2='Recipient')
