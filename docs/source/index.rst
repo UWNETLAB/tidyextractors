@@ -8,9 +8,10 @@ tidyextractors
 
 .. toctree::
    :maxdepth: 2
-   :caption: About
+   :caption: About tidyextractors
 
    Overview <overview>
+   What is "Tidy Data"? <tidy_data>
    Installation Guide <install>
 
 .. toctree::
@@ -23,12 +24,12 @@ tidyextractors
 
 .. toctree::
    :maxdepth: 2
-   :caption: API Reference:
+   :caption: API Reference
 
    API Reference <api_docs>
 
 .. toctree::
   :maxdepth: 2
-  :caption: Developer:
+  :caption: Developer
 
   Contributing <contributing>

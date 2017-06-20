@@ -3,6 +3,22 @@ Git Repository Data Extraction
 
 The ``tidyextractors.tidygit`` submodule lets you extract Git log data from a local Git repository. This page will guide you through the process.
 
+A Minimal Code Example
+------------------------------
+
+.. code-block:: python
+
+  from tidyextractors.tidygit import GitExtractor
+
+  # Extract data from a local Git repo
+  gx = GitExtractor('./your/repo/dir/')
+
+  # Commit data in a Pandas DataFrame
+  commits_df = gx.get_tidy('commits')
+
+  # Commit/file keyed change data in a Pandas DataFrame
+  changes_df = gx.get_tidy('changes')
+
 Step 1: Prepare Your Git Repo
 ----------------------------------
 
@@ -15,9 +31,9 @@ You can extract data from any local Git repository using the ``GitExtractor``:
 
 .. code-block:: python
 
-  import tidyextractors.tidygit as tg
+  from tidyextractors.tidygit import GitExtractor
 
-  gx = tg.GitExtractor('./your/repo/dir/')
+  gx = GitExtractor('./your/repo/dir/')
 
 
 Step 3: Get Data

@@ -3,6 +3,23 @@ Mbox Data Extraction
 
 Mbox is a file format used to store mailbox data on Unix operating systems. The ``tidyextractors.tidymbox`` submodule lets you extract user data from Mbox files with minimal effort. This page will guide you through the process.
 
+A Minimal Code Example
+------------------------------
+
+
+.. code-block:: python
+
+  from tidyextractors.tidymbox as MboxExtractor
+
+  # Extracts all mbox files in this directory.
+  mx = MboxExtractor('./your/mbox/dir/')
+
+  # Email messages in a Pandas DataFrame.
+  email_df = mx.get_tidy('emails')
+
+  # MessageID/receiver keyed Pandas DataFrame.
+  sends_df = mx.get_tidy('sends')
+
 Step 1: Prepare Your Mbox Files
 ----------------------------------
 
@@ -22,13 +39,13 @@ Once you have consolidated your Mbox files, you can extract data from them using
 
 .. code-block:: python
 
-  import tidyextractors.tidymbox as tm
+  from tidyextractors.tidymbox as MboxExtractor
 
   # All mbox files in the directory
-  mx = tm.MboxExtractor('./your/mbox/dir/')
+  mx = MboxExtractor('./your/mbox/dir/')
 
   # Only one mbox file
-  mx = tm.MboxExtractor('./your/mbox/dir/file1.mbox')
+  mx = MboxExtractor('./your/mbox/dir/file1.mbox')
 
 Step 3: Get Data
 --------------------------
