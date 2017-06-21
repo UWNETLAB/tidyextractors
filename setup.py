@@ -11,6 +11,9 @@ from os import path
 
 here = path.abspath(path.dirname(__file__))
 
+# !!! Update version here!
+version_string = '0.2.3'
+
 # Get the long description from the README file
 with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
@@ -21,13 +24,15 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.2.1',
+    version=version_string,
 
-    description='A collection of tools for extracting test_data into tidy DataFrames.',
+    description='A collection of tools for extracting data into tidy DataFrames.',
     long_description=long_description,
 
     # The project's main homepage.
-    url='http://tidyextractors.readthedocs.io/',
+    url='https://github.com/networks-lab/tidyextractors/',
+    download_url='https://github.com/networks-lab/tidyextractors/archive/{}.tar.gz'.format(version_string),
+
 
     # Author details
     author='networks-lab',
@@ -51,8 +56,7 @@ setup(
         'Topic :: Scientific/Engineering :: Information Analysis',
         'Topic :: Scientific/Engineering :: Mathematics',
         'Topic :: Sociology',
-        'Topic :: Software Development :: Version Control :: Git',
-
+        'Topic :: Software Development :: Version Control :: Git'
 
     ],
 

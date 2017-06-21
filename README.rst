@@ -18,10 +18,11 @@ Features
 Currently Implemented Data Sources
 ------------------------------------------
 
-* `Local Git Repositories <...>`_
-* `Twitter User Data (including Tweets) using the Twitter API <...>`_
-* `Emails stored in the Mbox file format. <>`_
+* `Local Git Repositories <http://tidyextractors.readthedocs.io/en/latest/git_overview.html>`_
+* `Twitter User Data (including Tweets) using the Twitter API <http://tidyextractors.readthedocs.io/en/latest/twitter_overview.html>`_
+* `Emails stored in the Mbox file format. <http://tidyextractors.readthedocs.io/en/latest/mbox_overview.html>`_
 
 Installing
 -----------------
 In the near future, ``tidyextractors`` will be distributed on PyPI and accessible via ``pip``. For now, clone the repository and run ``pip install -e .`` in the cloned directory.
+
