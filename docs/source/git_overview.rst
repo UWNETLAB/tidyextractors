@@ -3,6 +3,7 @@ Git Repository Data Extraction
 
 The ``tidyextractors.tidygit`` submodule lets you extract Git log data from a local Git repository. This page will guide you through the process.
 
+
 A Minimal Code Example
 ------------------------------
 
@@ -35,11 +36,12 @@ You can extract data from any local Git repository using the ``GitExtractor``:
 
   gx = GitExtractor('./your/repo/dir/')
 
+You may need to wait while the data is being extracted, but all the data is now stored inside the extractor object. You just need a bit more code to get it in your preferred format.
 
-Step 3: Get Data
+Step 3: Get Pandas Data
 --------------------------
 
-You can now get your data in a number of tidy formats using either the ``get_tidy`` method:
+You can now use the ``get_tidy`` method to get a Pandas ``DataFrame`` in the tidy format of your choice.
 
 .. code-block:: python
 
@@ -47,7 +49,7 @@ You can now get your data in a number of tidy formats using either the ``get_tid
 
   changes_df = gx.get_tidy('changes')
 
-A slightly my flexible option is to call the ``GitExtractor`` output methods directly. This is useful if you want to include collections in the cells of your DataFrame (e.g. lists or dictionaries), which are dropped when using ``get_tidy`` because tidy data must have only atomic values.
+A slightly my flexible option is to call the ``MboxExtractor`` output methods directly. This is useful if you want to include collections in the cells of your DataFrame (e.g. lists or dictionaries), which are dropped when using ``get_tidy`` because tidy data must have only atomic values.
 
 .. code-block:: python
 
@@ -58,7 +60,7 @@ A slightly my flexible option is to call the ``GitExtractor`` output methods dir
 ``get_tidy`` Options and Aliases
 ----------------------------------
 
-As shown above, there are two format options for ``GitExtractor.get_tidy``. Each of these options may also use a short alias:
+As shown above, there are two format options for ``GitExtractor.get_tidy``. Each of these options  also use a short alias:
 
 +---------+-------------+----------------------------------+
 | Lookup  | Method Used | Example Usage                    |
