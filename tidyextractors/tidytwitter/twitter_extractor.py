@@ -59,7 +59,7 @@ class TwitterExtractor(BaseExtractor):
         pbar1.set_description('Extracting user data...')
         for u in source:
             r = self._make_user_dict(u)
-            num_tweets = num_tweets + r['statuses_count']
+            num_tweets = num_tweets + min(r['statuses_count'], 3200)
             rows.append(r)
             pbar1.update(1)
 
