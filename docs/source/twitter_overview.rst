@@ -54,7 +54,7 @@ Once you have your API credentials, you can extract user data with the ``Twitter
 
 .. note::
 
-    As per the limit imposed by the Twitter API, a maximum of 3,200 tweets will be downloaded for each user.
+    As per the limit imposed by the Twitter API, only the 3,200 most recent tweets will be downloaded for each user.
 
 .. code-block:: python
 
