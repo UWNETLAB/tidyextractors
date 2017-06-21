@@ -27,7 +27,9 @@ setup(
     long_description=long_description,
 
     # The project's main homepage.
-    url='http://tidyextractors.readthedocs.io/',
+    url='https://github.com/networks-lab/tidyextractors/',
+    download_url='https://github.com/networks-lab/tidyextractors/archive/0.2.1.tar.gz',
+
 
     # Author details
     author='networks-lab',
