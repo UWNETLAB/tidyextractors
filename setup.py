@@ -76,18 +76,13 @@ setup(
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
     install_requires=[
-        're',
-        'os'
         'tqdm',
         'nltk',
         'petl',
         'numpy',
-        'types',
         'pandas',
         'tweepy',
         'mailbox',
-        'warnings',
-        'itertools',
         'gitpython',
         'sphinx_rtd_theme',
     ],
