@@ -63,10 +63,12 @@ Once you have your API credentials, you can extract user data with the ``Twitter
 
   tx = TwitterExtractor(users, **credentials)
 
-Step 3: Get Data
+You may need to wait while the data is being extracted, but all the data is now stored inside the extractor object. You just need a bit more code to get it in your preferred format.
+
+Step 3: Get Pandas Data
 --------------------------
 
-You can now get your data in a number of tidy formats using either the ``get_tidy`` method:
+You can now use the ``get_tidy`` method to get a Pandas ``DataFrame`` in the tidy format of your choice.
 
 .. code-block:: python
 
