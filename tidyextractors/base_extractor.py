@@ -361,7 +361,8 @@ class BaseExtractor(object):
 
         # Drop unwanted columns
         for col in drop:
-            df_out = df_out.drop(col,1)
+            if col in df_out.columns:
+                df_out = df_out.drop(col,1)
 
         if drop_collections is True:
             df_out = self._drop_collections(df_out)
