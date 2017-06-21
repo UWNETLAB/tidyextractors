@@ -1,5 +1,5 @@
-import tqdm
 import re
+import tqdm
 import warnings
 import petl as etl
 import numpy as np

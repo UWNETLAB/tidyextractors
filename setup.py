@@ -12,7 +12,7 @@ from os import path
 here = path.abspath(path.dirname(__file__))
 
 # !!! Update version here!
-version_string = '0.2.3'
+version_string = '0.2.4'
 
 # Get the long description from the README file
 with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
@@ -75,7 +75,22 @@ setup(
     # your project is installed. For an analysis of "install_requires" vs pip's
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=['pandas','gitpython','tqdm','sphinx_rtd_theme'],
+    install_requires=[
+        're',
+        'os'
+        'tqdm',
+        'nltk',
+        'petl',
+        'numpy',
+        'types',
+        'pandas',
+        'tweepy',
+        'mailbox',
+        'warnings',
+        'itertools',
+        'gitpython',
+        'sphinx_rtd_theme',
+    ],
 
     # List additional groups of dependencies here (e.g. development
     # dependencies). You can install these using the following syntax,

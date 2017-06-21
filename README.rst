@@ -23,6 +23,6 @@ Currently Implemented Data Sources
 * `Emails stored in the Mbox file format. <http://tidyextractors.readthedocs.io/en/latest/mbox_overview.html>`_
 
 Installing
------------------
+--------------
 In the near future, ``tidyextractors`` will be distributed on PyPI and accessible via ``pip``. For now, clone the repository and run ``pip install -e .`` in the cloned directory.
 
