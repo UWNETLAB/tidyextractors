@@ -63,7 +63,7 @@ class TwitterExtractor(BaseExtractor):
             rows.append(r)
             pbar1.update(1)
 
-        if extract_tweets:
+        if extract_tweets is True:
             # Extract tweets
             pbar2 = tqdm.tqdm(range(0,num_tweets))
             for r in rows:

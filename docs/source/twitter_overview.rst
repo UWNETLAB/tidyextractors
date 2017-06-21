@@ -1,10 +1,10 @@
 Twitter Data Extraction
-===============================
+=======================
 
 The ``tidyextractors.tidytwitter`` submodule lets you extract user data from Twitter with minimal effort. This page will guide you through the process.
 
 A Minimal Code Example
-----------------------------------
+----------------------
 
 .. code-block:: python
 
@@ -22,7 +22,7 @@ A Minimal Code Example
   users = ['user1','user2','user3']
 
   # Extract Twitter data.
-  tx = TwitterExtractor(users, **credentials)
+  tx = TwitterExtractor(users, extract_tweets=True, **credentials)
 
   # Twitter user profile data in a Pandas DataFrame
   user_df = tx.get_tidy('users')
@@ -31,7 +31,7 @@ A Minimal Code Example
   tweet_df = tx.get_tidy('tweets')
 
 Step 1: Get API Credentials
-----------------------------------
+---------------------------
 
 To extract data using the Twitter API, you will first need to obtain API credentials. Your API credentials contain four pieces of information:
 
@@ -43,9 +43,18 @@ To extract data using the Twitter API, you will first need to obtain API credent
 To get these credentials, check out the Twitter developer documentation: https://dev.twitter.com/oauth/overview/application-owner-access-tokens
 
 Step 2: Extract Data
--------------------------
+--------------------
 
 Once you have your API credentials, you can extract user data with the ``TwitterExtractor``:
+
+.. warning::
+
+    The Twitter API enforces rate limits, so be careful when downloading large amounts of data.
+    For a raw report on your remaining limit, call ``tx._api.rate_limit_status()`` after extraction.
+
+.. note::
+
+    As per the limit imposed by the Twitter API, a maximum of 3,200 tweets will be downloaded for each user.
 
 .. code-block:: python
 
@@ -59,14 +68,17 @@ Once you have your API credentials, you can extract user data with the ``Twitter
     'consumer_secret': 'lovnyqIA1oKs0jI4A27VXLLSUWrKc0hnNzyTu39NWIjSiq1xxj'
   }
 
+
+  # User names may have leading "@" but this is not required.
   users = ['user1','user2','user3']
 
-  tx = TwitterExtractor(users, **credentials)
+  # Users' tweets are extracted by default, but this may be disabled.
+  tx = TwitterExtractor(users, extract_tweets=True, **credentials)
 
 You may need to wait while the data is being extracted, but all the data is now stored inside the extractor object. You just need a bit more code to get it in your preferred format.
 
 Step 3: Get Pandas Data
---------------------------
+-----------------------
 
 You can now use the ``get_tidy`` method to get a Pandas ``DataFrame`` in the tidy format of your choice.
 
@@ -85,7 +97,7 @@ A slightly more flexible option is to call the ``TwitterExtractor`` output metho
   tweet_df = tx.tweets()
 
 ``get_tidy`` Options and Aliases
-----------------------------------
+--------------------------------
 
 As shown above, there are two format options for ``TwitterExtractor.get_tidy``. Each of these options may also use a short alias:
 
