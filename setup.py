@@ -4,7 +4,7 @@ See:
 https://packaging.python.org/en/latest/distributing.html
 https://github.com/pypa/sampleproject
 """
-
+import pip
 from os import path
 from codecs import open
 from setuptools import setup, find_packages
