@@ -84,3 +84,8 @@ As shown above, there are two format options for ``MboxExtractor.get_tidy``. Eac
 +--------+-------------+----------------------------------+
 | s      | sends       | MboxExtractor.get_tidy('s')      |
 +--------+-------------+----------------------------------+
+
+.. note::
+
+    This submodule's internals were adapted from Phil Deutsch's
+    `mbox-to-pandas <https://github.com/phildeutsch/mbox-analysis>`_ script with his permission.
