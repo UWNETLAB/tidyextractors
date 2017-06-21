@@ -1,0 +1,9 @@
+tqdm
+nltk
+petl
+numpy
+pandas
+tweepy
+mailbox
+gitpython
+sphinx_rtd_theme
