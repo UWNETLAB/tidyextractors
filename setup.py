@@ -23,7 +23,7 @@ setup(
     # https://packaging.python.org/en/latest/single_source_version.html
     version='0.2.1',
 
-    description='A collection of tools for extracting test_data into tidy DataFrames.',
+    description='A collection of tools for extracting data into tidy DataFrames.',
     long_description=long_description,
 
     # The project's main homepage.
@@ -53,8 +53,7 @@ setup(
         'Topic :: Scientific/Engineering :: Information Analysis',
         'Topic :: Scientific/Engineering :: Mathematics',
         'Topic :: Sociology',
-        'Topic :: Software Development :: Version Control :: Git',
-
+        'Topic :: Software Development :: Version Control :: Git'
 
     ],
 
