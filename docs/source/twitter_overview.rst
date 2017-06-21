@@ -76,7 +76,7 @@ You can now use the ``get_tidy`` method to get a Pandas ``DataFrame`` in the tid
 
   tweet_df = tx.get_tidy('tweets')
 
-A slightly my flexible option is to call the ``TwitterExtractor`` output methods directly. This is useful if you want to include collections in the cells of your DataFrame (e.g. lists or dictionaries), which are dropped when using ``get_tidy`` because tidy data must have only atomic values.
+A slightly more flexible option is to call the ``TwitterExtractor`` output methods directly. This is useful if you want to include collections in the cells of your DataFrame (e.g. lists or dictionaries), which are dropped when using ``get_tidy`` because tidy data must have only atomic values.
 
 .. code-block:: python
 
