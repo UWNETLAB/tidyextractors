@@ -24,6 +24,10 @@ sys.path.insert(0, os.path.abspath('..'))
 print(os.path.abspath('../..'))
 
 import sphinx_rtd_theme
+import tidyextractors
+import tidyextractors.tidygit
+import tidyextractors.tidymbox
+import tidyextractors.tidytwitter
 
 
 # -- General configuration ------------------------------------------------
