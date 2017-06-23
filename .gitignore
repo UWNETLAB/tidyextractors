@@ -5,6 +5,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# NetLab Specials
+test/twitter_data/txrc
+
 # C extensions
 *.so
 
