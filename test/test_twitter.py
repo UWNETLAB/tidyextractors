@@ -25,13 +25,13 @@ class TestTwitterExtractor(unittest.TestCase):
         self.assertEqual(isinstance(self.tx, tm.TwitterExtractor), True)
 
     def test_raw(self):
-        check_df = self.tx.raw()
+        check_df = self.tx.raw(drop_collections=False)
         expect_df = self.raw_df
         self.assertEqual(set(check_df.columns),set(expect_df.columns))
         self.assertEqual(set(expect_df['id']).issubset(set(check_df['id'])), True)
 
     def test_users(self):
-        check_df = self.tx.users()
+        check_df = self.tx.users(drop_collections=False)
         expect_df = self.users_df
         self.assertEqual(set(check_df.columns),set(expect_df.columns))
         self.assertEqual(set(expect_df['id']).issubset(set(check_df['id'])), True)

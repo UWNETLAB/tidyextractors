@@ -3,6 +3,8 @@ import re
 import tqdm
 import mailbox
 import pandas as pd
+import email.header as header
+import email.utils as email
 
 # Adapted from Phil Deutsch's "mbox-analysis" https://github.com/phildeutsch/mbox-analysis
 
@@ -29,30 +31,37 @@ def clean_address(address):
     :param address: String (email address)
     :return: String (clean email address)
     """
-    address = address.replace("<", "")
-    address = address.replace(">", "")
-    address = address.replace("\"", "")
-    address = address.replace("\n", " ")
-    address = address.replace("MAILER-DAEMON", "")
-    address = address.lower().strip()
+    if isinstance(address, header.Header):
+        return clean_address(address.encode('ascii'))
 
-    email = None
-    for word in address.split(' '):
-        email_regex = re.compile(
-            "^[a-zA-Z0-9._%-]+@[a-zA-Z0-9._%-]+.[a-zA-Z]{2,6}$"
-            )
-        email = re.match(email_regex, word)
-        if email is not None:
-            clean_email = email.group(0)
-    if email is None:
-        if address.split(' ')[-1].find('@') > -1:
-            clean_email = address.split(' ')[-1].strip()
-        elif address.split(' ')[-1].find('?') > -1:
-            clean_email = 'n/a'
-        else:
-            clean_email = address
+    elif isinstance(address, str):
+        address = address.replace("<", "")
+        address = address.replace(">", "")
+        address = address.replace("\"", "")
+        address = address.replace("\n", " ")
+        address = address.replace("MAILER-DAEMON", "")
+        address = address.lower().strip()
 
-    return clean_email
+        email = None
+        for word in address.split(' '):
+            email_regex = re.compile(
+                "^[a-zA-Z0-9._%-]+@[a-zA-Z0-9._%-]+.[a-zA-Z]{2,6}$"
+                )
+            email = re.match(email_regex, word)
+            if email is not None:
+                clean_email = email.group(0)
+        if email is None:
+            if address.split(' ')[-1].find('@') > -1:
+                clean_email = address.split(' ')[-1].strip()
+            elif address.split(' ')[-1].find('?') > -1:
+                clean_email = 'n/a'
+            else:
+                clean_email = address
+
+        return clean_email
+    else:
+        raise ValueError('An unexpected type was given to clean_address. Address was {}'.format(address))
+        return ''
 
 
 def get_body(message):
@@ -100,7 +109,13 @@ def write_table(mboxfile, mailTable):
     :param mailTable: A list (of lists)
     :return: An extended list of lists
     """
-    for message in mailbox.mbox(mboxfile):
+    mail_box_contents = mailbox.mbox(mboxfile)
+
+    m_pbar = tqdm.tqdm(range(0,len(mail_box_contents)))
+    m_pbar.set_description('Extracting mbox messages...')
+
+    for message in mail_box_contents:
+        m_pbar.update(1)
         clean_from = clean_address(message['From'])
         clean_to = clean_addresses(message['To'])
         clean_cc = clean_addresses(message['Cc'])
@@ -108,7 +123,7 @@ def write_table(mboxfile, mailTable):
             clean_from,
             clean_to,
             clean_cc,
-            message['Date'],
+            email.parsedate_to_datetime(message['Date']),
             message['Subject'],
             get_body(message)
             ])
@@ -137,4 +152,5 @@ def mbox_to_pandas(mbox_path):
     df_out = pd.DataFrame(mail_table)
     df_out.columns = ['From', 'To', 'Cc', 'Date', 'Subject', 'Body']
     df_out['NumTo'] = df_out['To'].map(lambda i: len(i))
+    df_out['NumCC'] = df_out['Cc'].map(lambda i: len(i))
     return df_out

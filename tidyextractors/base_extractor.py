@@ -16,9 +16,6 @@ class BaseExtractor(object):
     # _data stores the main collection of extracted test_data
     _data = None
 
-    # A lookup of 'format':<generating function> pairs used by get_tidy
-    _lookup = {}
-
     def __init__(self, source, *args, auto_extract=True, progress_bar=True, **kwargs):
         """
         Extractor initialization. Should not be overridden by extractor subclasses.
@@ -71,44 +68,6 @@ class BaseExtractor(object):
         """
         self._data = pd.DataFrame()
 
-    def _add_lookup(self, key, fn):
-        """
-        Adds an entry to the ``get_tidy`` lookup table.
-
-        :param string key: The lookup code e.g. "commits" or "c".
-        :param function fn: A function/method callable without parameters.
-        :return: None
-        """
-        self._lookup[key] = fn
-
-    def _print_lookup(self):
-        """
-        Prints the get_tidy lookup table in RST.
-
-        :return: String
-        """
-
-        # The name of the subclass
-        class_stem = re.sub(r'\W+', '', str(self.__class__).split('.')[-1])
-
-        # A list of entires
-        table = []
-
-        # Make a row tuple per entry, using value-method name.
-        for k in self._lookup:
-            table.append((k,self._lookup[k].__name__, class_stem+'.get_tidy(\''+k+'\')'))
-
-        # Make pandas dataframe
-        df1 = pd.DataFrame.from_records(table,columns=['Lookup', 'Method Used', 'Example Usage'])
-
-        # Make petl dataframe
-        df2 = etl.fromdataframe(df1)
-
-        # Make a pritable string in rst (default __str__ in etl dataframe)
-        printable = str(df2)
-
-        return printable
-
     def _col_type_set(self, col, df):
         """
         Determines the set of types present in a DataFrame column.
@@ -146,45 +105,18 @@ class BaseExtractor(object):
                 keep_cols.append(c)
         return df[keep_cols]
 
-    def get_tidy(self, output, drop_collections = True, *args, **kwargs):
-        """
-        A basic interface for getting data. "Output" is a string specifying
-        a type of data. Output types are subclass-specific.
-
-        Example:
-
-        .. code-block:: python
-
-            >>> my_extractor.get_tidy('raw')
-
-        :param string output: Specifies the type of data to produce.
-        :param bool drop_collections: Specifies whether columns containing collections are kept.
-        :param args: Arbitrary arguments permitted for extensibility.
-        :param kwargs: Arbitrary keyword arguments permitted for extensibility.
-        :return: pandas.DataFrame
-        """
-
-        # If the output is in _lookup call appropriate method.
-        if output in self._lookup:
-            if drop_collections:
-                return self._drop_collections(self._lookup[output](*args, **kwargs))
-            else:
-                return self._lookup[output](*args, **kwargs)
-
-        # Otherwise, warn the user and print appropriate options.
-        else:
-            warnings.warn('An invalid output format was entered.' +
-                          ' Valid formats are: ' +
-                          str(self._lookup.keys()))
-            return None
-
-    def raw(self):
+    def raw(self, drop_collections = False):
         """
         Produces the extractor object's data as it is stored internally.
 
         :return: pandas.DataFrame
         """
-        return self._data
+        base_df = self._data
+        if drop_collections is True:
+            out_df = self._drop_collections(base_df)
+        else:
+            out_df = base_df
+        return out_df
 
     def expand_on(self, col1, col2, rename1 = None, rename2 = None, drop = [], drop_collections = False):
         """

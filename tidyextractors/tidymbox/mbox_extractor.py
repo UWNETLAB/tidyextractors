@@ -5,24 +5,6 @@ from tidyextractors.tidymbox.mbox_to_pandas import mbox_to_pandas
 
 class MboxExtractor(BaseExtractor):
 
-    def __sub_init__(self, source, *args, **kwargs):
-        """
-        Subclass initialization routine which runs after BaseExtractor initialization.
-        Mutates get_tidy lookup table.
-
-        :param source: A string specifying a path to one or more mbox files.
-        :param args: Arbitrary arguments for extensibility.
-        :param kwargs: Arbitrary keyword arguments for extensibility.
-        :return: None
-        """
-        # Populate lookup table:
-        self._add_lookup('emails',self.emails)
-        self._add_lookup('sends',self.sends)
-
-        # Add lazy short form lookup table:
-        self._add_lookup('e',self.emails)
-        self._add_lookup('s',self.sends)
-
     def _extract(self, source, *args, **kwargs):
         """
         Extracts data from mbox files. Mutates _data.
@@ -36,18 +18,29 @@ class MboxExtractor(BaseExtractor):
         self._data = mbox_to_pandas(source)
         self._data['MessageID'] = pd.Series(range(0,len(self._data)))
 
-    def emails(self):
+    def emails(self, drop_collections = True):
         """
         Returns a table of mbox message data, with "messages" as rows/observations.
-
+        :param bool drop_collections: Should columns with lists/dicts/sets be dropped?
         :return: pandas.DataFrame
         """
-        return self._data
+        base_df = self._data
+        if drop_collections is True:
+            out_df = self._drop_collections(base_df)
+        else:
+            out_df = base_df
+        return out_df
 
     def sends(self):
         """
         Returns a table of mbox message data, with "sender/recipient" pairs as rows/observations.
-        NOTE: Rows may have a recipient from either "TO" or "CC". SendType column specifies this for each row.
+        .. note::
+
+            Rows may have a recipient from either "TO" or "CC". SendType column specifies this for each row.
+
+        .. note::
+
+            drop_collections is not available for this method, since there are no meaningful collections to keep.
 
         :return: pandas.DataFrame
         """

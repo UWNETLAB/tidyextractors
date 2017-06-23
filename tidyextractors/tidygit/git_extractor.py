@@ -4,23 +4,6 @@ from tidyextractors.tidygit.get_log import extract_log
 
 class GitExtractor(BaseExtractor):
 
-    def __sub_init__(self, source, *args, **kwargs):
-        """
-        Subclass initialization routine which runs after BaseExtractor initialization.
-        Mutates get_tidy lookup table.
-        :param source: A string specifying a path to a local git repository.
-        :param args: Arbitrary arguments for extensibility.
-        :param kwargs: Arbitrary keyword arguments for extensibility.
-        :return: None
-        """
-        # Populate lookup table:
-        self._add_lookup('commits', self.commits)
-        self._add_lookup('changes', self.changes)
-
-        # Add lazy short form lookup table:
-        self._add_lookup('cm', self.commits)
-        self._add_lookup('ch', self.changes)
-
     def _extract(self, source, *args, **kwargs):
         """
         Extracts data from a local git repository. Mutates _data.
@@ -35,17 +18,26 @@ class GitExtractor(BaseExtractor):
         # Shorten hashes
         self._data['hexsha'] = self._data['hexsha'].apply(lambda s: s[:7])
 
-    def commits(self):
+    def commits(self, drop_collections=True):
         """
         Returns a table of git log data, with "commits" as rows/observations.
 
         :return: pandas.DataFrame
         """
-        return self._data
+        base_df = self._data
+        if drop_collections is True:
+            out_df = self._drop_collections(base_df)
+        else:
+            out_df = base_df
+        return out_df
 
     def changes(self):
         """
         Returns a table of git log data, with "changes" as rows/observations.
+
+        .. note::
+
+            drop_collections is not available for this method, since there are no meaningful collections to keep.
 
         :return: pandas.DataFrame
         """

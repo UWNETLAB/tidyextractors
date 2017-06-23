@@ -1,5 +1,5 @@
-From,To,Cc,Date,Subject,Body,NumTo,MessageID
-ashinpan@gmail.com,['portablethunderbird@mozdev.org'],[],"Tue, 01 Feb 2005 00:48:48 +0600",[Portablethunderbird] how to reduce saved mails?,"From: PDT <ashinpan@gmail.com>
+From,To,Cc,Date,Subject,Body,NumTo,NumCC,MessageID
+ashinpan@gmail.com,['portablethunderbird@mozdev.org'],[],2005-02-01 00:48:48+06:00,[Portablethunderbird] how to reduce saved mails?,"From: PDT <ashinpan@gmail.com>
 X-Mailman-Approved-At: Mon, 31 Jan 2005 14:55:03 -0500
 Subject: [Portablethunderbird] how to reduce saved mails?
 X-BeenThere: portablethunderbird@mozdev.org
@@ -33,8 +33,8 @@ The problem is that the amount of my saved mails are daily growing
 larger. It is no problem in the machine but a real problem in the USB.
 
 Is there anyway to remove mails saved in the profile of the Portable 
-Thunderbird in my USB, and yet manage to use POP? I neednt keep them there.",1,0
-mozdev@johnhaller.com,['portablethunderbird@mozdev.org'],[],"Tue, 01 Feb 2005 01:42:22 -0500",[Portablethunderbird] Re: how to reduce saved mails?,"Subject: [Portablethunderbird] Re: how to reduce saved mails?
+Thunderbird in my USB, and yet manage to use POP? I neednt keep them there.",1,0,0
+mozdev@johnhaller.com,['portablethunderbird@mozdev.org'],[],2005-02-01 01:42:22-05:00,[Portablethunderbird] Re: how to reduce saved mails?,"Subject: [Portablethunderbird] Re: how to reduce saved mails?
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
 Precedence: list
@@ -80,8 +80,8 @@ John
 John T. Haller
 
 Personal Site: http://johnhaller.com/
-Web Development: http://rareideas.com/",1,1
-cathune_public@web.de,['portablethunderbird@mozdev.org'],[],"Thu, 03 Mar 2005 11:17:36 +0100","[Portablethunderbird] How to share mails between Linux and Windows
+Web Development: http://rareideas.com/",1,0,1
+cathune_public@web.de,['portablethunderbird@mozdev.org'],[],2005-03-03 11:17:36+01:00,"[Portablethunderbird] How to share mails between Linux and Windows
 	on USB-Stick?","Subject: [Portablethunderbird] How to share mails between Linux and Windows
 	on USB-Stick?
 X-BeenThere: portablethunderbird@mozdev.org
@@ -108,8 +108,8 @@ Carsten Scharfenberg
 
 __________________________________________________________
 Mit WEB.DE FreePhone mit hoechster Qualitaet ab 0 Ct./Min.
-weltweit telefonieren! http://freephone.web.de/?mc021201",1,2
-mozdev@johnhaller.com,['cathune_public@web.de'],['portablethunderbird@mozdev.org'],"Thu, 03 Mar 2005 13:39:13 -0500","Re: [Portablethunderbird] How to share mails between Linux and Windows
+weltweit telefonieren! http://freephone.web.de/?mc021201",1,0,2
+mozdev@johnhaller.com,['cathune_public@web.de'],['portablethunderbird@mozdev.org'],2005-03-03 13:39:13-05:00,"Re: [Portablethunderbird] How to share mails between Linux and Windows
 	on USB-Stick?","Cc: portablethunderbird@mozdev.org
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
@@ -152,8 +152,8 @@ John
 John T. Haller
 
 Personal Site: http://johnhaller.com/
-Web Development: http://rareideas.com/",1,3
-bandwidthnz-mozilla@yahoo.co.nz,['portablethunderbird@mozdev.org'],[],"Fri, 1 Apr 2005 13:53:36 +0100 (BST)","[Portablethunderbird] Portable and regular Thunderbird interactions
+Web Development: http://rareideas.com/",1,1,3
+bandwidthnz-mozilla@yahoo.co.nz,['portablethunderbird@mozdev.org'],[],2005-04-01 13:53:36+01:00,"[Portablethunderbird] Portable and regular Thunderbird interactions
 	with different accounts","Subject: [Portablethunderbird] Portable and regular Thunderbird interactions
 	with different accounts
 X-BeenThere: portablethunderbird@mozdev.org
@@ -185,8 +185,8 @@ anything else from my normal installation?
 2) Can I run a normal and portable Thunderbird session at the same
 time?  (e.g. double-click Thunderbird on my desktop, then plug in USB
 stick and double-click Thunderbird.exe there).
-",1,4
-mozdev@johnhaller.com,['bandwidthnz-mozilla@yahoo.co.nz'],['portablethunderbird@mozdev.org'],"Fri, 01 Apr 2005 12:43:01 -0500","Re: [Portablethunderbird] Portable and regular Thunderbird
+",1,0,4
+mozdev@johnhaller.com,['bandwidthnz-mozilla@yahoo.co.nz'],['portablethunderbird@mozdev.org'],2005-04-01 12:43:01-05:00,"Re: [Portablethunderbird] Portable and regular Thunderbird
 	interactions with different accounts","Cc: portablethunderbird@mozdev.org
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
@@ -235,8 +235,8 @@ John
 John T. Haller
 
 Personal Site: http://johnhaller.com/
-Web Development: http://rareideas.com/",1,5
-mcyzyk@comcast.net,['portablethunderbird@mozdev.org'],[],"Fri, 29 Apr 2005 14:18:27 -0400",[Portablethunderbird] Last 3 days...,"Subject: [Portablethunderbird] Last 3 days...
+Web Development: http://rareideas.com/",1,1,5
+mcyzyk@comcast.net,['portablethunderbird@mozdev.org'],[],2005-04-29 14:18:27-04:00,[Portablethunderbird] Last 3 days...,"Subject: [Portablethunderbird] Last 3 days...
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
 Precedence: list
@@ -252,8 +252,8 @@ X-List-Received-Date: Fri, 29 Apr 2005 18:24:01 -0000
 
 All,
 
-Does Portable Thunderbird, or an extension of it, allow one to limit download of either headers or full messages for Last 3 days or some other temporal limit like Pocket Outlook and some others do?  I have a lot of email stored up on the server and I cant open it up because PT tells me its too much for my 128 MB drive.  I really only ever want to download the last three days or so of email to my drive using Portable Thunderbird.",1,6
-mozdev@johnhaller.com,['mcyzyk@comcast.net'],['portablethunderbird@mozdev.org'],"Fri, 29 Apr 2005 14:23:39 -0400",Re: [Portablethunderbird] Last 3 days...,"Cc: portablethunderbird@mozdev.org
+Does Portable Thunderbird, or an extension of it, allow one to limit download of either headers or full messages for Last 3 days or some other temporal limit like Pocket Outlook and some others do?  I have a lot of email stored up on the server and I cant open it up because PT tells me its too much for my 128 MB drive.  I really only ever want to download the last three days or so of email to my drive using Portable Thunderbird.",1,0,6
+mozdev@johnhaller.com,['mcyzyk@comcast.net'],['portablethunderbird@mozdev.org'],2005-04-29 14:23:39-04:00,Re: [Portablethunderbird] Last 3 days...,"Cc: portablethunderbird@mozdev.org
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
 Precedence: list
@@ -297,8 +297,8 @@ John
 John T. Haller
 
 Personal Site: http://johnhaller.com/
-Web Development: http://rareideas.com/",1,7
-drbolt@aol.com,['portablethunderbird@mozdev.org'],[],"Fri, 29 Apr 2005 16:18:28 -0600","[Portablethunderbird] [Portable Thunderbird] Can't save to send or
+Web Development: http://rareideas.com/",1,1,7
+drbolt@aol.com,['portablethunderbird@mozdev.org'],[],2005-04-29 16:18:28-06:00,"[Portablethunderbird] [Portable Thunderbird] Can't save to send or
 	drafts folder","X-Mailman-Approved-At: Sat, 30 Apr 2005 09:22:21 -0400
 Subject: [Portablethunderbird] [Portable Thunderbird] Cant save to send or
 	drafts folder
@@ -318,8 +318,8 @@ X-List-Received-Date: Fri, 29 Apr 2005 22:25:57 -0000
 For some reason I cannot save to the Sent Items or Draft folders.  I am 
 sending and receiving fine, but the progress dialog just seems to go on 
 forever until I cancel it.  It doesnt freeze, it just sits there with 
-the green bar going across the little box in the bottom right.",1,8
-mozdev@johnhaller.com,['drbolt@aol.com'],['portablethunderbird@mozdev.org'],"Sat, 30 Apr 2005 09:32:55 -0400","Re: [Portablethunderbird] [Portable Thunderbird] Can't save to send
+the green bar going across the little box in the bottom right.",1,0,8
+mozdev@johnhaller.com,['drbolt@aol.com'],['portablethunderbird@mozdev.org'],2005-04-30 09:32:55-04:00,"Re: [Portablethunderbird] [Portable Thunderbird] Can't save to send
 	or	drafts folder","Cc: portablethunderbird@mozdev.org
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
@@ -355,8 +355,8 @@ John
 John T. Haller
 
 Personal Site: http://johnhaller.com/
-Web Development: http://rareideas.com/",1,9
-mozdev@johnhaller.com,['portablethunderbird@mozdev.org'],[],"Thu, 21 Jul 2005 01:13:39 -0400",[Portablethunderbird] Portable Thunderbird 1.0.6 Released,"Subject: [Portablethunderbird] Portable Thunderbird 1.0.6 Released
+Web Development: http://rareideas.com/",1,1,9
+mozdev@johnhaller.com,['portablethunderbird@mozdev.org'],[],2005-07-21 01:13:39-04:00,[Portablethunderbird] Portable Thunderbird 1.0.6 Released,"Subject: [Portablethunderbird] Portable Thunderbird 1.0.6 Released
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
 Precedence: list
@@ -385,8 +385,8 @@ The Portable Thunderbird Launcher 1.1.0 is also available:
 http://johnhaller.com/jh/mozilla/portable_thunderbird/#launcher
 
 Any comments or questions can be posted to this thread:
-http://forums.mozillazine.org/viewtopic.php?p1618892",1,10
-2smallhead@pchome.com.tw,['portablethunderbird@mozdev.org'],[],"Tue, 14 Mar 2006 19:01:26 +0800 (CST)",[Portablethunderbird] how to get Portablethunderbird source code,"Message-Id: <20060314110126.2B56645037@mt3.pchome.com.tw>
+http://forums.mozillazine.org/viewtopic.php?p1618892",1,0,10
+2smallhead@pchome.com.tw,['portablethunderbird@mozdev.org'],[],2006-03-14 19:01:26+08:00,[Portablethunderbird] how to get Portablethunderbird source code,"Message-Id: <20060314110126.2B56645037@mt3.pchome.com.tw>
 X-Virus-Scanned: amavisd-new at pchome.com.tw
 Subject: [Portablethunderbird] how to get Portablethunderbird source code
 X-BeenThere: portablethunderbird@mozdev.org
@@ -414,8 +414,8 @@ ra01MKZXCiBodHRwOi8vZWRtLXByZy5lcGFwZXIuY29tLnR3L2NsaWNrLnBocD9hZF9jb2RlPTEw
 NzcyMzcKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
 PT09PT09PQogU2t5cGVPdXQgpbSs/KVbMC43pLgvpMAgIKW0pGqzsDAuOaS4L6TAICCl36dZwcq2
 Uj4+CiBodHRwOi8vc2t5cGUucGNob21lLmNvbS50dy9za3lwZW91dC5odG0KPT09PT09PT09PT09
-PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKCgo",1,11
-mozdev@johnhaller.com,['2smallhead@pchome.com.tw'],['portablethunderbird@mozdev.org'],"Wed, 15 Mar 2006 02:40:10 -0500",Re: [Portablethunderbird] how to get Portablethunderbird source code,"Cc: portablethunderbird@mozdev.org
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKCgo",1,0,11
+mozdev@johnhaller.com,['2smallhead@pchome.com.tw'],['portablethunderbird@mozdev.org'],2006-03-15 02:40:10-05:00,Re: [Portablethunderbird] how to get Portablethunderbird source code,"Cc: portablethunderbird@mozdev.org
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
 Precedence: list
@@ -441,8 +441,8 @@ X-List-Received-Date: Wed, 15 Mar 2006 07:41:41 -0000
 The code for the launcher is included with PTB in the
 PortableThunderbirdCode directory.  You can also download just the
 launcher and code from the Source Forge project page:
-https://sourceforge.net/projects/portabletbird/",1,12
-ashinpan@gmail.com,['portablethunderbird@mozdev.org'],[],"Tue, 01 Feb 2005 00:48:48 +0600",[Portablethunderbird] how to reduce saved mails?,"From: PDT <ashinpan@gmail.com>
+https://sourceforge.net/projects/portabletbird/",1,1,12
+ashinpan@gmail.com,['portablethunderbird@mozdev.org'],[],2005-02-01 00:48:48+06:00,[Portablethunderbird] how to reduce saved mails?,"From: PDT <ashinpan@gmail.com>
 X-Mailman-Approved-At: Mon, 31 Jan 2005 14:55:03 -0500
 Subject: [Portablethunderbird] how to reduce saved mails?
 X-BeenThere: portablethunderbird@mozdev.org
@@ -476,8 +476,8 @@ The problem is that the amount of my saved mails are daily growing
 larger. It is no problem in the machine but a real problem in the USB.
 
 Is there anyway to remove mails saved in the profile of the Portable 
-Thunderbird in my USB, and yet manage to use POP? I neednt keep them there.",1,13
-mozdev@johnhaller.com,['portablethunderbird@mozdev.org'],[],"Tue, 01 Feb 2005 01:42:22 -0500",[Portablethunderbird] Re: how to reduce saved mails?,"Subject: [Portablethunderbird] Re: how to reduce saved mails?
+Thunderbird in my USB, and yet manage to use POP? I neednt keep them there.",1,0,13
+mozdev@johnhaller.com,['portablethunderbird@mozdev.org'],[],2005-02-01 01:42:22-05:00,[Portablethunderbird] Re: how to reduce saved mails?,"Subject: [Portablethunderbird] Re: how to reduce saved mails?
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
 Precedence: list
@@ -523,8 +523,8 @@ John
 John T. Haller
 
 Personal Site: http://johnhaller.com/
-Web Development: http://rareideas.com/",1,14
-cathune_public@web.de,['portablethunderbird@mozdev.org'],[],"Thu, 03 Mar 2005 11:17:36 +0100","[Portablethunderbird] How to share mails between Linux and Windows
+Web Development: http://rareideas.com/",1,0,14
+cathune_public@web.de,['portablethunderbird@mozdev.org'],[],2005-03-03 11:17:36+01:00,"[Portablethunderbird] How to share mails between Linux and Windows
 	on USB-Stick?","Subject: [Portablethunderbird] How to share mails between Linux and Windows
 	on USB-Stick?
 X-BeenThere: portablethunderbird@mozdev.org
@@ -551,8 +551,8 @@ Carsten Scharfenberg
 
 __________________________________________________________
 Mit WEB.DE FreePhone mit hoechster Qualitaet ab 0 Ct./Min.
-weltweit telefonieren! http://freephone.web.de/?mc021201",1,15
-mozdev@johnhaller.com,['cathune_public@web.de'],['portablethunderbird@mozdev.org'],"Thu, 03 Mar 2005 13:39:13 -0500","Re: [Portablethunderbird] How to share mails between Linux and Windows
+weltweit telefonieren! http://freephone.web.de/?mc021201",1,0,15
+mozdev@johnhaller.com,['cathune_public@web.de'],['portablethunderbird@mozdev.org'],2005-03-03 13:39:13-05:00,"Re: [Portablethunderbird] How to share mails between Linux and Windows
 	on USB-Stick?","Cc: portablethunderbird@mozdev.org
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
@@ -595,8 +595,8 @@ John
 John T. Haller
 
 Personal Site: http://johnhaller.com/
-Web Development: http://rareideas.com/",1,16
-bandwidthnz-mozilla@yahoo.co.nz,['portablethunderbird@mozdev.org'],[],"Fri, 1 Apr 2005 13:53:36 +0100 (BST)","[Portablethunderbird] Portable and regular Thunderbird interactions
+Web Development: http://rareideas.com/",1,1,16
+bandwidthnz-mozilla@yahoo.co.nz,['portablethunderbird@mozdev.org'],[],2005-04-01 13:53:36+01:00,"[Portablethunderbird] Portable and regular Thunderbird interactions
 	with different accounts","Subject: [Portablethunderbird] Portable and regular Thunderbird interactions
 	with different accounts
 X-BeenThere: portablethunderbird@mozdev.org
@@ -628,8 +628,8 @@ anything else from my normal installation?
 2) Can I run a normal and portable Thunderbird session at the same
 time?  (e.g. double-click Thunderbird on my desktop, then plug in USB
 stick and double-click Thunderbird.exe there).
-",1,17
-mozdev@johnhaller.com,['bandwidthnz-mozilla@yahoo.co.nz'],['portablethunderbird@mozdev.org'],"Fri, 01 Apr 2005 12:43:01 -0500","Re: [Portablethunderbird] Portable and regular Thunderbird
+",1,0,17
+mozdev@johnhaller.com,['bandwidthnz-mozilla@yahoo.co.nz'],['portablethunderbird@mozdev.org'],2005-04-01 12:43:01-05:00,"Re: [Portablethunderbird] Portable and regular Thunderbird
 	interactions with different accounts","Cc: portablethunderbird@mozdev.org
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
@@ -678,8 +678,8 @@ John
 John T. Haller
 
 Personal Site: http://johnhaller.com/
-Web Development: http://rareideas.com/",1,18
-mcyzyk@comcast.net,['portablethunderbird@mozdev.org'],[],"Fri, 29 Apr 2005 14:18:27 -0400",[Portablethunderbird] Last 3 days...,"Subject: [Portablethunderbird] Last 3 days...
+Web Development: http://rareideas.com/",1,1,18
+mcyzyk@comcast.net,['portablethunderbird@mozdev.org'],[],2005-04-29 14:18:27-04:00,[Portablethunderbird] Last 3 days...,"Subject: [Portablethunderbird] Last 3 days...
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
 Precedence: list
@@ -695,8 +695,8 @@ X-List-Received-Date: Fri, 29 Apr 2005 18:24:01 -0000
 
 All,
 
-Does Portable Thunderbird, or an extension of it, allow one to limit download of either headers or full messages for Last 3 days or some other temporal limit like Pocket Outlook and some others do?  I have a lot of email stored up on the server and I cant open it up because PT tells me its too much for my 128 MB drive.  I really only ever want to download the last three days or so of email to my drive using Portable Thunderbird.",1,19
-mozdev@johnhaller.com,['mcyzyk@comcast.net'],['portablethunderbird@mozdev.org'],"Fri, 29 Apr 2005 14:23:39 -0400",Re: [Portablethunderbird] Last 3 days...,"Cc: portablethunderbird@mozdev.org
+Does Portable Thunderbird, or an extension of it, allow one to limit download of either headers or full messages for Last 3 days or some other temporal limit like Pocket Outlook and some others do?  I have a lot of email stored up on the server and I cant open it up because PT tells me its too much for my 128 MB drive.  I really only ever want to download the last three days or so of email to my drive using Portable Thunderbird.",1,0,19
+mozdev@johnhaller.com,['mcyzyk@comcast.net'],['portablethunderbird@mozdev.org'],2005-04-29 14:23:39-04:00,Re: [Portablethunderbird] Last 3 days...,"Cc: portablethunderbird@mozdev.org
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
 Precedence: list
@@ -740,8 +740,8 @@ John
 John T. Haller
 
 Personal Site: http://johnhaller.com/
-Web Development: http://rareideas.com/",1,20
-drbolt@aol.com,['portablethunderbird@mozdev.org'],[],"Fri, 29 Apr 2005 16:18:28 -0600","[Portablethunderbird] [Portable Thunderbird] Can't save to send or
+Web Development: http://rareideas.com/",1,1,20
+drbolt@aol.com,['portablethunderbird@mozdev.org'],[],2005-04-29 16:18:28-06:00,"[Portablethunderbird] [Portable Thunderbird] Can't save to send or
 	drafts folder","X-Mailman-Approved-At: Sat, 30 Apr 2005 09:22:21 -0400
 Subject: [Portablethunderbird] [Portable Thunderbird] Cant save to send or
 	drafts folder
@@ -761,8 +761,8 @@ X-List-Received-Date: Fri, 29 Apr 2005 22:25:57 -0000
 For some reason I cannot save to the Sent Items or Draft folders.  I am 
 sending and receiving fine, but the progress dialog just seems to go on 
 forever until I cancel it.  It doesnt freeze, it just sits there with 
-the green bar going across the little box in the bottom right.",1,21
-mozdev@johnhaller.com,['drbolt@aol.com'],['portablethunderbird@mozdev.org'],"Sat, 30 Apr 2005 09:32:55 -0400","Re: [Portablethunderbird] [Portable Thunderbird] Can't save to send
+the green bar going across the little box in the bottom right.",1,0,21
+mozdev@johnhaller.com,['drbolt@aol.com'],['portablethunderbird@mozdev.org'],2005-04-30 09:32:55-04:00,"Re: [Portablethunderbird] [Portable Thunderbird] Can't save to send
 	or	drafts folder","Cc: portablethunderbird@mozdev.org
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
@@ -798,8 +798,8 @@ John
 John T. Haller
 
 Personal Site: http://johnhaller.com/
-Web Development: http://rareideas.com/",1,22
-mozdev@johnhaller.com,['portablethunderbird@mozdev.org'],[],"Thu, 21 Jul 2005 01:13:39 -0400",[Portablethunderbird] Portable Thunderbird 1.0.6 Released,"Subject: [Portablethunderbird] Portable Thunderbird 1.0.6 Released
+Web Development: http://rareideas.com/",1,1,22
+mozdev@johnhaller.com,['portablethunderbird@mozdev.org'],[],2005-07-21 01:13:39-04:00,[Portablethunderbird] Portable Thunderbird 1.0.6 Released,"Subject: [Portablethunderbird] Portable Thunderbird 1.0.6 Released
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
 Precedence: list
@@ -828,8 +828,8 @@ The Portable Thunderbird Launcher 1.1.0 is also available:
 http://johnhaller.com/jh/mozilla/portable_thunderbird/#launcher
 
 Any comments or questions can be posted to this thread:
-http://forums.mozillazine.org/viewtopic.php?p1618892",1,23
-2smallhead@pchome.com.tw,['portablethunderbird@mozdev.org'],[],"Tue, 14 Mar 2006 19:01:26 +0800 (CST)",[Portablethunderbird] how to get Portablethunderbird source code,"Message-Id: <20060314110126.2B56645037@mt3.pchome.com.tw>
+http://forums.mozillazine.org/viewtopic.php?p1618892",1,0,23
+2smallhead@pchome.com.tw,['portablethunderbird@mozdev.org'],[],2006-03-14 19:01:26+08:00,[Portablethunderbird] how to get Portablethunderbird source code,"Message-Id: <20060314110126.2B56645037@mt3.pchome.com.tw>
 X-Virus-Scanned: amavisd-new at pchome.com.tw
 Subject: [Portablethunderbird] how to get Portablethunderbird source code
 X-BeenThere: portablethunderbird@mozdev.org
@@ -857,8 +857,8 @@ ra01MKZXCiBodHRwOi8vZWRtLXByZy5lcGFwZXIuY29tLnR3L2NsaWNrLnBocD9hZF9jb2RlPTEw
 NzcyMzcKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
 PT09PT09PQogU2t5cGVPdXQgpbSs/KVbMC43pLgvpMAgIKW0pGqzsDAuOaS4L6TAICCl36dZwcq2
 Uj4+CiBodHRwOi8vc2t5cGUucGNob21lLmNvbS50dy9za3lwZW91dC5odG0KPT09PT09PT09PT09
-PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKCgo",1,24
-mozdev@johnhaller.com,['2smallhead@pchome.com.tw'],['portablethunderbird@mozdev.org'],"Wed, 15 Mar 2006 02:40:10 -0500",Re: [Portablethunderbird] how to get Portablethunderbird source code,"Cc: portablethunderbird@mozdev.org
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKCgo",1,0,24
+mozdev@johnhaller.com,['2smallhead@pchome.com.tw'],['portablethunderbird@mozdev.org'],2006-03-15 02:40:10-05:00,Re: [Portablethunderbird] how to get Portablethunderbird source code,"Cc: portablethunderbird@mozdev.org
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
 Precedence: list
@@ -884,8 +884,8 @@ X-List-Received-Date: Wed, 15 Mar 2006 07:41:41 -0000
 The code for the launcher is included with PTB in the
 PortableThunderbirdCode directory.  You can also download just the
 launcher and code from the Source Forge project page:
-https://sourceforge.net/projects/portabletbird/",1,25
-ashinpan@gmail.com,['portablethunderbird@mozdev.org'],[],"Tue, 01 Feb 2005 00:48:48 +0600",[Portablethunderbird] how to reduce saved mails?,"From: PDT <ashinpan@gmail.com>
+https://sourceforge.net/projects/portabletbird/",1,1,25
+ashinpan@gmail.com,['portablethunderbird@mozdev.org'],[],2005-02-01 00:48:48+06:00,[Portablethunderbird] how to reduce saved mails?,"From: PDT <ashinpan@gmail.com>
 X-Mailman-Approved-At: Mon, 31 Jan 2005 14:55:03 -0500
 Subject: [Portablethunderbird] how to reduce saved mails?
 X-BeenThere: portablethunderbird@mozdev.org
@@ -919,8 +919,8 @@ The problem is that the amount of my saved mails are daily growing
 larger. It is no problem in the machine but a real problem in the USB.
 
 Is there anyway to remove mails saved in the profile of the Portable 
-Thunderbird in my USB, and yet manage to use POP? I neednt keep them there.",1,26
-mozdev@johnhaller.com,['portablethunderbird@mozdev.org'],[],"Tue, 01 Feb 2005 01:42:22 -0500",[Portablethunderbird] Re: how to reduce saved mails?,"Subject: [Portablethunderbird] Re: how to reduce saved mails?
+Thunderbird in my USB, and yet manage to use POP? I neednt keep them there.",1,0,26
+mozdev@johnhaller.com,['portablethunderbird@mozdev.org'],[],2005-02-01 01:42:22-05:00,[Portablethunderbird] Re: how to reduce saved mails?,"Subject: [Portablethunderbird] Re: how to reduce saved mails?
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
 Precedence: list
@@ -966,8 +966,8 @@ John
 John T. Haller
 
 Personal Site: http://johnhaller.com/
-Web Development: http://rareideas.com/",1,27
-cathune_public@web.de,['portablethunderbird@mozdev.org'],[],"Thu, 03 Mar 2005 11:17:36 +0100","[Portablethunderbird] How to share mails between Linux and Windows
+Web Development: http://rareideas.com/",1,0,27
+cathune_public@web.de,['portablethunderbird@mozdev.org'],[],2005-03-03 11:17:36+01:00,"[Portablethunderbird] How to share mails between Linux and Windows
 	on USB-Stick?","Subject: [Portablethunderbird] How to share mails between Linux and Windows
 	on USB-Stick?
 X-BeenThere: portablethunderbird@mozdev.org
@@ -994,8 +994,8 @@ Carsten Scharfenberg
 
 __________________________________________________________
 Mit WEB.DE FreePhone mit hoechster Qualitaet ab 0 Ct./Min.
-weltweit telefonieren! http://freephone.web.de/?mc021201",1,28
-mozdev@johnhaller.com,['cathune_public@web.de'],['portablethunderbird@mozdev.org'],"Thu, 03 Mar 2005 13:39:13 -0500","Re: [Portablethunderbird] How to share mails between Linux and Windows
+weltweit telefonieren! http://freephone.web.de/?mc021201",1,0,28
+mozdev@johnhaller.com,['cathune_public@web.de'],['portablethunderbird@mozdev.org'],2005-03-03 13:39:13-05:00,"Re: [Portablethunderbird] How to share mails between Linux and Windows
 	on USB-Stick?","Cc: portablethunderbird@mozdev.org
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
@@ -1038,8 +1038,8 @@ John
 John T. Haller
 
 Personal Site: http://johnhaller.com/
-Web Development: http://rareideas.com/",1,29
-bandwidthnz-mozilla@yahoo.co.nz,['portablethunderbird@mozdev.org'],[],"Fri, 1 Apr 2005 13:53:36 +0100 (BST)","[Portablethunderbird] Portable and regular Thunderbird interactions
+Web Development: http://rareideas.com/",1,1,29
+bandwidthnz-mozilla@yahoo.co.nz,['portablethunderbird@mozdev.org'],[],2005-04-01 13:53:36+01:00,"[Portablethunderbird] Portable and regular Thunderbird interactions
 	with different accounts","Subject: [Portablethunderbird] Portable and regular Thunderbird interactions
 	with different accounts
 X-BeenThere: portablethunderbird@mozdev.org
@@ -1071,8 +1071,8 @@ anything else from my normal installation?
 2) Can I run a normal and portable Thunderbird session at the same
 time?  (e.g. double-click Thunderbird on my desktop, then plug in USB
 stick and double-click Thunderbird.exe there).
-",1,30
-mozdev@johnhaller.com,['bandwidthnz-mozilla@yahoo.co.nz'],['portablethunderbird@mozdev.org'],"Fri, 01 Apr 2005 12:43:01 -0500","Re: [Portablethunderbird] Portable and regular Thunderbird
+",1,0,30
+mozdev@johnhaller.com,['bandwidthnz-mozilla@yahoo.co.nz'],['portablethunderbird@mozdev.org'],2005-04-01 12:43:01-05:00,"Re: [Portablethunderbird] Portable and regular Thunderbird
 	interactions with different accounts","Cc: portablethunderbird@mozdev.org
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
@@ -1121,8 +1121,8 @@ John
 John T. Haller
 
 Personal Site: http://johnhaller.com/
-Web Development: http://rareideas.com/",1,31
-mcyzyk@comcast.net,['portablethunderbird@mozdev.org'],[],"Fri, 29 Apr 2005 14:18:27 -0400",[Portablethunderbird] Last 3 days...,"Subject: [Portablethunderbird] Last 3 days...
+Web Development: http://rareideas.com/",1,1,31
+mcyzyk@comcast.net,['portablethunderbird@mozdev.org'],[],2005-04-29 14:18:27-04:00,[Portablethunderbird] Last 3 days...,"Subject: [Portablethunderbird] Last 3 days...
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
 Precedence: list
@@ -1138,8 +1138,8 @@ X-List-Received-Date: Fri, 29 Apr 2005 18:24:01 -0000
 
 All,
 
-Does Portable Thunderbird, or an extension of it, allow one to limit download of either headers or full messages for Last 3 days or some other temporal limit like Pocket Outlook and some others do?  I have a lot of email stored up on the server and I cant open it up because PT tells me its too much for my 128 MB drive.  I really only ever want to download the last three days or so of email to my drive using Portable Thunderbird.",1,32
-mozdev@johnhaller.com,['mcyzyk@comcast.net'],['portablethunderbird@mozdev.org'],"Fri, 29 Apr 2005 14:23:39 -0400",Re: [Portablethunderbird] Last 3 days...,"Cc: portablethunderbird@mozdev.org
+Does Portable Thunderbird, or an extension of it, allow one to limit download of either headers or full messages for Last 3 days or some other temporal limit like Pocket Outlook and some others do?  I have a lot of email stored up on the server and I cant open it up because PT tells me its too much for my 128 MB drive.  I really only ever want to download the last three days or so of email to my drive using Portable Thunderbird.",1,0,32
+mozdev@johnhaller.com,['mcyzyk@comcast.net'],['portablethunderbird@mozdev.org'],2005-04-29 14:23:39-04:00,Re: [Portablethunderbird] Last 3 days...,"Cc: portablethunderbird@mozdev.org
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
 Precedence: list
@@ -1183,8 +1183,8 @@ John
 John T. Haller
 
 Personal Site: http://johnhaller.com/
-Web Development: http://rareideas.com/",1,33
-drbolt@aol.com,['portablethunderbird@mozdev.org'],[],"Fri, 29 Apr 2005 16:18:28 -0600","[Portablethunderbird] [Portable Thunderbird] Can't save to send or
+Web Development: http://rareideas.com/",1,1,33
+drbolt@aol.com,['portablethunderbird@mozdev.org'],[],2005-04-29 16:18:28-06:00,"[Portablethunderbird] [Portable Thunderbird] Can't save to send or
 	drafts folder","X-Mailman-Approved-At: Sat, 30 Apr 2005 09:22:21 -0400
 Subject: [Portablethunderbird] [Portable Thunderbird] Cant save to send or
 	drafts folder
@@ -1204,8 +1204,8 @@ X-List-Received-Date: Fri, 29 Apr 2005 22:25:57 -0000
 For some reason I cannot save to the Sent Items or Draft folders.  I am 
 sending and receiving fine, but the progress dialog just seems to go on 
 forever until I cancel it.  It doesnt freeze, it just sits there with 
-the green bar going across the little box in the bottom right.",1,34
-mozdev@johnhaller.com,['drbolt@aol.com'],['portablethunderbird@mozdev.org'],"Sat, 30 Apr 2005 09:32:55 -0400","Re: [Portablethunderbird] [Portable Thunderbird] Can't save to send
+the green bar going across the little box in the bottom right.",1,0,34
+mozdev@johnhaller.com,['drbolt@aol.com'],['portablethunderbird@mozdev.org'],2005-04-30 09:32:55-04:00,"Re: [Portablethunderbird] [Portable Thunderbird] Can't save to send
 	or	drafts folder","Cc: portablethunderbird@mozdev.org
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
@@ -1241,8 +1241,8 @@ John
 John T. Haller
 
 Personal Site: http://johnhaller.com/
-Web Development: http://rareideas.com/",1,35
-mozdev@johnhaller.com,['portablethunderbird@mozdev.org'],[],"Thu, 21 Jul 2005 01:13:39 -0400",[Portablethunderbird] Portable Thunderbird 1.0.6 Released,"Subject: [Portablethunderbird] Portable Thunderbird 1.0.6 Released
+Web Development: http://rareideas.com/",1,1,35
+mozdev@johnhaller.com,['portablethunderbird@mozdev.org'],[],2005-07-21 01:13:39-04:00,[Portablethunderbird] Portable Thunderbird 1.0.6 Released,"Subject: [Portablethunderbird] Portable Thunderbird 1.0.6 Released
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
 Precedence: list
@@ -1271,8 +1271,8 @@ The Portable Thunderbird Launcher 1.1.0 is also available:
 http://johnhaller.com/jh/mozilla/portable_thunderbird/#launcher
 
 Any comments or questions can be posted to this thread:
-http://forums.mozillazine.org/viewtopic.php?p1618892",1,36
-2smallhead@pchome.com.tw,['portablethunderbird@mozdev.org'],[],"Tue, 14 Mar 2006 19:01:26 +0800 (CST)",[Portablethunderbird] how to get Portablethunderbird source code,"Message-Id: <20060314110126.2B56645037@mt3.pchome.com.tw>
+http://forums.mozillazine.org/viewtopic.php?p1618892",1,0,36
+2smallhead@pchome.com.tw,['portablethunderbird@mozdev.org'],[],2006-03-14 19:01:26+08:00,[Portablethunderbird] how to get Portablethunderbird source code,"Message-Id: <20060314110126.2B56645037@mt3.pchome.com.tw>
 X-Virus-Scanned: amavisd-new at pchome.com.tw
 Subject: [Portablethunderbird] how to get Portablethunderbird source code
 X-BeenThere: portablethunderbird@mozdev.org
@@ -1300,8 +1300,8 @@ ra01MKZXCiBodHRwOi8vZWRtLXByZy5lcGFwZXIuY29tLnR3L2NsaWNrLnBocD9hZF9jb2RlPTEw
 NzcyMzcKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
 PT09PT09PQogU2t5cGVPdXQgpbSs/KVbMC43pLgvpMAgIKW0pGqzsDAuOaS4L6TAICCl36dZwcq2
 Uj4+CiBodHRwOi8vc2t5cGUucGNob21lLmNvbS50dy9za3lwZW91dC5odG0KPT09PT09PT09PT09
-PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKCgo",1,37
-mozdev@johnhaller.com,['2smallhead@pchome.com.tw'],['portablethunderbird@mozdev.org'],"Wed, 15 Mar 2006 02:40:10 -0500",Re: [Portablethunderbird] how to get Portablethunderbird source code,"Cc: portablethunderbird@mozdev.org
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKCgo",1,0,37
+mozdev@johnhaller.com,['2smallhead@pchome.com.tw'],['portablethunderbird@mozdev.org'],2006-03-15 02:40:10-05:00,Re: [Portablethunderbird] how to get Portablethunderbird source code,"Cc: portablethunderbird@mozdev.org
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
 Precedence: list
@@ -1327,8 +1327,8 @@ X-List-Received-Date: Wed, 15 Mar 2006 07:41:41 -0000
 The code for the launcher is included with PTB in the
 PortableThunderbirdCode directory.  You can also download just the
 launcher and code from the Source Forge project page:
-https://sourceforge.net/projects/portabletbird/",1,38
-ashinpan@gmail.com,['portablethunderbird@mozdev.org'],[],"Tue, 01 Feb 2005 00:48:48 +0600",[Portablethunderbird] how to reduce saved mails?,"From: PDT <ashinpan@gmail.com>
+https://sourceforge.net/projects/portabletbird/",1,1,38
+ashinpan@gmail.com,['portablethunderbird@mozdev.org'],[],2005-02-01 00:48:48+06:00,[Portablethunderbird] how to reduce saved mails?,"From: PDT <ashinpan@gmail.com>
 X-Mailman-Approved-At: Mon, 31 Jan 2005 14:55:03 -0500
 Subject: [Portablethunderbird] how to reduce saved mails?
 X-BeenThere: portablethunderbird@mozdev.org
@@ -1362,8 +1362,8 @@ The problem is that the amount of my saved mails are daily growing
 larger. It is no problem in the machine but a real problem in the USB.
 
 Is there anyway to remove mails saved in the profile of the Portable 
-Thunderbird in my USB, and yet manage to use POP? I neednt keep them there.",1,39
-mozdev@johnhaller.com,['portablethunderbird@mozdev.org'],[],"Tue, 01 Feb 2005 01:42:22 -0500",[Portablethunderbird] Re: how to reduce saved mails?,"Subject: [Portablethunderbird] Re: how to reduce saved mails?
+Thunderbird in my USB, and yet manage to use POP? I neednt keep them there.",1,0,39
+mozdev@johnhaller.com,['portablethunderbird@mozdev.org'],[],2005-02-01 01:42:22-05:00,[Portablethunderbird] Re: how to reduce saved mails?,"Subject: [Portablethunderbird] Re: how to reduce saved mails?
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
 Precedence: list
@@ -1409,8 +1409,8 @@ John
 John T. Haller
 
 Personal Site: http://johnhaller.com/
-Web Development: http://rareideas.com/",1,40
-cathune_public@web.de,['portablethunderbird@mozdev.org'],[],"Thu, 03 Mar 2005 11:17:36 +0100","[Portablethunderbird] How to share mails between Linux and Windows
+Web Development: http://rareideas.com/",1,0,40
+cathune_public@web.de,['portablethunderbird@mozdev.org'],[],2005-03-03 11:17:36+01:00,"[Portablethunderbird] How to share mails between Linux and Windows
 	on USB-Stick?","Subject: [Portablethunderbird] How to share mails between Linux and Windows
 	on USB-Stick?
 X-BeenThere: portablethunderbird@mozdev.org
@@ -1437,8 +1437,8 @@ Carsten Scharfenberg
 
 __________________________________________________________
 Mit WEB.DE FreePhone mit hoechster Qualitaet ab 0 Ct./Min.
-weltweit telefonieren! http://freephone.web.de/?mc021201",1,41
-mozdev@johnhaller.com,['cathune_public@web.de'],['portablethunderbird@mozdev.org'],"Thu, 03 Mar 2005 13:39:13 -0500","Re: [Portablethunderbird] How to share mails between Linux and Windows
+weltweit telefonieren! http://freephone.web.de/?mc021201",1,0,41
+mozdev@johnhaller.com,['cathune_public@web.de'],['portablethunderbird@mozdev.org'],2005-03-03 13:39:13-05:00,"Re: [Portablethunderbird] How to share mails between Linux and Windows
 	on USB-Stick?","Cc: portablethunderbird@mozdev.org
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
@@ -1481,8 +1481,8 @@ John
 John T. Haller
 
 Personal Site: http://johnhaller.com/
-Web Development: http://rareideas.com/",1,42
-bandwidthnz-mozilla@yahoo.co.nz,['portablethunderbird@mozdev.org'],[],"Fri, 1 Apr 2005 13:53:36 +0100 (BST)","[Portablethunderbird] Portable and regular Thunderbird interactions
+Web Development: http://rareideas.com/",1,1,42
+bandwidthnz-mozilla@yahoo.co.nz,['portablethunderbird@mozdev.org'],[],2005-04-01 13:53:36+01:00,"[Portablethunderbird] Portable and regular Thunderbird interactions
 	with different accounts","Subject: [Portablethunderbird] Portable and regular Thunderbird interactions
 	with different accounts
 X-BeenThere: portablethunderbird@mozdev.org
@@ -1514,8 +1514,8 @@ anything else from my normal installation?
 2) Can I run a normal and portable Thunderbird session at the same
 time?  (e.g. double-click Thunderbird on my desktop, then plug in USB
 stick and double-click Thunderbird.exe there).
-",1,43
-mozdev@johnhaller.com,['bandwidthnz-mozilla@yahoo.co.nz'],['portablethunderbird@mozdev.org'],"Fri, 01 Apr 2005 12:43:01 -0500","Re: [Portablethunderbird] Portable and regular Thunderbird
+",1,0,43
+mozdev@johnhaller.com,['bandwidthnz-mozilla@yahoo.co.nz'],['portablethunderbird@mozdev.org'],2005-04-01 12:43:01-05:00,"Re: [Portablethunderbird] Portable and regular Thunderbird
 	interactions with different accounts","Cc: portablethunderbird@mozdev.org
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
@@ -1564,8 +1564,8 @@ John
 John T. Haller
 
 Personal Site: http://johnhaller.com/
-Web Development: http://rareideas.com/",1,44
-mcyzyk@comcast.net,['portablethunderbird@mozdev.org'],[],"Fri, 29 Apr 2005 14:18:27 -0400",[Portablethunderbird] Last 3 days...,"Subject: [Portablethunderbird] Last 3 days...
+Web Development: http://rareideas.com/",1,1,44
+mcyzyk@comcast.net,['portablethunderbird@mozdev.org'],[],2005-04-29 14:18:27-04:00,[Portablethunderbird] Last 3 days...,"Subject: [Portablethunderbird] Last 3 days...
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
 Precedence: list
@@ -1581,8 +1581,8 @@ X-List-Received-Date: Fri, 29 Apr 2005 18:24:01 -0000
 
 All,
 
-Does Portable Thunderbird, or an extension of it, allow one to limit download of either headers or full messages for Last 3 days or some other temporal limit like Pocket Outlook and some others do?  I have a lot of email stored up on the server and I cant open it up because PT tells me its too much for my 128 MB drive.  I really only ever want to download the last three days or so of email to my drive using Portable Thunderbird.",1,45
-mozdev@johnhaller.com,['mcyzyk@comcast.net'],['portablethunderbird@mozdev.org'],"Fri, 29 Apr 2005 14:23:39 -0400",Re: [Portablethunderbird] Last 3 days...,"Cc: portablethunderbird@mozdev.org
+Does Portable Thunderbird, or an extension of it, allow one to limit download of either headers or full messages for Last 3 days or some other temporal limit like Pocket Outlook and some others do?  I have a lot of email stored up on the server and I cant open it up because PT tells me its too much for my 128 MB drive.  I really only ever want to download the last three days or so of email to my drive using Portable Thunderbird.",1,0,45
+mozdev@johnhaller.com,['mcyzyk@comcast.net'],['portablethunderbird@mozdev.org'],2005-04-29 14:23:39-04:00,Re: [Portablethunderbird] Last 3 days...,"Cc: portablethunderbird@mozdev.org
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
 Precedence: list
@@ -1626,8 +1626,8 @@ John
 John T. Haller
 
 Personal Site: http://johnhaller.com/
-Web Development: http://rareideas.com/",1,46
-drbolt@aol.com,['portablethunderbird@mozdev.org'],[],"Fri, 29 Apr 2005 16:18:28 -0600","[Portablethunderbird] [Portable Thunderbird] Can't save to send or
+Web Development: http://rareideas.com/",1,1,46
+drbolt@aol.com,['portablethunderbird@mozdev.org'],[],2005-04-29 16:18:28-06:00,"[Portablethunderbird] [Portable Thunderbird] Can't save to send or
 	drafts folder","X-Mailman-Approved-At: Sat, 30 Apr 2005 09:22:21 -0400
 Subject: [Portablethunderbird] [Portable Thunderbird] Cant save to send or
 	drafts folder
@@ -1647,8 +1647,8 @@ X-List-Received-Date: Fri, 29 Apr 2005 22:25:57 -0000
 For some reason I cannot save to the Sent Items or Draft folders.  I am 
 sending and receiving fine, but the progress dialog just seems to go on 
 forever until I cancel it.  It doesnt freeze, it just sits there with 
-the green bar going across the little box in the bottom right.",1,47
-mozdev@johnhaller.com,['drbolt@aol.com'],['portablethunderbird@mozdev.org'],"Sat, 30 Apr 2005 09:32:55 -0400","Re: [Portablethunderbird] [Portable Thunderbird] Can't save to send
+the green bar going across the little box in the bottom right.",1,0,47
+mozdev@johnhaller.com,['drbolt@aol.com'],['portablethunderbird@mozdev.org'],2005-04-30 09:32:55-04:00,"Re: [Portablethunderbird] [Portable Thunderbird] Can't save to send
 	or	drafts folder","Cc: portablethunderbird@mozdev.org
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
@@ -1684,8 +1684,8 @@ John
 John T. Haller
 
 Personal Site: http://johnhaller.com/
-Web Development: http://rareideas.com/",1,48
-mozdev@johnhaller.com,['portablethunderbird@mozdev.org'],[],"Thu, 21 Jul 2005 01:13:39 -0400",[Portablethunderbird] Portable Thunderbird 1.0.6 Released,"Subject: [Portablethunderbird] Portable Thunderbird 1.0.6 Released
+Web Development: http://rareideas.com/",1,1,48
+mozdev@johnhaller.com,['portablethunderbird@mozdev.org'],[],2005-07-21 01:13:39-04:00,[Portablethunderbird] Portable Thunderbird 1.0.6 Released,"Subject: [Portablethunderbird] Portable Thunderbird 1.0.6 Released
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
 Precedence: list
@@ -1714,8 +1714,8 @@ The Portable Thunderbird Launcher 1.1.0 is also available:
 http://johnhaller.com/jh/mozilla/portable_thunderbird/#launcher
 
 Any comments or questions can be posted to this thread:
-http://forums.mozillazine.org/viewtopic.php?p1618892",1,49
-2smallhead@pchome.com.tw,['portablethunderbird@mozdev.org'],[],"Tue, 14 Mar 2006 19:01:26 +0800 (CST)",[Portablethunderbird] how to get Portablethunderbird source code,"Message-Id: <20060314110126.2B56645037@mt3.pchome.com.tw>
+http://forums.mozillazine.org/viewtopic.php?p1618892",1,0,49
+2smallhead@pchome.com.tw,['portablethunderbird@mozdev.org'],[],2006-03-14 19:01:26+08:00,[Portablethunderbird] how to get Portablethunderbird source code,"Message-Id: <20060314110126.2B56645037@mt3.pchome.com.tw>
 X-Virus-Scanned: amavisd-new at pchome.com.tw
 Subject: [Portablethunderbird] how to get Portablethunderbird source code
 X-BeenThere: portablethunderbird@mozdev.org
@@ -1743,8 +1743,8 @@ ra01MKZXCiBodHRwOi8vZWRtLXByZy5lcGFwZXIuY29tLnR3L2NsaWNrLnBocD9hZF9jb2RlPTEw
 NzcyMzcKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
 PT09PT09PQogU2t5cGVPdXQgpbSs/KVbMC43pLgvpMAgIKW0pGqzsDAuOaS4L6TAICCl36dZwcq2
 Uj4+CiBodHRwOi8vc2t5cGUucGNob21lLmNvbS50dy9za3lwZW91dC5odG0KPT09PT09PT09PT09
-PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKCgo",1,50
-mozdev@johnhaller.com,['2smallhead@pchome.com.tw'],['portablethunderbird@mozdev.org'],"Wed, 15 Mar 2006 02:40:10 -0500",Re: [Portablethunderbird] how to get Portablethunderbird source code,"Cc: portablethunderbird@mozdev.org
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKCgo",1,0,50
+mozdev@johnhaller.com,['2smallhead@pchome.com.tw'],['portablethunderbird@mozdev.org'],2006-03-15 02:40:10-05:00,Re: [Portablethunderbird] how to get Portablethunderbird source code,"Cc: portablethunderbird@mozdev.org
 X-BeenThere: portablethunderbird@mozdev.org
 X-Mailman-Version: 2.1.2
 Precedence: list
@@ -1770,4 +1770,4 @@ X-List-Received-Date: Wed, 15 Mar 2006 07:41:41 -0000
 The code for the launcher is included with PTB in the
 PortableThunderbirdCode directory.  You can also download just the
 launcher and code from the Source Forge project page:
-https://sourceforge.net/projects/portabletbird/",1,51
+https://sourceforge.net/projects/portabletbird/",1,1,51

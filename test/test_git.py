@@ -20,13 +20,13 @@ class TestGitExtractor(unittest.TestCase):
         self.assertEqual(isinstance(self.gx, tg.GitExtractor), True)
 
     def test_raw(self):
-        check_df = self.gx.raw()
+        check_df = self.gx.raw(drop_collections=False)
         expect_df = self.raw_df
         self.assertEqual(set(check_df.columns),set(expect_df.columns))
         self.assertEqual(set(check_df['hexsha']),set(expect_df['hexsha']))
 
     def test_commits(self):
-        check_df = self.gx.commits()
+        check_df = self.gx.commits(drop_collections=False)
         expect_df = self.commits_df
         self.assertEqual(set(check_df.columns),set(expect_df.columns))
         self.assertEqual(set(check_df['hexsha']),set(expect_df['hexsha']))

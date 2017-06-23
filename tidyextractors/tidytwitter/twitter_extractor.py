@@ -11,26 +11,6 @@ from tidyextractors.tidytwitter.twitter_object_handlers import twitter_object_ha
 
 class TwitterExtractor(BaseExtractor):
 
-    def __sub_init__(self, source, *args, **kwargs):
-        """
-        Subclass initialization routine which runs after BaseExtractor initialization.
-        Mutates get_tidy lookup table.
-        NOTE: TwitterExtractor requires a complete set of Twitter API credentials
-        to initialize: 'access_token', 'access_secret', 'consumer_key', and 'consumer_secret'.
-
-        :param source: A list of user screen names.
-        :param args: Arbitrary arguments for extensibility.
-        :param kwargs: Arbitrary keyword arguments for extensibility.
-        :return: None
-        """
-        # Populate lookup table:
-        self._add_lookup('users', self.users)
-        self._add_lookup('tweets', self.tweets)
-
-        # Add lazy short form lookup table:
-        self._add_lookup('u', self.users)
-        self._add_lookup('t', self.tweets)
-
     def _extract(self, source, extract_tweets=True, *args, **kwargs):
         """
         Extracts user data Using the twitter API. Mutates _data.
@@ -76,17 +56,26 @@ class TwitterExtractor(BaseExtractor):
 
         self._data = pd.DataFrame.from_records(rows)
 
-    def users(self):
+    def users(self, drop_collections = True):
         """
         Returns a table of Twitter user data, with "users" as rows/observations.
 
         :return: pandas.DataFrame
         """
-        return self._data
+        base_df = self._data
+        if drop_collections is True:
+            out_df = self._drop_collections(base_df)
+        else:
+            out_df = base_df
+        return out_df
 
     def tweets(self):
         """
         Returns a table of Twitter user data, with "tweets" as rows/observations.
+
+        .. note::
+
+            drop_collections is not available for this method, since there are no meaningful collections to keep.
 
         :return: pandas.DataFrame
         """
@@ -116,7 +105,9 @@ class TwitterExtractor(BaseExtractor):
 
         drop_columns = list(set(all_columns).difference(set(keep_columns)))
 
-        return self.expand_on('id', 'tweets', rename1='id', rename2='tweet_id', drop=drop_columns)
+        base_df = self.expand_on('id', 'tweets', rename1='id', rename2='tweet_id', drop=drop_columns)
+
+        return self._drop_collections(base_df)
 
     def _handle_object(self, name, obj):
         """

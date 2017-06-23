@@ -18,13 +18,13 @@ class TestMboxExtractor(unittest.TestCase):
         self.assertEqual(isinstance(self.gx, tm.MboxExtractor), True)
 
     def test_raw(self):
-        check_df = self.gx.raw()
+        check_df = self.gx.raw(drop_collections=False)
         expect_df = self.raw_df
         self.assertEqual(set(check_df.columns),set(expect_df.columns))
         self.assertEqual(set(check_df['MessageID']),set(expect_df['MessageID']))
 
     def test_emails(self):
-        check_df = self.gx.emails()
+        check_df = self.gx.emails(drop_collections=False)
         expect_df = self.emails_df
         self.assertEqual(set(check_df.columns),set(expect_df.columns))
         self.assertEqual(set(check_df['MessageID']),set(expect_df['MessageID']))
