@@ -1,3 +1,4 @@
+import os
 import unittest
 import pandas as pd
 import tidyextractors as tx
@@ -7,10 +8,10 @@ import tidyextractors.tidygit as tg
 class TestGitExtractor(unittest.TestCase):
 
     def setUp(self):
-        self.gx = tg.GitExtractor('./git_data/')
-        self.changes_df = pd.read_csv('./git_data/git_changes_test.csv')
-        self.commits_df = pd.read_csv('./git_data/git_commits_test.csv')
-        self.raw_df = pd.read_csv('./git_data/git_raw_test.csv')
+        self.gx = tg.GitExtractor(os.path.join('.', 'git_data'))
+        self.changes_df = pd.read_csv(os.path.join('.', 'git_data', 'git_changes_test.csv'))
+        self.commits_df = pd.read_csv(os.path.join('.', 'git_data', 'git_commits_test.csv'))
+        self.raw_df = pd.read_csv(os.path.join('.', 'git_data', 'git_raw_test.csv'))
 
     def test_construction(self):
         self.assertEqual(isinstance(self.gx, tx.BaseExtractor), True)

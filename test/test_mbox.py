@@ -1,3 +1,4 @@
+import os
 import unittest
 import pandas as pd
 import tidyextractors as tx
@@ -7,10 +8,10 @@ import tidyextractors.tidymbox as tm
 class TestMboxExtractor(unittest.TestCase):
 
     def setUp(self):
-        self.gx = tm.MboxExtractor('./mbox_data/')
-        self.sends_df = pd.read_csv('./mbox_data/mbox_sends_test.csv')
-        self.emails_df = pd.read_csv('./mbox_data/mbox_emails_test.csv')
-        self.raw_df = pd.read_csv('./mbox_data/mbox_raw_test.csv')
+        self.gx = tm.MboxExtractor(os.path.join('.', 'mbox_data'))
+        self.sends_df = pd.read_csv(os.path.join('.', 'mbox_data', 'mbox_sends_test.csv'))
+        self.emails_df = pd.read_csv(os.path.join('.', 'mbox_data', 'mbox_emails_test.csv'))
+        self.raw_df = pd.read_csv(os.path.join('.', 'mbox_data', 'mbox_raw_test.csv'))
 
     def test_construction(self):
         self.assertEqual(isinstance(self.gx, tx.BaseExtractor), True)

@@ -1,6 +1,7 @@
 import unittest
-import tidyextractors as tx
 import pandas as pd
+import tidyextractors as tx
+
 
 class TestBaseExtractor(unittest.TestCase):
 
