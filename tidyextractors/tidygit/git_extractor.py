@@ -49,4 +49,4 @@ class GitExtractor(BaseExtractor):
 
         :return: pandas.DataFrame
         """
-        return self.expand_on('hexsha', 'changes', rename1='hash', rename2='file')
+        return self.expand_on('hexsha', 'changes', rename1='hexsha', rename2='file')

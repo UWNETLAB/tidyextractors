@@ -1,0 +1,39 @@
+import unittest
+import pandas as pd
+import tidyextractors as tx
+import tidyextractors.tidygit as tg
+
+
+class TestGitExtractor(unittest.TestCase):
+
+    def setUp(self):
+        self.gx = tg.GitExtractor('./git_data/')
+        self.changes_df = pd.read_csv('./git_data/git_changes_test.csv')
+        self.commits_df = pd.read_csv('./git_data/git_commits_test.csv')
+        self.raw_df = pd.read_csv('./git_data/git_raw_test.csv')
+
+    def test_construction(self):
+        self.assertEqual(isinstance(self.gx, tx.BaseExtractor), True)
+        self.assertEqual(isinstance(self.gx, tg.GitExtractor), True)
+
+    def test_raw(self):
+        check_df = self.gx.raw()
+        expect_df = self.raw_df
+        self.assertEqual(set(check_df.columns),set(expect_df.columns))
+        self.assertEqual(set(check_df['hexsha']),set(expect_df['hexsha']))
+
+    def test_commits(self):
+        check_df = self.gx.commits()
+        expect_df = self.commits_df
+        self.assertEqual(set(check_df.columns),set(expect_df.columns))
+        self.assertEqual(set(check_df['hexsha']),set(expect_df['hexsha']))
+
+    def test_changes(self):
+        check_df = self.gx.changes()
+        expect_df = self.changes_df
+        self.assertEqual(set(check_df.columns),set(expect_df.columns))
+        self.assertEqual(set(check_df['hexsha']),set(expect_df['hexsha']))
+
+
+if __name__ == '__main__':
+    unittest.main()

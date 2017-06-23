@@ -12,7 +12,7 @@ __pycache__/
 .idea/
 
 # Project Files
-tests/test_data/
+test/test_data/
 
 # Distribution / packaging
 .Python
