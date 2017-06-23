@@ -116,7 +116,7 @@ class TwitterExtractor(BaseExtractor):
 
         drop_columns = list(set(all_columns).difference(set(keep_columns)))
 
-        return self.expand_on('id', 'tweets', ['id','tweet_id'], rename1='id', rename2='tweet_id', drop=drop_columns)
+        return self.expand_on('id', 'tweets', rename1='id', rename2='tweet_id', drop=drop_columns)
 
     def _handle_object(self, name, obj):
         """
