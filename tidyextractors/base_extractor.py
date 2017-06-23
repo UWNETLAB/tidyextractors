@@ -186,7 +186,7 @@ class BaseExtractor(object):
         """
         return self._data
 
-    def expand_on(self, col1, col2, index_cols, rename1 = None, rename2 = None, drop = [], drop_collections = False):
+    def expand_on(self, col1, col2, rename1 = None, rename2 = None, drop = [], drop_collections = False):
         """
         Returns a reshaped version of extractor's data, where unique combinations of values from col1 and col2
         are given individual rows.
@@ -225,7 +225,6 @@ class BaseExtractor(object):
 
         :param string col1: The first column to expand on. May be an atomic value, or a dict of dict.
         :param string col2: The second column to expand on. May be an atomic value, or a dict of dict.
-        :param list index_cols: The names of columns to be used to create a MultiIndex for output data.
         :param string rename1: The name for col1 after expansion. Defaults to col1_extended.
         :param string rename2: The name for col2 after expansion. Defaults to col2_extended.
         :param list drop: Column names to be dropped from output.
@@ -357,7 +356,8 @@ class BaseExtractor(object):
         df_out = pd.concat([df_1, df_2], axis=1)
 
         # Set new index
-        df_out = df_out.set_index(index_cols)
+        # index_cols has been depracated
+        # df_out = df_out.set_index(index_cols)
 
         # Drop unwanted columns
         for col in drop:
