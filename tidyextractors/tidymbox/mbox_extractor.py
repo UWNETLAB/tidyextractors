@@ -42,7 +42,7 @@ class MboxExtractor(BaseExtractor):
 
         :return: pandas.DataFrame
         """
-        return self._data.set_index(['MessageID'])
+        return self._data
 
     def sends(self):
         """
@@ -52,8 +52,8 @@ class MboxExtractor(BaseExtractor):
         :return: pandas.DataFrame
         """
         # Expand on each "to" field
-        on_to_df = self.expand_on('From', 'To', ['MessageID', 'Recipient'], rename1='From', rename2='Recipient')
-        on_cc_df = self.expand_on('From', 'Cc', ['MessageID', 'Recipient'], rename1='From', rename2='Recipient')
+        on_to_df = self.expand_on('From', 'To', rename1='From', rename2='Recipient')
+        on_cc_df = self.expand_on('From', 'Cc', rename1='From', rename2='Recipient')
 
         # Specify how it was sent
         on_to_df['SendType'] = 'To'

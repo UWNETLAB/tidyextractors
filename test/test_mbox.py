@@ -20,19 +20,19 @@ class TestMboxExtractor(unittest.TestCase):
         check_df = self.gx.raw()
         expect_df = self.raw_df
         self.assertEqual(set(check_df.columns),set(expect_df.columns))
-        self.assertEqual(set(check_df['date']),set(expect_df['date']))
+        self.assertEqual(set(check_df['MessageID']),set(expect_df['MessageID']))
 
     def test_emails(self):
         check_df = self.gx.emails()
         expect_df = self.emails_df
         self.assertEqual(set(check_df.columns),set(expect_df.columns))
-        self.assertEqual(set(check_df['date']),set(expect_df['date']))
+        self.assertEqual(set(check_df['MessageID']),set(expect_df['MessageID']))
 
     def test_sends(self):
         check_df = self.gx.sends()
         expect_df = self.sends_df
         self.assertEqual(set(check_df.columns),set(expect_df.columns))
-        self.assertEqual(set(check_df['hexsha']),set(expect_df['hexsha']))
+        self.assertEqual(set(check_df['MessageID']),set(expect_df['MessageID']))
 
 
 if __name__ == '__main__':

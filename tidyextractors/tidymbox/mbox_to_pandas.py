@@ -114,7 +114,6 @@ def write_table(mboxfile, mailTable):
             ])
 
 
-
 def mbox_to_pandas(mbox_path):
     """
     Extracts all mbox messages from mbox files in mbox_path.
