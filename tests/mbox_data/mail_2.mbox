@@ -1,0 +1,746 @@
+From nobody Mon Jan 31 14:55:05 2005
+Received: (qmail 88425 invoked from network); 31 Jan 2005 18:52:51 -0000
+Received: from rproxy.gmail.com (64.233.170.203)
+	by mozdev.org with SMTP; 31 Jan 2005 18:52:51 -0000
+Received: by rproxy.gmail.com with SMTP id y7so190892rne
+	for <portablethunderbird@mozdev.org>;
+	Mon, 31 Jan 2005 10:49:13 -0800 (PST)
+DomainKey-Signature: a=rsa-sha1; q=dns; c=nofws; s=beta; d=gmail.com;
+	h=received:message-id:date:organization:user-agent:x-accept-language:mime-version:to:subject:content-type:content-transfer-encoding:from;
+	b=gpm3voIwDPQkrBmM4F9oBT+6XWW7XBakt9ho/9ZjgUrJ6/Wm/Wult6WESAKMRh474zN3xNOysqMoVP2MoVzgRLEuzbMvmnp+GDdNVJwOqJa7cPC7bUs9v+QUZH1fi+kOtZG7vT2AZrSYymR5Q7pUOL13C5LI1eyjTz0XDLn9Xbo=
+Received: by 10.38.209.74 with SMTP id h74mr93131rng;
+	Mon, 31 Jan 2005 10:49:12 -0800 (PST)
+Return-Path: <ashinpan@gmail.com>
+Received: from ?192.168.245.182? ([202.69.200.19])
+	by smtp.gmail.com with ESMTP id 70sm317797rnb.2005.01.31.10.49.06;
+	Mon, 31 Jan 2005 10:49:12 -0800 (PST)
+Message-ID: <41FE7D90.3050509@gmail.com>
+Date: Tue, 01 Feb 2005 00:48:48 +0600
+Organization: World
+User-Agent: Mozilla Thunderbird 1.0 (Windows/20041206)
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: Portable Thunderbird Mailing List <portablethunderbird@mozdev.org>
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+From: PDT <ashinpan@gmail.com>
+X-Mailman-Approved-At: Mon, 31 Jan 2005 14:55:03 -0500
+Subject: [Portablethunderbird] how to reduce saved mails?
+X-BeenThere: portablethunderbird@mozdev.org
+X-Mailman-Version: 2.1.2
+Precedence: list
+List-Id: <portablethunderbird.mozdev.org>
+List-Unsubscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=unsubscribe>
+List-Archive: <http://mozdev.org/pipermail/portablethunderbird>
+List-Post: <mailto:portablethunderbird@mozdev.org>
+List-Help: <mailto:portablethunderbird-request@mozdev.org?subject=help>
+List-Subscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=subscribe>
+X-List-Received-Date: Mon, 31 Jan 2005 18:52:51 -0000
+
+Hi! All
+
+I am a new user of Portable Thunderbird and I would like to seek help 
+from fellow users, who are more experienced, to solve a problem.
+
+I think I should explain it first. I usually get my mails by POP using 
+Thunderbird installed in my machine (Mine is a Gmail account). But I 
+would like to use Portable Thunderbird at the Cybercafe where I usually 
+surf the Web. According to the instructions given on the Portable 
+Thunderbird website, I copy my profile from my machine into the profile 
+folder of Thunderbird in my USB. At Cybercafe, I use the portable exe to 
+download my mail by POP while surfing at the same time. When I get back 
+to my place, I copy the profile in the USB into my machine again.
+
+The problem is that the amount of my saved mails are daily growing 
+larger. It is no problem in the machine but a real problem in the USB.
+
+Is there anyway to remove mails saved in the profile of the Portable 
+Thunderbird in my USB, and yet manage to use POP? I needn't keep them there.
+
+cheers!
+
+PDT
+
+
+From nobody Tue Feb  1 01:47:19 2005
+Received: (qmail 70142 invoked from network); 1 Feb 2005 06:46:45 -0000
+Received: from gw3.webcontrolcenter.com (216.119.106.223)
+	by mozdev.org with SMTP; 1 Feb 2005 06:46:45 -0000
+Received: from mail8.webcontrolcenter.com [216.119.106.141] by
+	GW3.webcontrolcenter.com with SMTP; Mon, 31 Jan 2005 23:42:21 -0700
+Received: from user-0cdf4eg.cable.mindspring.com [24.215.145.208] by
+	mail8.webcontrolcenter.com with SMTP; 
+	Mon, 31 Jan 2005 23:41:59 -0700
+Message-ID: <41FF24CE.4050904@johnhaller.com>
+Date: Tue, 01 Feb 2005 01:42:22 -0500
+From: "John T. Haller" <mozdev@johnhaller.com>
+User-Agent: Mozilla Thunderbird 1.0 (Windows/20041206)
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: portablethunderbird@mozdev.org
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+Subject: [Portablethunderbird] Re: how to reduce saved mails?
+X-BeenThere: portablethunderbird@mozdev.org
+X-Mailman-Version: 2.1.2
+Precedence: list
+List-Id: <portablethunderbird.mozdev.org>
+List-Unsubscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=unsubscribe>
+List-Archive: <http://mozdev.org/pipermail/portablethunderbird>
+List-Post: <mailto:portablethunderbird@mozdev.org>
+List-Help: <mailto:portablethunderbird-request@mozdev.org?subject=help>
+List-Subscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=subscribe>
+X-List-Received-Date: Tue, 01 Feb 2005 06:46:46 -0000
+
+PDT wrote:
+
+ > The problem is that the amount of my saved mails are daily growing
+ > larger. It is no problem in the machine but a real problem in the USB.
+ >
+ > Is there anyway to remove mails saved in the profile of the Portable
+ > Thunderbird in my USB, and yet manage to use POP? I needn't keep them
+ > there.
+
+PDT,
+
+You have a couple of options.  You can selectively copy over bits of 
+your mail store.  If you look inside your profile directory, you'll see 
+individual directories and files that correspond to your mail folders. 
+What you could do is create an Archive folder (for easy identification) 
+and keep all your older mail you don't want to take with you inside 
+that.  Then, copy all your mail folders over except that one (and 
+sub-folders).  It's actually just a big bunch of text files, so you can 
+really do what you'd like with them.
+
+Also, you should compact your folders on a regular basis to save space. 
+  Deleted messages are not removed until you do... even if you empty 
+trash.  Just click on any Local Folder and then select FILE and then 
+Compact Folders from the main menu.
+
+Regards,
+John
+
+-- 
+John T. Haller
+
+Personal Site: http://johnhaller.com/
+Web Development: http://rareideas.com/
+
+
+
+From nobody Thu Mar  3 05:23:26 2005
+Received: (qmail 22832 invoked from network); 3 Mar 2005 10:22:53 -0000
+Received: from fmmailgate05.web.de (217.72.192.243)
+	by mozdev.org with SMTP; 3 Mar 2005 10:22:53 -0000
+Received: by fmmailgate05.web.de (8.12.10/8.12.10/webde Linux 0.7) with SMTP
+	id j23AGdKG004093 
+	for portablethunderbird@mozdev.org; Thu, 3 Mar 2005 11:17:40 +0100
+Received: from [217.93.5.40] by freemailng9903.web.de with HTTP;
+	Thu, 03 Mar 2005 11:17:36 +0100
+Date: Thu, 03 Mar 2005 11:17:36 +0100
+Message-Id: <191900938@web.de>
+MIME-Version: 1.0
+From: "Carsten Scharfenberg" <cathune_public@web.de>
+To: portablethunderbird@mozdev.org
+Precedence: fm-user
+Organization: http://freemail.web.de/
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+Subject: [Portablethunderbird] How to share mails between Linux and Windows
+	on USB-Stick?
+X-BeenThere: portablethunderbird@mozdev.org
+X-Mailman-Version: 2.1.2
+List-Id: <portablethunderbird.mozdev.org>
+List-Unsubscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=unsubscribe>
+List-Archive: <http://mozdev.org/pipermail/portablethunderbird>
+List-Post: <mailto:portablethunderbird@mozdev.org>
+List-Help: <mailto:portablethunderbird-request@mozdev.org?subject=help>
+List-Subscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=subscribe>
+X-List-Received-Date: Thu, 03 Mar 2005 10:22:54 -0000
+
+Hello,
+
+I'm trying to install Thunderbird for Windows and Linux on my USB Stick and share my profile between them.
+As it seems not to be possible to use the same profile folder for both Linux and Windows (as there are system specific components in it) it is necessary to have two profile folders and to create symbolic links for the mail folder, the address book and so on.
+The problem is: with Linux it is not possible to create symbolic links as the USB Stick uses the VFAT file system; Windows links can be created but Thunderbird does not except them (i.e. no mails appear in Thunderbird).
+Is there any possibility to circumvent these problems?
+
+Regards
+Carsten Scharfenberg
+
+__________________________________________________________
+Mit WEB.DE FreePhone mit hoechster Qualitaet ab 0 Ct./Min.
+weltweit telefonieren! http://freephone.web.de/?mc=021201
+
+
+From nobody Thu Mar  3 13:45:46 2005
+Received: (qmail 96703 invoked from network); 3 Mar 2005 18:44:41 -0000
+Received: from gw3.webcontrolcenter.com (216.119.106.45)
+	by mozdev.org with SMTP; 3 Mar 2005 18:44:41 -0000
+Received: from mail8.webcontrolcenter.com [216.119.106.141] by
+	GW3.webcontrolcenter.com with SMTP; Thu, 3 Mar 2005 11:38:40 -0700
+Received: from user-0cdf4eg.cable.mindspring.com [24.215.145.208] by
+	mail8.webcontrolcenter.com with SMTP; Thu, 3 Mar 2005 11:38:20 -0700
+Message-ID: <422759D1.1080907@johnhaller.com>
+Date: Thu, 03 Mar 2005 13:39:13 -0500
+From: "John T. Haller" <mozdev@johnhaller.com>
+User-Agent: Mozilla Thunderbird 1.0 (Windows/20041206)
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: Carsten Scharfenberg <cathune_public@web.de>
+Subject: Re: [Portablethunderbird] How to share mails between Linux and Windows
+	on USB-Stick?
+References: <191900938@web.de>
+In-Reply-To: <191900938@web.de>
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+Cc: portablethunderbird@mozdev.org
+X-BeenThere: portablethunderbird@mozdev.org
+X-Mailman-Version: 2.1.2
+Precedence: list
+List-Id: <portablethunderbird.mozdev.org>
+List-Unsubscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=unsubscribe>
+List-Archive: <http://mozdev.org/pipermail/portablethunderbird>
+List-Post: <mailto:portablethunderbird@mozdev.org>
+List-Help: <mailto:portablethunderbird-request@mozdev.org?subject=help>
+List-Subscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=subscribe>
+X-List-Received-Date: Thu, 03 Mar 2005 18:44:42 -0000
+
+Carsten Scharfenberg wrote:
+
+> I'm trying to install Thunderbird for Windows and Linux on my USB
+> Stick and share my profile between them. As it seems not to be
+> possible to use the same profile folder for both Linux and Windows
+> (as there are system specific components in it) it is necessary to
+> have two profile folders and to create symbolic links for the mail
+> folder, the address book and so on. The problem is: with Linux it is
+> not possible to create symbolic links as the USB Stick uses the VFAT
+> file system; Windows links can be created but Thunderbird does not
+> except them (i.e. no mails appear in Thunderbird). Is there any
+> possibility to circumvent these problems?
+
+Carsten,
+
+You will need to manually (or automatically) copy specific files between 
+the 2 profiles.  I'm pretty sure you can copy over your whole mailstore 
+(imapmail and mail) as well as most other files.  The issues arise in 
+the prefs.js when it references local file paths as Windows and Linux 
+treat these differently.
+
+Regards,
+John
+
+-- 
+John T. Haller
+
+Personal Site: http://johnhaller.com/
+Web Development: http://rareideas.com/
+
+
+
+From nobody Fri Apr  1 08:00:40 2005
+Received: (qmail 20413 invoked from network); 1 Apr 2005 12:59:57 -0000
+Received: from web52310.mail.yahoo.com (206.190.39.105)
+	by mozdev.org with SMTP; 1 Apr 2005 12:59:57 -0000
+Received: (qmail 85892 invoked by uid 60001); 1 Apr 2005 12:53:36 -0000
+Message-ID: <20050401125336.85890.qmail@web52310.mail.yahoo.com>
+Received: from [193.119.175.147] by web52310.mail.yahoo.com via HTTP;
+	Fri, 01 Apr 2005 13:53:36 BST
+Date: Fri, 1 Apr 2005 13:53:36 +0100 (BST)
+From: <bandwidthnz-mozilla@yahoo.co.nz>
+To: portablethunderbird@mozdev.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+Content-Transfer-Encoding: 8bit
+Subject: [Portablethunderbird] Portable and regular Thunderbird interactions
+	with different accounts
+X-BeenThere: portablethunderbird@mozdev.org
+X-Mailman-Version: 2.1.2
+Precedence: list
+Reply-To: bandwidthnz-mozilla@yahoo.co.nz
+List-Id: <portablethunderbird.mozdev.org>
+List-Unsubscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=unsubscribe>
+List-Archive: <http://mozdev.org/pipermail/portablethunderbird>
+List-Post: <mailto:portablethunderbird@mozdev.org>
+List-Help: <mailto:portablethunderbird-request@mozdev.org?subject=help>
+List-Subscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=subscribe>
+X-List-Received-Date: Fri, 01 Apr 2005 12:59:57 -0000
+
+Hi,
+
+Bloody good idea, this.  Thanks Jeff :) !
+
+I want to install portable Thunderbird on a USB stick for my personal
+email, but since I'll often access this from my work PC - which also
+uses Thunderbird, I'd like to check if there are any precautions I need
+to take to prevent one or other mail store getting corrupted.
+
+1) Will portable Thunderbird access registry settings, files, or
+anything else from my normal installation?
+
+2) Can I run a "normal" and portable Thunderbird session at the same
+time?  (e.g. double-click Thunderbird on my desktop, then plug in USB
+stick and double-click Thunderbird.exe there).
+
+Thanks very much,
+
+Mark.
+
+From nobody Fri Apr  1 12:50:51 2005
+Received: (qmail 65287 invoked from network); 1 Apr 2005 17:50:13 -0000
+Received: from gw2.webcontrolcenter.com (216.119.106.40)
+	by mozdev.org with SMTP; 1 Apr 2005 17:50:13 -0000
+Received: from mail8.webcontrolcenter.com [216.119.106.141] by
+	GW2.webcontrolcenter.com with SMTP; Fri, 1 Apr 2005 10:42:11 -0700
+Received: from user-0cdf4eg.cable.mindspring.com [24.215.145.208] by
+	mail8.webcontrolcenter.com with SMTP; Fri, 1 Apr 2005 10:41:58 -0700
+Message-ID: <424D8825.5030500@johnhaller.com>
+Date: Fri, 01 Apr 2005 12:43:01 -0500
+From: "John T. Haller" <mozdev@johnhaller.com>
+User-Agent: Mozilla Thunderbird 1.0.2 (Windows/20050317)
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: bandwidthnz-mozilla@yahoo.co.nz
+Subject: Re: [Portablethunderbird] Portable and regular Thunderbird
+	interactions with different accounts
+References: <20050401125336.85890.qmail@web52310.mail.yahoo.com>
+In-Reply-To: <20050401125336.85890.qmail@web52310.mail.yahoo.com>
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+Cc: portablethunderbird@mozdev.org
+X-BeenThere: portablethunderbird@mozdev.org
+X-Mailman-Version: 2.1.2
+Precedence: list
+List-Id: <portablethunderbird.mozdev.org>
+List-Unsubscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=unsubscribe>
+List-Archive: <http://mozdev.org/pipermail/portablethunderbird>
+List-Post: <mailto:portablethunderbird@mozdev.org>
+List-Help: <mailto:portablethunderbird-request@mozdev.org?subject=help>
+List-Subscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=subscribe>
+X-List-Received-Date: Fri, 01 Apr 2005 17:50:13 -0000
+
+bandwidthnz-mozilla@yahoo.co.nz wrote:
+
+> Bloody good idea, this.  Thanks Jeff :) !
+> 
+> I want to install portable Thunderbird on a USB stick for my personal
+> email, but since I'll often access this from my work PC - which also
+> uses Thunderbird, I'd like to check if there are any precautions I need
+> to take to prevent one or other mail store getting corrupted.
+> 
+> 1) Will portable Thunderbird access registry settings, files, or
+> anything else from my normal installation?
+> 
+> 2) Can I run a "normal" and portable Thunderbird session at the same
+> time?  (e.g. double-click Thunderbird on my desktop, then plug in USB
+> stick and double-click Thunderbird.exe there).
+> 
+> Thanks very much,
+
+Mark,
+
+Everything with portable thunderbird is self-contained with the 
+exception of the single file and directoy it generates locally listed in 
+known issues.
+
+You can't run both at the same time right now, but with the 1.0.2 
+release next week that gets the snazzy new launcher you can.
+
+Regards,
+John
+
+-- 
+John T. Haller
+
+Personal Site: http://johnhaller.com/
+Web Development: http://rareideas.com/
+
+
+
+From nobody Fri Apr 29 14:24:34 2005
+Received: (qmail 24573 invoked from network); 29 Apr 2005 18:24:00 -0000
+Received: from rwcrmhc11.comcast.net (204.127.198.35)
+	by mozdev.org with SMTP; 29 Apr 2005 18:24:00 -0000
+Received: from comcast.net (crow.cer.jhu.edu[128.220.212.23])
+	by comcast.net (rwcrmhc11) with ESMTP
+	id <2005042918162701300gehphe>; Fri, 29 Apr 2005 18:16:27 +0000
+Message-ID: <42727A73.800@comcast.net>
+Date: Fri, 29 Apr 2005 14:18:27 -0400
+From: Mark Cyzyk <mcyzyk@comcast.net>
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US;
+	rv:1.6) Gecko/20040113
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: portablethunderbird@mozdev.org
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Subject: [Portablethunderbird] Last 3 days...
+X-BeenThere: portablethunderbird@mozdev.org
+X-Mailman-Version: 2.1.2
+Precedence: list
+List-Id: <portablethunderbird.mozdev.org>
+List-Unsubscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=unsubscribe>
+List-Archive: <http://mozdev.org/pipermail/portablethunderbird>
+List-Post: <mailto:portablethunderbird@mozdev.org>
+List-Help: <mailto:portablethunderbird-request@mozdev.org?subject=help>
+List-Subscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=subscribe>
+X-List-Received-Date: Fri, 29 Apr 2005 18:24:01 -0000
+
+All,
+
+Does Portable Thunderbird, or an extension of it, allow one to limit download of either headers or full messages for "Last 3 days" or some other temporal limit like Pocket Outlook and some others do?  I have a lot of email stored up on the server and I can't open it up because PT tells me it's too much for my 128 MB drive.  I really only ever want to download the last three days or so of email to my drive using Portable Thunderbird.
+
+Mark Cyzyk
+
+
+
+
+From nobody Fri Apr 29 14:32:57 2005
+Received: (qmail 25519 invoked from network); 29 Apr 2005 18:32:06 -0000
+Received: from unknown (HELO GW5.webcontrolcenter.com) (216.119.106.186)
+	by mozdev.org with SMTP; 29 Apr 2005 18:32:06 -0000
+Received: from MAIL31 [216.119.106.158] by GW5.webcontrolcenter.com with SMTP; 
+	Fri, 29 Apr 2005 11:22:49 -0700
+Received: from user-0cdf4eg.cable.mindspring.com [24.215.145.208] by
+	MAIL31.CRYSTALTECH.COM with SMTP; Fri, 29 Apr 2005 11:22:24 -0700
+Message-ID: <42727BAB.60102@johnhaller.com>
+Date: Fri, 29 Apr 2005 14:23:39 -0400
+From: "John T. Haller" <mozdev@johnhaller.com>
+User-Agent: Mozilla Thunderbird 1.0.2 (Windows/20050317)
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: Mark Cyzyk <mcyzyk@comcast.net>
+Subject: Re: [Portablethunderbird] Last 3 days...
+References: <42727A73.800@comcast.net>
+In-Reply-To: <42727A73.800@comcast.net>
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+Cc: portablethunderbird@mozdev.org
+X-BeenThere: portablethunderbird@mozdev.org
+X-Mailman-Version: 2.1.2
+Precedence: list
+List-Id: <portablethunderbird.mozdev.org>
+List-Unsubscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=unsubscribe>
+List-Archive: <http://mozdev.org/pipermail/portablethunderbird>
+List-Post: <mailto:portablethunderbird@mozdev.org>
+List-Help: <mailto:portablethunderbird-request@mozdev.org?subject=help>
+List-Subscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=subscribe>
+X-List-Received-Date: Fri, 29 Apr 2005 18:32:11 -0000
+
+Mark Cyzyk wrote:
+
+> Does Portable Thunderbird, or an extension of it, allow one to limit 
+> download of either headers or full messages for "Last 3 days" or some 
+> other temporal limit like Pocket Outlook and some others do?  I have a 
+> lot of email stored up on the server and I can't open it up because PT 
+> tells me it's too much for my 128 MB drive.  I really only ever want to 
+> download the last three days or so of email to my drive using Portable 
+> Thunderbird.
+
+Mark,
+
+Thunderbird can only do headers-only or full messages.  It can't just 
+take a specific timeframe, I believe.  How to do this is explained on 
+the project page.
+
+If your inbox is that large, I would suggest moving some messages to 
+other folders on the server.  If you are using POP, you'd only be seeing 
+the active messages in your inbox.  If you are using IMAP, you can 
+selectively subscribe to the inbox folder but not your archive folders.
+
+In short, the answer is to cut down your inbox as a workaround.
+
+Regards,
+John
+
+-- 
+John T. Haller
+
+Personal Site: http://johnhaller.com/
+Web Development: http://rareideas.com/
+
+
+
+From nobody Sat Apr 30 09:32:46 2005
+Received: (qmail 57945 invoked from network); 29 Apr 2005 22:25:56 -0000
+Received: from rwcrmhc11.comcast.net (204.127.198.35)
+	by mozdev.org with SMTP; 29 Apr 2005 22:25:56 -0000
+Received: from [10.7.0.14] (unknown[12.147.71.60])
+	by comcast.net (rwcrmhc11) with ESMTP
+	id <2005042922182701300geg1re>; Fri, 29 Apr 2005 22:18:27 +0000
+Message-ID: <4272B2B4.8020807@aol.com>
+Date: Fri, 29 Apr 2005 16:18:28 -0600
+From: drbolt <drbolt@aol.com>
+User-Agent: Mozilla Thunderbird 1.0 (Windows/20041206)
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: portablethunderbird@mozdev.org
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Mailman-Approved-At: Sat, 30 Apr 2005 09:22:21 -0400
+Subject: [Portablethunderbird] [Portable Thunderbird] Can't save to send or
+	drafts folder
+X-BeenThere: portablethunderbird@mozdev.org
+X-Mailman-Version: 2.1.2
+Precedence: list
+List-Id: <portablethunderbird.mozdev.org>
+List-Unsubscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=unsubscribe>
+List-Archive: <http://mozdev.org/pipermail/portablethunderbird>
+List-Post: <mailto:portablethunderbird@mozdev.org>
+List-Help: <mailto:portablethunderbird-request@mozdev.org?subject=help>
+List-Subscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=subscribe>
+X-List-Received-Date: Fri, 29 Apr 2005 22:25:57 -0000
+
+For some reason I cannot save to the Sent Items or Draft folders.  I am 
+sending and receiving fine, but the progress dialog just seems to go on 
+forever until I cancel it.  It doesn't freeze, it just sits there with 
+the green bar going across the little box in the bottom right.
+
+From nobody Sat Apr 30 09:41:55 2005
+Received: (qmail 64887 invoked from network); 30 Apr 2005 13:41:08 -0000
+Received: from gw5.webcontrolcenter.com (216.119.106.187)
+	by mozdev.org with SMTP; 30 Apr 2005 13:41:08 -0000
+Received: from MAIL31 [216.119.106.158] by GW5.webcontrolcenter.com with SMTP; 
+	Sat, 30 Apr 2005 06:31:51 -0700
+Received: from user-0cdf4eg.cable.mindspring.com [24.215.145.208] by
+	MAIL31.CRYSTALTECH.COM with SMTP; Sat, 30 Apr 2005 06:31:42 -0700
+Message-ID: <42738907.5010805@johnhaller.com>
+Date: Sat, 30 Apr 2005 09:32:55 -0400
+From: "John T. Haller" <mozdev@johnhaller.com>
+User-Agent: Mozilla Thunderbird 1.0.2 (Windows/20050317)
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: drbolt <drbolt@aol.com>
+Subject: Re: [Portablethunderbird] [Portable Thunderbird] Can't save to send
+	or	drafts folder
+References: <4272B2B4.8020807@aol.com>
+In-Reply-To: <4272B2B4.8020807@aol.com>
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+Cc: portablethunderbird@mozdev.org
+X-BeenThere: portablethunderbird@mozdev.org
+X-Mailman-Version: 2.1.2
+Precedence: list
+List-Id: <portablethunderbird.mozdev.org>
+List-Unsubscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=unsubscribe>
+List-Archive: <http://mozdev.org/pipermail/portablethunderbird>
+List-Post: <mailto:portablethunderbird@mozdev.org>
+List-Help: <mailto:portablethunderbird-request@mozdev.org?subject=help>
+List-Subscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=subscribe>
+X-List-Received-Date: Sat, 30 Apr 2005 13:41:08 -0000
+
+drbolt wrote:
+> For some reason I cannot save to the Sent Items or Draft folders.  I am 
+> sending and receiving fine, but the progress dialog just seems to go on 
+> forever until I cancel it.  It doesn't freeze, it just sits there with 
+> the green bar going across the little box in the bottom right.
+
+Are you using IMAP or are you saving locally to the Local Folders?  If 
+IMAP, then it may be a server issue and I would recommend removing the 
+account from PTB and then re-adding it.  If Local, then perhaps the 
+folder is corrupt.  You can delete it from your profile (not from within 
+PTB) manually and PTB will recreate it.  Are you using the included 
+profile or a local one that you moved into it?  Local profiles are 
+currently incompatible and may cause issues like this.
+
+Regards,
+John
+
+-- 
+John T. Haller
+
+Personal Site: http://johnhaller.com/
+Web Development: http://rareideas.com/
+
+
+
+From nobody Thu Jul 21 01:15:19 2005
+Received: (qmail 41667 invoked from network); 21 Jul 2005 05:14:36 -0000
+Received: from gw5.webcontrolcenter.com (216.119.106.187)
+	by mozdev.org with SMTP; 21 Jul 2005 05:14:36 -0000
+Received: from MAIL31 [216.119.106.158] by GW5.webcontrolcenter.com with SMTP; 
+	Wed, 20 Jul 2005 22:13:26 -0700
+Received: from user-0cdf4eg.cable.mindspring.com [24.215.145.208] by
+	mail31.webcontrolcenter.com with SMTP; 
+	Wed, 20 Jul 2005 22:13:11 -0700
+Message-ID: <42DF2F03.4090500@johnhaller.com>
+Date: Thu, 21 Jul 2005 01:13:39 -0400
+From: "John T. Haller" <mozdev@johnhaller.com>
+User-Agent: Mozilla Thunderbird 1.0.6 (Windows/20050716)
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: portablethunderbird@mozdev.org
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+Subject: [Portablethunderbird] Portable Thunderbird 1.0.6 Released
+X-BeenThere: portablethunderbird@mozdev.org
+X-Mailman-Version: 2.1.2
+Precedence: list
+List-Id: <portablethunderbird.mozdev.org>
+List-Unsubscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=unsubscribe>
+List-Archive: <http://mozdev.org/pipermail/portablethunderbird>
+List-Post: <mailto:portablethunderbird@mozdev.org>
+List-Help: <mailto:portablethunderbird-request@mozdev.org?subject=help>
+List-Subscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=subscribe>
+X-List-Received-Date: Thu, 21 Jul 2005 05:14:36 -0000
+
+Portable Thunderbird 1.0.6 Beta has been released. For the unfamiliar, 
+Portable Thunderbird is a fully-functional package of Thunderbird 
+designed for removable media, allowing you to carry Thunderbird around 
+with you on a removable drive (USB thumbdrive, portable hard drive, 
+iPod, etc). This new release uses Thunderbird 1.0.6 as its base and now 
+includes support for the Mozilla Calendar extension as well as split 
+directory structures (seperate Apps and Data) as detailed in the readme.txt.
+
+Download Portable Thunderbird 1.0.6 Beta:
+http://johnhaller.com/jh/mozilla/portable_thunderbird/
+
+The Portable Thunderbird Launcher 1.1.0 is also available:
+http://johnhaller.com/jh/mozilla/portable_thunderbird/#launcher
+
+Any comments or questions can be posted to this thread:
+http://forums.mozillazine.org/viewtopic.php?p=1618892
+
+Regards,
+John
+
+
+
+From nobody Wed Mar 15 02:19:06 2006
+Received: (qmail 5204 invoked from network); 15 Mar 2006 07:18:31 -0000
+Received: from mt4.pchome.com.tw (211.20.188.214)
+	by mozdev.org with SMTP; 15 Mar 2006 07:18:31 -0000
+Received: from mt3.pchome.com.tw (mt3.pchome.com.tw [211.20.188.213])
+	by mt4.pchome.com.tw (Postfix) with ESMTP id 9C4EF451D7
+	for <portablethunderbird@mozdev.org>;
+	Tue, 14 Mar 2006 19:01:29 +0800 (CST)
+Received: from localhost (localhost [127.0.0.1])
+	by mt3.pchome.com.tw (Postfix) with ESMTP id 0C56B45038
+	for <portablethunderbird@mozdev.org>;
+	Tue, 14 Mar 2006 19:01:27 +0800 (CST)
+Received: from mt3.pchome.com.tw ([127.0.0.1])
+	by localhost (mt3.pchome.com.tw [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id 23545-09 for <portablethunderbird@mozdev.org>;
+	Tue, 14 Mar 2006 19:01:26 +0800 (CST)
+Received: from mxx1.pchome.com.tw (mxx1.pchome.com.tw [211.20.188.171])
+	by mt3.pchome.com.tw (Postfix) with SMTP id 2B56645037
+	for <portablethunderbird@mozdev.org>;
+	Tue, 14 Mar 2006 19:01:26 +0800 (CST)
+From: "2smallhead" <2smallhead@pchome.com.tw>
+To: portablethunderbird@mozdev.org
+Date: Tue, 14 Mar 2006 19:01:26 +0800 (CST)
+X-PCHOME-Received: from 61.220.211.138 by mxx1.pchome.com.tw
+MIME-Version: 1.0
+Content-Type: text/plain; charset="big5"
+Content-Transfer-Encoding: 8bit
+Message-Id: <20060314110126.2B56645037@mt3.pchome.com.tw>
+X-Virus-Scanned: amavisd-new at pchome.com.tw
+Subject: [Portablethunderbird] how to get Portablethunderbird source code
+X-BeenThere: portablethunderbird@mozdev.org
+X-Mailman-Version: 2.1.2
+Precedence: list
+List-Id: <portablethunderbird.mozdev.org>
+List-Unsubscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=unsubscribe>
+List-Archive: <http://mozdev.org/pipermail/portablethunderbird>
+List-Post: <mailto:portablethunderbird@mozdev.org>
+List-Help: <mailto:portablethunderbird-request@mozdev.org?subject=help>
+List-Subscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=subscribe>
+X-List-Received-Date: Wed, 15 Mar 2006 07:18:33 -0000
+
+Hello All
+
+      Hi, my name is Golden . I am interesting in the project of 
+Portablethunderbird . I want to trace Portablethunderbird source 
+code, I follow the way to download source code but the cvs 
+portablethunderbird/src directory is empty. How can I do for downloading
+the Portablethunderbird source code??
+
+                                                             Golden
+==========================================================
+ 免費3月職訓：限50名
+ http://edm-prg.epaper.com.tw/click.php?ad_code=1077237
+==========================================================
+ SkypeOut 打美加0.7元/分  打大陸0.9元/分  立即購買>>
+ http://skype.pchome.com.tw/skypeout.htm
+==========================================================
+
+
+
+
+From nobody Wed Mar 15 02:42:13 2006
+Received: (qmail 7948 invoked from network); 15 Mar 2006 07:41:40 -0000
+Received: from gw8.webcontrolcenter.com (63.134.207.37)
+	by mozdev.org with SMTP; 15 Mar 2006 07:41:40 -0000
+Received: from mail31.webcontrolcenter.com [216.119.106.158] by
+	gw8.webcontrolcenter.com with SMTP; Wed, 15 Mar 2006 00:40:52 -0700
+Received: from user-12ldttv.cable.mindspring.com [69.86.247.191] by
+	mail31.webcontrolcenter.com with SMTP; 
+	Wed, 15 Mar 2006 00:40:17 -0700
+Message-ID: <4417C4DA.30800@johnhaller.com>
+Date: Wed, 15 Mar 2006 02:40:10 -0500
+From: "John T. Haller" <mozdev@johnhaller.com>
+User-Agent: Thunderbird 1.5 (Windows/20051201)
+MIME-Version: 1.0
+To: 2smallhead <2smallhead@pchome.com.tw>
+Subject: Re: [Portablethunderbird] how to get Portablethunderbird source code
+References: <20060314110126.2B56645037@mt3.pchome.com.tw>
+In-Reply-To: <20060314110126.2B56645037@mt3.pchome.com.tw>
+Content-Type: text/plain; charset=Big5
+Content-Transfer-Encoding: 7bit
+Cc: portablethunderbird@mozdev.org
+X-BeenThere: portablethunderbird@mozdev.org
+X-Mailman-Version: 2.1.2
+Precedence: list
+List-Id: <portablethunderbird.mozdev.org>
+List-Unsubscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=unsubscribe>
+List-Archive: <http://mozdev.org/pipermail/portablethunderbird>
+List-Post: <mailto:portablethunderbird@mozdev.org>
+List-Help: <mailto:portablethunderbird-request@mozdev.org?subject=help>
+List-Subscribe: <http://mozdev.org/mailman/listinfo/portablethunderbird>,
+	<mailto:portablethunderbird-request@mozdev.org?subject=subscribe>
+X-List-Received-Date: Wed, 15 Mar 2006 07:41:41 -0000
+
+2smallhead wrote:
+> Hello All
+> 
+>       Hi, my name is Golden . I am interesting in the project of 
+> Portablethunderbird . I want to trace Portablethunderbird source 
+> code, I follow the way to download source code but the cvs 
+> portablethunderbird/src directory is empty. How can I do for downloading
+> the Portablethunderbird source code??
+
+The code for the launcher is included with PTB in the
+PortableThunderbirdCode directory.  You can also download just the
+launcher and code from the Source Forge project page:
+https://sourceforge.net/projects/portabletbird/
+
+Regards,
+John
+
+
+

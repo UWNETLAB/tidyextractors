@@ -12,7 +12,7 @@ __pycache__/
 .idea/
 
 # Project Files
-tidyextractors/test_data/
+tests/test_data/
 
 # Distribution / packaging
 .Python
