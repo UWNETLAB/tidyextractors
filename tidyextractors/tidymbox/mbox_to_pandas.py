@@ -79,9 +79,13 @@ def clean_address(address):
                 clean_email = address
 
         return clean_email
+
+    elif address is None:
+        return None
+
     else:
         raise ValueError('An unexpected type was given to clean_address. Address was {}'.format(address))
-        return ''
+        return None
 
 
 def get_body(message):
@@ -116,7 +120,7 @@ def get_body(message):
         body = body.replace("\"", "")
         body = body.replace("\'", "")
     except:
-        body = "N/A"
+        body = None
 
     return body
 
@@ -134,8 +138,13 @@ def write_table(mboxfile, mailTable):
     m_pbar = tqdm.tqdm(range(0,len(mail_box_contents)))
     m_pbar.set_description('Extracting mbox messages...')
 
+    count = 0
+    update_interval = min(50,len(mail_box_contents))
+
     for message in mail_box_contents:
-        m_pbar.update(1)
+        count += 1
+        if count % update_interval == 0:
+            m_pbar.update(update_interval)
         clean_from = clean_address(message['From'])
         clean_to = clean_addresses(message['To'])
         clean_cc = clean_addresses(message['Cc'])
@@ -144,8 +153,6 @@ def write_table(mboxfile, mailTable):
             clean_date = email.parsedate_to_datetime(message['Date'])
         except:
             clean_date = None
-            warnings.warn('No date for message: {}'.format(str(message)))
-            print('Failed Date: {}'.format(str(message['Date'])))
 
         mailTable.append([
             clean_from,
