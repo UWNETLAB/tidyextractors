@@ -21,6 +21,7 @@ import os
 import re
 import tqdm
 import mailbox
+import warnings
 import pandas as pd
 import email.utils as email
 import email.header as header
@@ -138,11 +139,19 @@ def write_table(mboxfile, mailTable):
         clean_from = clean_address(message['From'])
         clean_to = clean_addresses(message['To'])
         clean_cc = clean_addresses(message['Cc'])
+
+        try:
+            clean_date = email.parsedate_to_datetime(message['Date'])
+        except:
+            clean_date = None
+            warnings.warn('No date for message: {}'.format(str(message)))
+            print('Failed Date: {}'.format(str(message['Date'])))
+
         mailTable.append([
             clean_from,
             clean_to,
             clean_cc,
-            email.parsedate_to_datetime(message['Date']),
+            clean_date,
             message['Subject'],
             get_body(message)
             ])
