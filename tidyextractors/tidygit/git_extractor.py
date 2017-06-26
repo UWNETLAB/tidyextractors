@@ -7,7 +7,7 @@ class GitExtractor(BaseExtractor):
     def _extract(self, source, *args, **kwargs):
         """
         Extracts data from a local git repository. Mutates _data.
-        :param source: A string specifying a path to a local git repository.
+        :param str source: The path to a local git repository.
         :param args: Arbitrary arguments for extensibility.
         :param kwargs: Arbitrary keyword arguments for extensibility.
         :return: None

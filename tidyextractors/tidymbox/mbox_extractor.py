@@ -9,7 +9,7 @@ class MboxExtractor(BaseExtractor):
         """
         Extracts data from mbox files. Mutates _data.
 
-        :param source: A string specifying a path to one or more mbox files.
+        :param str source: THe path to one or more mbox files.
         :param args: Arbitrary arguments for extensibility.
         :param kwargs: Arbitrary keyword arguments for extensibility.
         :return: None

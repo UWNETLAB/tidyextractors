@@ -3,8 +3,8 @@ import re
 import tqdm
 import mailbox
 import pandas as pd
-import email.header as header
 import email.utils as email
+import email.header as header
 
 # Adapted from Phil Deutsch's "mbox-analysis" https://github.com/phildeutsch/mbox-analysis
 

@@ -17,7 +17,7 @@ class TwitterExtractor(BaseExtractor):
         NOTE: TwitterExtractor requires a complete set of Twitter API credentials
         to initialize: 'access_token', 'access_secret', 'consumer_key', and 'consumer_secret'.
 
-        :param source: A list of user screen names.
+        :param list source: A list of user screen name strings.
         :param args: Arbitrary arguments for extensibility.
         :param kwargs: Arbitrary keyword arguments for extensibility.
         :return: None
@@ -114,7 +114,7 @@ class TwitterExtractor(BaseExtractor):
         Process an object using twitter_object_handlers_lookup.
         Doesn't currently do anything (as of 2017-06-16).
 
-        :param name: String
+        :param str name: Object name
         :param obj: An object to be processed
         :return: A dictionary of attributes
         """
