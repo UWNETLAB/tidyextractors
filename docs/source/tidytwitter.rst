@@ -5,4 +5,4 @@
     :members:
 
 .. autoclass:: TwitterExtractor
-    :members: users, tweets, raw, get_tidy
+    :members: users, tweets, raw

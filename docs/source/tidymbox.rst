@@ -5,7 +5,7 @@
     :members:
 
 .. autoclass:: MboxExtractor
-    :members: emails, sends, raw, get_tidy
+    :members: emails, sends, raw
 
 .. note::
 

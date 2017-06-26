@@ -5,4 +5,4 @@
     :members:
 
 .. autoclass:: GitExtractor
-    :members: commits, changes, raw, get_tidy
+    :members: commits, changes, raw
