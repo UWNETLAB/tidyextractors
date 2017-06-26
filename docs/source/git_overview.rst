@@ -14,11 +14,11 @@ A Minimal Code Example
   # Extract data from a local Git repo
   gx = GitExtractor('./your/repo/dir/')
 
-  # Commit data in a Pandas DataFrame
-  commits_df = gx.get_tidy('commits')
+  # Commit data in a Pandas DataFrame.
+  commits_df = gx.commits(drop_collections=True)
 
   # Commit/file keyed change data in a Pandas DataFrame
-  changes_df = gx.get_tidy('changes')
+  changes_df = gx.changes()
 
 Step 1: Prepare Your Git Repo
 ----------------------------------
@@ -41,35 +41,15 @@ You may need to wait while the data is being extracted, but all the data is now 
 Step 3: Get Pandas Data
 --------------------------
 
-You can now use the ``get_tidy`` method to get a Pandas ``DataFrame`` in the tidy format of your choice.
+Now, you can call a ``GitExtractor`` method to return data in a Pandas DataFrame.
 
-.. code-block:: python
+.. note::
 
-  commits_df = gx.get_tidy('commits')
-
-  changes_df = gx.get_tidy('changes')
-
-A slightly my flexible option is to call the ``MboxExtractor`` output methods directly. This is useful if you want to include collections in the cells of your DataFrame (e.g. lists or dictionaries), which are dropped when using ``get_tidy`` because tidy data must have only atomic values.
+    ``GitExtractor.commits()`` drops columns with collections of data in cells (i.e. ``list``, ``set``, and ``dicts``) because "tidy data" requires only atomic values in cells.
+    If you don't want data dropped, change the ``drop_collections`` argument to false.
 
 .. code-block:: python
 
   commits_df = gx.commits()
 
   changes_df = gx.changes()
-
-``get_tidy`` Options and Aliases
-----------------------------------
-
-As shown above, there are two format options for ``GitExtractor.get_tidy``. Each of these options  also use a short alias:
-
-+---------+-------------+----------------------------------+
-| Lookup  | Method Used | Example Usage                    |
-+=========+=============+==================================+
-| commits | commits     | GitExtractor.get_tidy('commits') |
-+---------+-------------+----------------------------------+
-| changes | changes     | GitExtractor.get_tidy('changes') |
-+---------+-------------+----------------------------------+
-| cm      | commits     | GitExtractor.get_tidy('cm')      |
-+---------+-------------+----------------------------------+
-| ch      | changes     | GitExtractor.get_tidy('ch')      |
-+---------+-------------+----------------------------------+

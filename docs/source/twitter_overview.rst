@@ -25,10 +25,10 @@ A Minimal Code Example
   tx = TwitterExtractor(users, extract_tweets=True, **credentials)
 
   # Twitter user profile data in a Pandas DataFrame
-  user_df = tx.get_tidy('users')
+  user_df = tx.users(drop_collections=True)
 
   # User/tweet keyed Pandas DataFrame
-  tweet_df = tx.get_tidy('tweets')
+  tweet_df = tx.tweets()
 
 Step 1: Get API Credentials
 ---------------------------
@@ -80,15 +80,13 @@ You may need to wait while the data is being extracted, but all the data is now 
 Step 3: Get Pandas Data
 -----------------------
 
-You can now use the ``get_tidy`` method to get a Pandas ``DataFrame`` in the tidy format of your choice.
+Now, you can call a ``TwitterExtractor`` method to return data in a Pandas DataFrame.
 
-.. code-block:: python
 
-  user_df = tx.get_tidy('users')
+.. note::
 
-  tweet_df = tx.get_tidy('tweets')
-
-A slightly more flexible option is to call the ``TwitterExtractor`` output methods directly. This is useful if you want to include collections in the cells of your DataFrame (e.g. lists or dictionaries), which are dropped when using ``get_tidy`` because tidy data must have only atomic values.
+    ``TwitterExtractor.users()`` drops columns with collections of data in cells (i.e. ``list``, ``set``, and ``dicts``) because "tidy data" requires only atomic values in cells.
+    If you don't want data dropped, change the ``drop_collections`` argument to false.
 
 .. code-block:: python
 
@@ -96,19 +94,3 @@ A slightly more flexible option is to call the ``TwitterExtractor`` output metho
 
   tweet_df = tx.tweets()
 
-``get_tidy`` Options and Aliases
---------------------------------
-
-As shown above, there are two format options for ``TwitterExtractor.get_tidy``. Each of these options may also use a short alias:
-
-+--------+-------------+-------------------------------------+
-| Lookup | Method Used | Example Usage                       |
-+========+=============+=====================================+
-| users  | users       | TwitterExtractor.get_tidy('users')  |
-+--------+-------------+-------------------------------------+
-| tweets | tweets      | TwitterExtractor.get_tidy('tweets') |
-+--------+-------------+-------------------------------------+
-| u      | users       | TwitterExtractor.get_tidy('u')      |
-+--------+-------------+-------------------------------------+
-| t      | tweets      | TwitterExtractor.get_tidy('t')      |
-+--------+-------------+-------------------------------------+

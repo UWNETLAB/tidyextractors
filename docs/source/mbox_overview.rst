@@ -15,10 +15,10 @@ A Minimal Code Example
   mx = MboxExtractor('./your/mbox/dir/')
 
   # Email messages in a Pandas DataFrame.
-  email_df = mx.get_tidy('emails')
+  email_df = mx.emails(drop_collections=True)
 
   # MessageID/receiver keyed Pandas DataFrame.
-  sends_df = mx.get_tidy('sends')
+  sends_df = mx.sends()
 
 Step 1: Prepare Your Mbox Files
 ----------------------------------
@@ -52,15 +52,12 @@ You may need to wait while the data is being extracted, but all the data is now 
 Step 3: Get Pandas Data
 --------------------------
 
-You can now use the ``get_tidy`` method to get a Pandas ``DataFrame`` in the tidy format of your choice.
+Now, you can call an ``MboxExtractor`` method to return data in a Pandas DataFrame.
 
-.. code-block:: python
+.. note::
 
-  email_df = mx.get_tidy('emails')
-
-  sends_df = mx.get_tidy('sends')
-
-A slightly more flexible option is to call the ``MboxExtractor`` output methods directly. This is useful if you want to include collections in the cells of your DataFrame (e.g. lists or dictionaries), which are dropped when using ``get_tidy`` because tidy data must have only atomic values.
+    ``MboxExtractor.emails()`` drops columns with collections of data in cells (i.e. ``list``, ``set``, and ``dicts``) because "tidy data" requires only atomic values in cells.
+    If you don't want data dropped, change the ``drop_collections`` argument to false.
 
 .. code-block:: python
 
@@ -68,22 +65,6 @@ A slightly more flexible option is to call the ``MboxExtractor`` output methods 
 
   sends_df = mx.sends()
 
-``get_tidy`` Options and Aliases
-----------------------------------
-
-As shown above, there are two format options for ``MboxExtractor.get_tidy``. Each of these options may also use a short alias:
-
-+--------+-------------+----------------------------------+
-| Lookup | Method Used | Example Usage                    |
-+========+=============+==================================+
-| emails | emails      | MboxExtractor.get_tidy('emails') |
-+--------+-------------+----------------------------------+
-| sends  | sends       | MboxExtractor.get_tidy('sends')  |
-+--------+-------------+----------------------------------+
-| e      | emails      | MboxExtractor.get_tidy('e')      |
-+--------+-------------+----------------------------------+
-| s      | sends       | MboxExtractor.get_tidy('s')      |
-+--------+-------------+----------------------------------+
 
 .. note::
 

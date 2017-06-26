@@ -10,4 +10,3 @@ Contributing a new extractor is relatively simple. Broadly speaking, you need to
 
 * Define a ``NewExtractor._extract`` method, which should extract data and assign it to ``NewExtractor._data``. This method will be called by ``BaseExtractor.__init__`` during initialization.
 * Create a method to return each data format (e.g. ``commits``, ``changes``).
-* Define a ``NewExtractor.__sub_init__`` method, which should add these methods (and a short alias) to the ``get_tidy`` lookup table using the ``_add_lookup`` method. This method will be called by ``BaseExtractor.__init__`` during initialization.
