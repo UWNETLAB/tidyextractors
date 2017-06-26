@@ -43,13 +43,15 @@ Step 3: Get Pandas Data
 
 Now, you can call a ``GitExtractor`` method to return data in a Pandas DataFrame.
 
+.. code-block:: python
+
+  # Commit data in a Pandas DataFrame.
+  commits_df = gx.commits(drop_collections=True)
+
+  # Commit/file keyed change data in a Pandas DataFrame
+  changes_df = gx.changes()
+
 .. note::
 
     ``GitExtractor.commits()`` drops columns with collections of data in cells (i.e. ``list``, ``set``, and ``dicts``) because "tidy data" requires only atomic values in cells.
     If you don't want data dropped, change the ``drop_collections`` argument to false.
-
-.. code-block:: python
-
-  commits_df = gx.commits()
-
-  changes_df = gx.changes()

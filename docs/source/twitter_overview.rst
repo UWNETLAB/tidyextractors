@@ -82,15 +82,16 @@ Step 3: Get Pandas Data
 
 Now, you can call a ``TwitterExtractor`` method to return data in a Pandas DataFrame.
 
+.. code-block:: python
+
+  # Twitter user profile data in a Pandas DataFrame
+  user_df = tx.users(drop_collections=True)
+
+  # User/tweet keyed Pandas DataFrame
+  tweet_df = tx.tweets()
 
 .. note::
 
     ``TwitterExtractor.users()`` drops columns with collections of data in cells (i.e. ``list``, ``set``, and ``dicts``) because "tidy data" requires only atomic values in cells.
     If you don't want data dropped, change the ``drop_collections`` argument to false.
-
-.. code-block:: python
-
-  user_df = tx.users()
-
-  tweet_df = tx.tweets()
 

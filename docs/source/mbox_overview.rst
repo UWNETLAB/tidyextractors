@@ -54,17 +54,18 @@ Step 3: Get Pandas Data
 
 Now, you can call an ``MboxExtractor`` method to return data in a Pandas DataFrame.
 
+.. code-block:: python
+
+  # Email messages in a Pandas DataFrame.
+  email_df = mx.emails(drop_collections=True)
+
+  # MessageID/receiver keyed Pandas DataFrame.
+  sends_df = mx.sends()
+
 .. note::
 
     ``MboxExtractor.emails()`` drops columns with collections of data in cells (i.e. ``list``, ``set``, and ``dicts``) because "tidy data" requires only atomic values in cells.
     If you don't want data dropped, change the ``drop_collections`` argument to false.
-
-.. code-block:: python
-
-  email_df = mx.emails()
-
-  sends_df = mx.sends()
-
 
 .. note::
 
