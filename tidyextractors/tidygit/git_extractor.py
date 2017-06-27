@@ -29,6 +29,7 @@ class GitExtractor(BaseExtractor):
         :param str source: The path to a local git repository.
         :param args: Arbitrary arguments for extensibility.
         :param kwargs: Arbitrary keyword arguments for extensibility.
+
         :return: None
         """
         # Extract git test_data
@@ -40,6 +41,8 @@ class GitExtractor(BaseExtractor):
     def commits(self, drop_collections=True):
         """
         Returns a table of git log data, with "commits" as rows/observations.
+
+        :param bool drop_collections: Indicates whether columns with lists/dicts/sets will be dropped?
 
         :return: pandas.DataFrame
         """

@@ -65,7 +65,7 @@ Now, you can call an ``MboxExtractor`` method to return data in a Pandas DataFra
 .. note::
 
     ``MboxExtractor.emails()`` drops columns with collections of data in cells (i.e. ``list``, ``set``, and ``dicts``) because "tidy data" requires only atomic values in cells.
-    If you don't want data dropped, change the ``drop_collections`` argument to false.
+    If you don't want data dropped, change the optional ``drop_collections`` argument to false.
 
 .. note::
 

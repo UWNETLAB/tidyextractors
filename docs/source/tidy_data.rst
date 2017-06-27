@@ -1,12 +1,12 @@
 What is Tidy Data?
 ========================
 
-`Hadley Whickham's (2014) <http://vita.had.co.nz/papers/tidy-data.html>`_ introduced "tidy data" to describe data that has been cleaned and reshaped in a way that is ready for analysis. The concept of tidy data inspired ``tidyextractors``, which provides a convenient interface for extracting data in a tidy format. However, what is a tidy format?
+`Hadley Whickham (2014) <http://vita.had.co.nz/papers/tidy-data.html>`_ introduced "tidy data" to describe data that has been cleaned and reshaped in a way that is ready for analysis. The concept of tidy data inspired ``tidyextractors``, which provides a convenient interface for extracting data in a tidy format. However, what is a tidy format?
 
 Our Definition of Tidy Data
 ---------------------------------
 
-We consider data to be "tidy" if it satisfies the following contraints:
+We consider data to be "tidy" if it satisfies the following constraints:
 
 * Data values are atomic. No cell contains a collection of items (e.g. a list, set, or dictionary).
 * Each row is a single observation. This is to say that each row represents a single "entity" (e.g. such as a commit, a change to a file, or a tweet) which can be uniquely identified by a primary key (e.g. MessageID for an email, or MessageID and recipient for an email "send").
@@ -17,7 +17,7 @@ This definition intentionally allows for a certain degree of data redundancy, wh
 Choosing Output Formats
 -----------------------------------
 
-We have a few guiding principals for deciding which output format to implement for a given extractor:
+We have a few guiding principals for deciding which output formats to implement for a given extractor:
 
 * If an entity would have its own table in a normalized database, it should be available as an output format.
 * Dataset should include all variables that have meaningful information about the table's defining unit of observation, even if this data may be redundant between rows.

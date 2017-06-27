@@ -23,7 +23,7 @@ A Minimal Code Example
 Step 1: Prepare Your Git Repo
 ----------------------------------
 
-All you need to get started is the path to any local Git repository. If you want to extract data from a repository hosted on GitHub, download or clone the repository to your computer.
+All you need to get started is the path to a local Git repository. If you want to extract data from a repository hosted on GitHub, download or clone the repository to your computer.
 
 Step 2: Extract Data
 -------------------------
@@ -54,4 +54,4 @@ Now, you can call a ``GitExtractor`` method to return data in a Pandas DataFrame
 .. note::
 
     ``GitExtractor.commits()`` drops columns with collections of data in cells (i.e. ``list``, ``set``, and ``dicts``) because "tidy data" requires only atomic values in cells.
-    If you don't want data dropped, change the ``drop_collections`` argument to false.
+    If you don't want data dropped, change the optional ``drop_collections`` argument to false.

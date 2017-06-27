@@ -93,5 +93,4 @@ Now, you can call a ``TwitterExtractor`` method to return data in a Pandas DataF
 .. note::
 
     ``TwitterExtractor.users()`` drops columns with collections of data in cells (i.e. ``list``, ``set``, and ``dicts``) because "tidy data" requires only atomic values in cells.
-    If you don't want data dropped, change the ``drop_collections`` argument to false.
-
+    If you don't want data dropped, change the optional ``drop_collections`` argument to false.
