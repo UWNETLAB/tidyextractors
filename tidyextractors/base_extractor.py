@@ -128,6 +128,8 @@ class BaseExtractor(object):
         """
         Produces the extractor object's data as it is stored internally.
 
+        :param bool drop_collections: Defaults to False. Indicates whether columns with lists/dicts/sets will be dropped.
+
         :return: pandas.DataFrame
         """
         base_df = self._data

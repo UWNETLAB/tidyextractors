@@ -42,7 +42,7 @@ class GitExtractor(BaseExtractor):
         """
         Returns a table of git log data, with "commits" as rows/observations.
 
-        :param bool drop_collections: Indicates whether columns with lists/dicts/sets will be dropped?
+        :param bool drop_collections: Defaults to True. Indicates whether columns with lists/dicts/sets will be dropped.
 
         :return: pandas.DataFrame
         """

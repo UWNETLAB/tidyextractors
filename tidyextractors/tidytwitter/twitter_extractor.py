@@ -79,6 +79,8 @@ class TwitterExtractor(BaseExtractor):
         """
         Returns a table of Twitter user data, with "users" as rows/observations.
 
+        :param bool drop_collections: Defaults to True. Indicates whether columns with lists/dicts/sets will be dropped.
+
         :return: pandas.DataFrame
         """
         base_df = self._data

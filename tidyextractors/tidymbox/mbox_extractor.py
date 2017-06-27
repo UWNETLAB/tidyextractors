@@ -40,7 +40,9 @@ class MboxExtractor(BaseExtractor):
     def emails(self, drop_collections = True):
         """
         Returns a table of mbox message data, with "messages" as rows/observations.
-        :param bool drop_collections: Should columns with lists/dicts/sets be dropped?
+
+        :param bool drop_collections: Defaults to True. Indicates whether columns with lists/dicts/sets will be dropped.
+
         :return: pandas.DataFrame
         """
         base_df = self._data
@@ -53,6 +55,7 @@ class MboxExtractor(BaseExtractor):
     def sends(self):
         """
         Returns a table of mbox message data, with "sender/recipient" pairs as rows/observations.
+
         .. note::
 
             Rows may have a recipient from either "TO" or "CC". SendType column specifies this for each row.
