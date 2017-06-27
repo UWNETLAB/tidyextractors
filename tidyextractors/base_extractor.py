@@ -91,7 +91,7 @@ class BaseExtractor(object):
         """
         Determines the set of types present in a DataFrame column.
 
-        :param string col: A column name.
+        :param str col: A column name.
         :param pandas.DataFrame df: The dataset. Usually ``self._data``.
         :return: A set of Types.
         """
@@ -176,10 +176,10 @@ class BaseExtractor(object):
         | value2        | valueB        | X4    | Y4    |
         +---------------+---------------+-------+-------+
 
-        :param string col1: The first column to expand on. May be an atomic value, or a dict of dict.
-        :param string col2: The second column to expand on. May be an atomic value, or a dict of dict.
-        :param string rename1: The name for col1 after expansion. Defaults to col1_extended.
-        :param string rename2: The name for col2 after expansion. Defaults to col2_extended.
+        :param str col1: The first column to expand on. May be an atomic value, or a dict of dict.
+        :param str col2: The second column to expand on. May be an atomic value, or a dict of dict.
+        :param str rename1: The name for col1 after expansion. Defaults to col1_extended.
+        :param str rename2: The name for col2 after expansion. Defaults to col2_extended.
         :param list drop: Column names to be dropped from output.
         :param bool drop_collections: Should columns with compound values be dropped?
         :return: pandas.DataFrame
