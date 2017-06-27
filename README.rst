@@ -4,7 +4,7 @@ tidyextractors
 Overview
 -----------------
 
-``tidyextractors`` makes extracting data from supported sources as painless as possible, delivering you a populated Pandas DataFrame in three lines of code. ``tidyextractors`` was inspired by `Hadley Whickham's (2014) paper <http://vita.had.co.nz/papers/tidy-data.html>`_  which introduces "tidy data" as a conceptual framework for data preparation.
+``tidyextractors`` makes extracting data from supported sources as painless as possible, delivering you a populated Pandas DataFrame in three lines of code. ``tidyextractors`` was inspired by `Hadley Wickham's (2014) paper <http://vita.had.co.nz/papers/tidy-data.html>`_  which introduces "tidy data" as a conceptual framework for data preparation.
 
 For more information, including code examples, API reference, and general documentation, click `HERE <readthedocs.io>`_.
 

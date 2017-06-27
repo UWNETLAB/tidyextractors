@@ -1,7 +1,7 @@
 What is Tidy Data?
 ========================
 
-`Hadley Whickham (2014) <http://vita.had.co.nz/papers/tidy-data.html>`_ introduced "tidy data" to describe data that has been cleaned and reshaped in a way that is ready for analysis. The concept of tidy data inspired ``tidyextractors``, which provides a convenient interface for extracting data in a tidy format. However, what is a tidy format?
+`Hadley Wickham (2014) <http://vita.had.co.nz/papers/tidy-data.html>`_ introduced "tidy data" to describe data that has been cleaned and reshaped in a way that is ready for analysis. The concept of tidy data inspired ``tidyextractors``, which provides a convenient interface for extracting data in a tidy format. However, what is a tidy format?
 
 Our Definition of Tidy Data
 ---------------------------------
