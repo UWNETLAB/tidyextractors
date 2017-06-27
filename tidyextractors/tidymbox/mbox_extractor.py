@@ -23,12 +23,21 @@ from tidyextractors.tidymbox.mbox_to_pandas import mbox_to_pandas
 
 
 class MboxExtractor(BaseExtractor):
+    """
+    The ``MboxExtractor`` class is for extracting data from local Mbox files. This class
+    has methods for outputting data into the ``emails`` and ``sends`` tidy formats, and a
+    raw untidy format.
+
+    :param str source: The path to either a single mbox file or a directory containing multiple mbox files.
+    :param bool auto_extract: Defaults to True. If True, data is extracted automatically.
+     Otherwise, extraction must be initiated through the internal interface.
+    """
 
     def _extract(self, source, *args, **kwargs):
         """
         Extracts data from mbox files. Mutates _data.
 
-        :param str source: THe path to one or more mbox files.
+        :param str source: The path to one or more mbox files.
         :param args: Arbitrary arguments for extensibility.
         :param kwargs: Arbitrary keyword arguments for extensibility.
         :return: None

@@ -29,6 +29,24 @@ from tidyextractors.tidytwitter.twitter_object_handlers import twitter_object_ha
 
 
 class TwitterExtractor(BaseExtractor):
+    """
+    The ``TwitterExtractor`` class is for extracting user data from Twitter. This class
+    has methods for outputting data into the ``users`` and ``tweets`` tidy formats, and a
+    raw untidy format.
+
+    :param list source: A list of user screen name strings.
+    :param bool auto_extract: Defaults to True. If True, data is extracted automatically.
+     Otherwise, extraction must be initiated through the internal interface.
+    :param str access_token: One of four required keyword arguments that make up a
+     complete set of Twitter API credentials.
+    :param str access_secret: One of four required keyword arguments that make up a
+     complete set of Twitter API credentials.
+    :param str consumer_key: One of four required keyword arguments that make up a
+     complete set of Twitter API credentials.
+    :param str consumer_secret: One of four required keyword arguments that make up a
+     complete set of Twitter API credentials.
+
+    """
 
     def _extract(self, source, extract_tweets=True, *args, **kwargs):
         """

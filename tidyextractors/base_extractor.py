@@ -35,7 +35,7 @@ class BaseExtractor(object):
     # _data stores the main collection of extracted test_data
     _data = None
 
-    def __init__(self, source, *args, auto_extract=True, progress_bar=True, **kwargs):
+    def __init__(self, source, auto_extract=True, *args, **kwargs):
         """
         Extractor initialization. Should not be overridden by extractor subclasses.
 

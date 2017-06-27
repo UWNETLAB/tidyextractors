@@ -22,7 +22,15 @@ from tidyextractors.tidygit.get_log import extract_log
 
 
 class GitExtractor(BaseExtractor):
+    """
+    The ``GitExtractor`` class is for extracting data from local git repositories. This class
+    has methods for outputting data into the ``changes`` and ``commits`` tidy formats, and a
+    raw untidy format.
 
+    :param str source: The path to a local git repository
+    :param bool auto_extract: Defaults to True. If True, data is extracted automatically.
+     Otherwise, extraction must be initiated through the internal interface.
+    """
     def _extract(self, source, *args, **kwargs):
         """
         Extracts data from a local git repository. Mutates _data.
