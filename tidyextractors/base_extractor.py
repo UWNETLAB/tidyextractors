@@ -24,6 +24,7 @@ import petl as etl
 import numpy as np
 import pandas as pd
 import itertools as it
+import progress_bar
 
 
 class BaseExtractor(object):
