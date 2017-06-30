@@ -33,7 +33,7 @@ from pip.req import parse_requirements
 here = path.abspath(path.dirname(__file__))
 
 # !!! Update version here!
-version_string = '0.3.3'
+version_string = '0.3.4'
 
 # Parse requirements
 # parse_requirements() returns generator of pip.req.InstallRequirement objects
