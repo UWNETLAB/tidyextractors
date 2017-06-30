@@ -24,7 +24,6 @@ import petl as etl
 import numpy as np
 import pandas as pd
 import itertools as it
-import progress_bar
 
 
 class BaseExtractor(object):
@@ -43,16 +42,12 @@ class BaseExtractor(object):
         :param source: Specifies data source. Differs by subclass.
         :param args: Arbitrary arguments permitted for extensibility.
         :param bool auto_extract: Extract data from source upon initialization?
-        :param bool progress_bar: Show progress bar?
         :param kwargs: Arbitrary keyword arguments permitted for extensibility.
         """
 
         # Extract test_data unless otherwise specified
         if auto_extract:
             self._extract(source, *args, **kwargs)
-
-        # Store progress bar preference
-        self._progress_bool = progress_bar
 
         # Do subclass initialization
         self.__sub_init__(source, *args, **kwargs)

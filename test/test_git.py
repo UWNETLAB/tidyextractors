@@ -19,6 +19,7 @@
 
 import os
 import unittest
+import subprocess as sub
 import pandas as pd
 import tidyextractors as tx
 import tidyextractors.tidygit as tg
@@ -28,11 +29,15 @@ class TestGitExtractor(unittest.TestCase):
 
     def setUp(self):
         os.rename(os.path.join('.','git_data','git/'),os.path.join('.','git_data','.git/'))
-        self.gx = tg.GitExtractor(os.path.join('.', 'git_data'))
-        self.changes_df = pd.read_csv(os.path.join('.', 'git_data', 'git_changes_test.csv'))
-        self.commits_df = pd.read_csv(os.path.join('.', 'git_data', 'git_commits_test.csv'))
-        self.raw_df = pd.read_csv(os.path.join('.', 'git_data', 'git_raw_test.csv'))
-        os.rename(os.path.join('.','git_data','.git/'),os.path.join('.','git_data','git/'))
+        try:
+            self.gx = tg.GitExtractor(os.path.join('.', 'git_data'))
+            self.changes_df = pd.read_csv(os.path.join('.', 'git_data', 'git_changes_test.csv'))
+            self.commits_df = pd.read_csv(os.path.join('.', 'git_data', 'git_commits_test.csv'))
+            self.raw_df = pd.read_csv(os.path.join('.', 'git_data', 'git_raw_test.csv'))
+            os.rename(os.path.join('.','git_data','.git/'),os.path.join('.','git_data','git/'))
+        except:
+            os.rename(os.path.join('.','git_data','.git/'),os.path.join('.','git_data','git/'))
+            raise
 
     def test_construction(self):
         self.assertEqual(isinstance(self.gx, tx.BaseExtractor), True)
