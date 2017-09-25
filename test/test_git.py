@@ -26,17 +26,16 @@ import tidyextractors.tidygit as tg
 
 
 class TestGitExtractor(unittest.TestCase):
-
     def setUp(self):
-        os.rename(os.path.join('.','git_data','git/'),os.path.join('.','git_data','.git/'))
+        os.rename(os.path.join('.', 'git_data', 'git/'), os.path.join('.', 'git_data', '.git/'))
         try:
             self.gx = tg.GitExtractor(os.path.join('.', 'git_data'))
             self.changes_df = pd.read_csv(os.path.join('.', 'git_data', 'git_changes_test.csv'))
             self.commits_df = pd.read_csv(os.path.join('.', 'git_data', 'git_commits_test.csv'))
             self.raw_df = pd.read_csv(os.path.join('.', 'git_data', 'git_raw_test.csv'))
-            os.rename(os.path.join('.','git_data','.git/'),os.path.join('.','git_data','git/'))
+            os.rename(os.path.join('.', 'git_data', '.git/'), os.path.join('.', 'git_data', 'git/'))
         except:
-            os.rename(os.path.join('.','git_data','.git/'),os.path.join('.','git_data','git/'))
+            os.rename(os.path.join('.', 'git_data', '.git/'), os.path.join('.', 'git_data', 'git/'))
             raise
 
     def test_construction(self):
@@ -46,20 +45,20 @@ class TestGitExtractor(unittest.TestCase):
     def test_raw(self):
         check_df = self.gx.raw(drop_collections=False)
         expect_df = self.raw_df
-        self.assertEqual(set(check_df.columns),set(expect_df.columns))
-        self.assertEqual(set(check_df['hexsha']),set(expect_df['hexsha']))
+        self.assertEqual(set(check_df.columns), set(expect_df.columns))
+        self.assertEqual(set(check_df['hexsha']), set(expect_df['hexsha']))
 
     def test_commits(self):
         check_df = self.gx.commits(drop_collections=False)
         expect_df = self.commits_df
-        self.assertEqual(set(check_df.columns),set(expect_df.columns))
-        self.assertEqual(set(check_df['hexsha']),set(expect_df['hexsha']))
+        self.assertEqual(set(check_df.columns), set(expect_df.columns))
+        self.assertEqual(set(check_df['hexsha']), set(expect_df['hexsha']))
 
     def test_changes(self):
         check_df = self.gx.changes()
         expect_df = self.changes_df
-        self.assertEqual(set(check_df.columns),set(expect_df.columns))
-        self.assertEqual(set(check_df['hexsha']),set(expect_df['hexsha']))
+        self.assertEqual(set(check_df.columns), set(expect_df.columns))
+        self.assertEqual(set(check_df['hexsha']), set(expect_df['hexsha']))
 
 
 if __name__ == '__main__':

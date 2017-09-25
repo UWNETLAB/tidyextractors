@@ -17,10 +17,8 @@
 # If not, see <http://www.gnu.org/licenses/>.
 # *********************************************************************************************
 
-import re
 import tqdm
 import warnings
-import petl as etl
 import numpy as np
 import pandas as pd
 import itertools as it
