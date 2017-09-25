@@ -17,4 +17,7 @@
 # If not, see <http://www.gnu.org/licenses/>.
 # *********************************************************************************************
 
-from tidyextractors.base_extractor import *
+from tidyextractors.base_extractor import BaseExtractor
+import tidyextractors.tidygit as tidygit
+import tidyextractors.tidymbox as tidymbox
+import tidyextractors.tidytwitter as tidytwitter
